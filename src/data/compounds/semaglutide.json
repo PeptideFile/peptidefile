@@ -1,0 +1,17 @@
+{
+  "name": "Semaglutide",
+  "slug": "semaglutide",
+  "category": "GLP-1 Receptor Agonist",
+  "evidenceLevel": "strong",
+  "status": "FDA Approved (Ozempic, Wegovy, Rybelsus)",
+  "developer": "Novo Nordisk",
+  "mechanism": "GLP-1 receptor agonist that reduces appetite, slows gastric emptying, and improves glycemic control",
+  "shortDescription": "The most widely prescribed GLP-1 drug. FDA-approved for both type 2 diabetes (Ozempic) and chronic weight management (Wegovy).",
+  "keyData": {
+    "weightLoss": "~15% body weight (STEP trials)",
+    "approvalStatus": "FDA approved 2021 (Wegovy for weight loss)",
+    "brandNames": ["Ozempic", "Wegovy", "Rybelsus"],
+    "commonSideEffects": ["Nausea", "Vomiting", "Diarrhea", "Constipation"]
+  },
+  "clusterArticles": []
+}

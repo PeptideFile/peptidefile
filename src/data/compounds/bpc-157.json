@@ -1,0 +1,17 @@
+{
+  "name": "BPC-157",
+  "slug": "bpc-157",
+  "category": "Recovery & Healing Peptide",
+  "evidenceLevel": "moderate",
+  "status": "Research compound (not FDA approved)",
+  "developer": "N/A — research peptide",
+  "mechanism": "Gastric pentadecapeptide that promotes angiogenesis, tendon and ligament healing, and gut repair",
+  "shortDescription": "The most popular recovery peptide. Strong animal study data for tendon, ligament, and gut healing. Human clinical data is limited but growing.",
+  "keyData": {
+    "primaryUse": "Injury recovery, gut healing, tendon repair",
+    "evidenceBase": "Extensive animal studies, limited human trials",
+    "administrationRoutes": ["Subcutaneous injection", "Oral"],
+    "commonSideEffects": ["Generally well-tolerated in studies", "Injection site reactions"]
+  },
+  "clusterArticles": []
+}

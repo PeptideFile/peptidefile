@@ -1,0 +1,17 @@
+{
+  "name": "TB-500",
+  "slug": "tb-500",
+  "category": "Recovery & Healing Peptide",
+  "evidenceLevel": "moderate",
+  "status": "Research compound (not FDA approved)",
+  "developer": "N/A — synthetic thymosin beta-4 fragment",
+  "mechanism": "Promotes cell migration, blood vessel growth, and reduces inflammation for tissue repair",
+  "shortDescription": "Synthetic fragment of thymosin beta-4. Used alongside BPC-157 for injury recovery. Primarily studied in animal models with promising wound healing data.",
+  "keyData": {
+    "primaryUse": "Wound healing, muscle recovery, inflammation reduction",
+    "evidenceBase": "Animal studies, limited human data",
+    "relatedCompound": "Thymosin beta-4",
+    "commonSideEffects": ["Headache", "Injection site irritation"]
+  },
+  "clusterArticles": []
+}

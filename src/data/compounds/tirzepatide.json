@@ -1,0 +1,17 @@
+{
+  "name": "Tirzepatide",
+  "slug": "tirzepatide",
+  "category": "GLP-1/GIP Dual Agonist",
+  "evidenceLevel": "strong",
+  "status": "FDA Approved (Mounjaro, Zepbound)",
+  "developer": "Eli Lilly",
+  "mechanism": "Dual agonist targeting both GLP-1 and GIP receptors for enhanced metabolic effects",
+  "shortDescription": "Eli Lilly's dual agonist. FDA-approved for type 2 diabetes (Mounjaro) and obesity (Zepbound). The current market leader before retatrutide arrives.",
+  "keyData": {
+    "weightLoss": "~22.5% at highest dose (SURMOUNT-1)",
+    "approvalStatus": "FDA approved 2023 (Zepbound for weight loss)",
+    "brandNames": ["Mounjaro", "Zepbound"],
+    "commonSideEffects": ["Nausea", "Diarrhea", "Reduced appetite"]
+  },
+  "clusterArticles": []
+}

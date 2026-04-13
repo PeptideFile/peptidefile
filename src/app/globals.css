@@ -1,0 +1,124 @@
+/* Google Fonts — must come before @import "tailwindcss" */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
+
+@import "tailwindcss";
+
+/* ============================================================
+   PEPTIDE FILE — DESIGN SYSTEM (Tailwind v4 CSS config)
+   ============================================================ */
+
+@theme {
+  /* Colors */
+  --color-paper: #FAF9F6;
+  --color-ink: #1A1A1A;
+  --color-muted: #6B6B6B;
+  --color-accent: #2563EB;
+  --color-border: #E5E2DC;
+  --color-highlight: #FEF3C7;
+  --color-evidence-strong: #16A34A;
+  --color-evidence-moderate: #F59E0B;
+  --color-evidence-emerging: #8B5CF6;
+
+  /* Font families */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Display font sizes */
+  --text-display-xl: 3.5rem;
+  --text-display-xl--line-height: 1.1;
+  --text-display-xl--letter-spacing: -0.02em;
+
+  --text-display-lg: 2.5rem;
+  --text-display-lg--line-height: 1.15;
+  --text-display-lg--letter-spacing: -0.01em;
+
+  --text-display-md: 2rem;
+  --text-display-md--line-height: 1.2;
+
+  --text-display-sm: 1.5rem;
+  --text-display-sm--line-height: 1.3;
+}
+
+/* Base styles */
+:root {
+  --background: #FAF9F6;
+  --foreground: #1A1A1A;
+}
+
+body {
+  background-color: #FAF9F6;
+  color: #1A1A1A;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection highlight */
+::selection {
+  background-color: #FEF3C7;
+  color: #1A1A1A;
+}
+
+/* Prose / article content */
+.prose {
+  max-width: 680px;
+  line-height: 1.75;
+  font-size: 1.0625rem;
+}
+
+.prose p {
+  margin-bottom: 1.5em;
+}
+
+.prose h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  color: #1A1A1A;
+}
+
+.prose h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  color: #1A1A1A;
+}
+
+.prose ul,
+.prose ol {
+  margin-bottom: 1.5em;
+  padding-left: 1.5em;
+}
+
+.prose li {
+  margin-bottom: 0.4em;
+}
+
+.prose a {
+  color: #2563EB;
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #1d4ed8;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: #1A1A1A;
+}
+
+.prose blockquote {
+  border-left: 3px solid #E5E2DC;
+  padding-left: 1.25em;
+  margin-left: 0;
+  color: #6B6B6B;
+  font-style: italic;
+}

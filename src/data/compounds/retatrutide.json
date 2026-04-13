@@ -1,0 +1,31 @@
+{
+  "name": "Retatrutide",
+  "slug": "retatrutide",
+  "category": "GLP-1/GIP/Glucagon Triple Agonist",
+  "evidenceLevel": "strong",
+  "status": "Phase III Clinical Trials",
+  "developer": "Eli Lilly",
+  "mechanism": "Triple agonist targeting GLP-1, GIP, and glucagon receptors simultaneously",
+  "shortDescription": "The most potent weight loss compound in clinical development. Phase III TRIUMPH-4 showed 28.7% body weight reduction at 12mg over 68 weeks.",
+  "keyData": {
+    "weightLoss": "28.7% at 12mg/68 weeks (TRIUMPH-4)",
+    "trialProgram": "TRIUMPH (7 Phase III trials)",
+    "fdaTimeline": "NDA expected late 2026–2027",
+    "commonSideEffects": ["Nausea", "Diarrhea", "Vomiting", "Dysesthesia (20.9% at 12mg)"]
+  },
+  "pillarArticle": {
+    "title": "The Retatrutide File",
+    "targetKeyword": "retatrutide",
+    "wordCount": 5000
+  },
+  "clusterArticles": [
+    { "title": "Retatrutide vs Semaglutide", "slug": "vs-semaglutide", "targetKeyword": "retatrutide vs semaglutide" },
+    { "title": "Retatrutide vs Tirzepatide", "slug": "vs-tirzepatide", "targetKeyword": "retatrutide vs tirzepatide" },
+    { "title": "Phase III Trial Results", "slug": "clinical-trial-results", "targetKeyword": "retatrutide clinical trial results" },
+    { "title": "Side Effects Breakdown", "slug": "side-effects", "targetKeyword": "retatrutide side effects" },
+    { "title": "Dosage Guide (Trial Data)", "slug": "dosage", "targetKeyword": "retatrutide dosage" },
+    { "title": "FDA Approval Timeline", "slug": "fda-approval", "targetKeyword": "retatrutide FDA approval date" },
+    { "title": "Weight Loss Projections", "slug": "weight-loss", "targetKeyword": "how much weight loss retatrutide" },
+    { "title": "Triple Agonist Mechanism", "slug": "mechanism", "targetKeyword": "how does retatrutide work" }
+  ]
+}
