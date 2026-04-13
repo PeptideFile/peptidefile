@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import EvidenceBadge from "@/components/EvidenceBadge";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import { compounds, getCompoundBySlug } from "@/data/compounds";
 
 interface PageProps {
@@ -17,11 +16,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { compound: slug } = await params;
   const data = getCompoundBySlug(slug);
-
-  if (!data) {
-    return { title: "Not Found — Peptide File" };
-  }
-
+  if (!data) return { title: "Not Found — Peptide File" };
   return {
     title: `${data.name} — Peptide File`,
     description: data.shortDescription,
@@ -37,153 +32,312 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function CompoundPage({ params }: PageProps) {
   const { compound: slug } = await params;
   const data = getCompoundBySlug(slug);
+  if (!data) notFound();
 
-  if (!data) {
-    notFound();
-  }
+  const pillarTitle = data.pillarArticle?.title ?? `The ${data.name} File`;
 
   return (
     <>
-      <Header />
-      <main className="flex-1">
-        <article className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-          {/* Header */}
-          <header className="mb-10">
-            <div className="mb-4">
-              <EvidenceBadge level={data.evidenceLevel} />
-            </div>
-            <h1
-              className="text-display-lg text-ink mb-3"
+      <article
+        style={{
+          maxWidth: "800px",
+          margin: "0 auto",
+          padding: "64px 48px",
+        }}
+      >
+        {/* Eyebrow */}
+        <div className="eyebrow">
+          <span className="eyebrow-text">{data.category}</span>
+        </div>
+
+        {/* Title */}
+        <h1
+          style={{
+            fontFamily: "var(--serif)",
+            fontSize: "clamp(36px, 4vw, 52px)",
+            color: "var(--ink)",
+            fontWeight: 400,
+            lineHeight: 1.1,
+            marginBottom: "16px",
+          }}
+        >
+          {pillarTitle}
+        </h1>
+
+        {/* Status line */}
+        <p
+          style={{
+            fontFamily: "var(--mono)",
+            fontSize: "11px",
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+            color: "var(--ink3)",
+            marginBottom: "20px",
+          }}
+        >
+          {data.status} · {data.developer}
+        </p>
+
+        {/* Evidence badge */}
+        <div style={{ marginBottom: "12px" }}>
+          <EvidenceBadge level={data.evidenceLevel} />
+        </div>
+
+        {/* Short description */}
+        <p
+          style={{
+            fontSize: "17px",
+            color: "var(--ink2)",
+            fontWeight: 300,
+            lineHeight: 1.6,
+            maxWidth: "600px",
+            marginTop: "24px",
+            paddingTop: "24px",
+            borderTop: "1px solid var(--rule)",
+          }}
+        >
+          {data.shortDescription}
+        </p>
+
+        {/* Mechanism */}
+        <section style={{ marginTop: "48px" }}>
+          <h2
+            style={{
+              fontFamily: "var(--serif)",
+              fontSize: "24px",
+              color: "var(--ink)",
+              fontWeight: 400,
+              marginBottom: "12px",
+              paddingBottom: "10px",
+              borderBottom: "1px solid var(--rule)",
+            }}
+          >
+            Mechanism
+          </h2>
+          <p
+            style={{
+              fontSize: "15px",
+              color: "var(--ink2)",
+              fontWeight: 300,
+              lineHeight: 1.7,
+            }}
+          >
+            {data.mechanism}
+          </p>
+        </section>
+
+        {/* Key data */}
+        <section style={{ marginTop: "48px" }}>
+          <h2
+            style={{
+              fontFamily: "var(--serif)",
+              fontSize: "24px",
+              color: "var(--ink)",
+              fontWeight: 400,
+              marginBottom: "16px",
+              paddingBottom: "10px",
+              borderBottom: "1px solid var(--rule)",
+            }}
+          >
+            Key Data
+          </h2>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              border: "1px solid var(--rule)",
+            }}
+          >
+            {Object.entries(data.keyData).map(([key, value], i, arr) => (
+              <div
+                key={key}
+                style={{
+                  padding: "20px",
+                  background: "var(--paper2)",
+                  borderRight: i % 2 === 0 ? "1px solid var(--rule)" : "none",
+                  borderBottom: i < arr.length - 2 ? "1px solid var(--rule)" : "none",
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: "10px",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                    color: "var(--ink3)",
+                    marginBottom: "8px",
+                  }}
+                >
+                  {key.replace(/([A-Z])/g, " $1").trim()}
+                </p>
+                {Array.isArray(value) ? (
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                    {value.map((item, j) => (
+                      <li
+                        key={j}
+                        style={{
+                          fontSize: "13px",
+                          color: "var(--ink2)",
+                          fontWeight: 300,
+                          lineHeight: 1.6,
+                          marginBottom: "2px",
+                        }}
+                      >
+                        · {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p
+                    style={{
+                      fontFamily: "var(--serif)",
+                      fontSize: "18px",
+                      color: "var(--ink)",
+                    }}
+                  >
+                    {value}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Coming soon */}
+        <section
+          style={{
+            marginTop: "48px",
+            padding: "28px",
+            background: "var(--paper2)",
+            border: "1px solid var(--rule)",
+            borderLeft: "3px solid var(--accent)",
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: "var(--serif)",
+              fontSize: "20px",
+              color: "var(--ink)",
+              fontWeight: 400,
+              marginBottom: "10px",
+            }}
+          >
+            Full Article Coming Soon
+          </h2>
+          <p
+            style={{
+              fontFamily: "var(--serif)",
+              fontStyle: "italic",
+              fontSize: "15px",
+              color: "var(--ink3)",
+              lineHeight: 1.6,
+            }}
+          >
+            The full <em>{pillarTitle}</em> will cover mechanism of action,
+            clinical trial evidence, dosage data, side effects, comparisons, and
+            FAQs — all evidence-rated and referenced. Check back soon.
+          </p>
+        </section>
+
+        {/* Cluster articles */}
+        {data.clusterArticles && data.clusterArticles.length > 0 && (
+          <section style={{ marginTop: "48px" }}>
+            <h2
               style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                letterSpacing: "-0.01em",
+                fontFamily: "var(--serif)",
+                fontSize: "24px",
+                color: "var(--ink)",
+                fontWeight: 400,
+                marginBottom: "16px",
+                paddingBottom: "10px",
+                borderBottom: "1px solid var(--rule)",
               }}
             >
-              {data.name}
-            </h1>
-            <p
-              className="text-xs text-muted uppercase tracking-widest mb-4"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
-            >
-              {data.category}
-            </p>
-            <p className="text-lg text-muted leading-relaxed max-w-xl">
-              {data.shortDescription}
-            </p>
-          </header>
-
-          {/* Status bar */}
-          <div className="flex flex-wrap gap-6 py-4 border-t border-b border-border mb-10 text-sm">
-            <div>
-              <p className="text-xs text-muted uppercase tracking-wide mb-0.5">Status</p>
-              <p className="font-medium text-ink">{data.status}</p>
-            </div>
-            <div>
-              <p className="text-xs text-muted uppercase tracking-wide mb-0.5">Developer</p>
-              <p className="font-medium text-ink">{data.developer}</p>
-            </div>
-          </div>
-
-          {/* Mechanism */}
-          <section className="mb-10">
-            <h2
-              className="text-display-sm text-ink mb-3"
-              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-            >
-              Mechanism
+              Related Articles
             </h2>
-            <p className="text-base text-muted leading-relaxed">{data.mechanism}</p>
-          </section>
-
-          {/* Key data */}
-          <section className="mb-10">
-            <h2
-              className="text-display-sm text-ink mb-4"
-              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-            >
-              Key Data
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {Object.entries(data.keyData).map(([key, value]) => (
-                <div
-                  key={key}
-                  className="p-4 border border-border rounded bg-paper"
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              {data.clusterArticles.map((article) => (
+                <li
+                  key={article.slug}
+                  style={{
+                    borderLeft: "2px solid var(--rule)",
+                    paddingLeft: "16px",
+                    paddingTop: "12px",
+                    paddingBottom: "12px",
+                    marginBottom: "4px",
+                    transition: "border-color 0.15s",
+                  }}
                 >
-                  <p
-                    className="text-xs text-muted uppercase tracking-wide mb-1"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  <Link
+                    href={`/${data.slug}/${article.slug}`}
+                    style={{ textDecoration: "none" }}
                   >
-                    {key.replace(/([A-Z])/g, " $1").trim()}
-                  </p>
-                  {Array.isArray(value) ? (
-                    <ul className="text-sm text-ink space-y-0.5">
-                      {value.map((item, i) => (
-                        <li key={i}>• {item}</li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-sm font-medium text-ink">{value}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Placeholder content */}
-          <section className="mb-10 p-6 border border-border rounded bg-highlight/20">
-            <h2
-              className="text-display-sm text-ink mb-3"
-              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-            >
-              Full Article Coming Soon
-            </h2>
-            <p className="text-muted text-sm leading-relaxed">
-              The full <em>{data.pillarArticle?.title ?? `${data.name} File`}</em>{" "}
-              will cover mechanism of action, clinical trial evidence, dosage
-              data, side effects, comparisons, and FAQs — all evidence-rated and
-              referenced. Check back soon.
-            </p>
-          </section>
-
-          {/* Cluster articles */}
-          {data.clusterArticles && data.clusterArticles.length > 0 && (
-            <section className="mb-10">
-              <h2
-                className="text-display-sm text-ink mb-5"
-                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-              >
-                Related Articles
-              </h2>
-              <ul className="divide-y divide-border border border-border rounded">
-                {data.clusterArticles.map((article) => (
-                  <li key={article.slug}>
-                    <Link
-                      href={`/${data.slug}/${article.slug}`}
-                      className="flex items-center justify-between px-4 py-3 hover:bg-highlight/20 transition-colors group"
+                    <p
+                      style={{
+                        fontFamily: "var(--serif)",
+                        fontSize: "17px",
+                        color: "var(--ink)",
+                        marginBottom: "4px",
+                      }}
                     >
-                      <span className="text-sm font-medium text-ink group-hover:text-accent transition-colors">
-                        {article.title}
-                      </span>
-                      <span className="text-xs text-muted group-hover:text-accent transition-colors">
-                        →
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
+                      {article.title}
+                    </p>
+                    <p
+                      style={{
+                        fontFamily: "var(--mono)",
+                        fontSize: "10px",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.08em",
+                        color: "var(--ink3)",
+                        margin: 0,
+                      }}
+                    >
+                      {article.targetKeyword}
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
-          {/* Disclaimer */}
-          <div className="mt-10 p-4 bg-highlight rounded border border-amber-200 text-sm text-ink">
-            <strong>Disclaimer:</strong> This content is for informational
-            purposes only. It is not medical advice and does not replace
-            consultation with a qualified healthcare provider. Always consult a
-            physician before making any health decisions.
-          </div>
-        </article>
-      </main>
-      <Footer />
+        {/* Disclaimer */}
+        <div
+          style={{
+            marginTop: "64px",
+            padding: "16px 20px",
+            background: "var(--paper2)",
+            borderTop: "2px solid var(--rule)",
+            fontFamily: "var(--mono)",
+            fontSize: "10px",
+            textTransform: "uppercase",
+            letterSpacing: "0.06em",
+            color: "var(--ink3)",
+            lineHeight: 1.6,
+            textAlign: "center",
+          }}
+        >
+          This content is for informational purposes only. Not medical advice.
+          Always consult a qualified healthcare provider before making any health decisions.
+        </div>
+      </article>
+
+      {/* Newsletter */}
+      <NewsletterSignup />
+
+      <style>{`
+        @media (max-width: 900px) {
+          article {
+            padding: 40px 24px !important;
+          }
+          article > div[style*="grid-template-columns: repeat(2"] {
+            grid-template-columns: 1fr !important;
+          }
+          article > section > div[style*="grid-template-columns: repeat(2"] {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </>
   );
 }

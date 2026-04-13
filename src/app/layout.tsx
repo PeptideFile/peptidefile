@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Header from "@/components/Header";
+import Ticker from "@/components/Ticker";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -31,9 +34,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
-      <body className="min-h-full flex flex-col bg-paper text-ink antialiased">
-        {children}
+    <html lang="en">
+      <body style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+        <Header />
+        <Ticker />
+        <div style={{ flex: 1 }}>{children}</div>
+        <Footer />
       </body>
     </html>
   );

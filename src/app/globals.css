@@ -1,94 +1,146 @@
-/* Google Fonts — must come before @import "tailwindcss" */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
+/* ─── Google Fonts — must precede @import "tailwindcss" ─── */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Geist:wght@300;400;500&display=swap');
 
 @import "tailwindcss";
 
-/* ============================================================
-   PEPTIDE FILE — DESIGN SYSTEM (Tailwind v4 CSS config)
-   ============================================================ */
-
+/* ─── Tailwind v4 theme tokens ─────────────────────────── */
 @theme {
-  /* Colors */
-  --color-paper: #FAF9F6;
-  --color-ink: #1A1A1A;
-  --color-muted: #6B6B6B;
-  --color-accent: #2563EB;
-  --color-border: #E5E2DC;
-  --color-highlight: #FEF3C7;
-  --color-evidence-strong: #16A34A;
-  --color-evidence-moderate: #F59E0B;
-  --color-evidence-emerging: #8B5CF6;
+  --color-ink:    #0f0e0c;
+  --color-ink2:   #3a3830;
+  --color-ink3:   #7a7568;
+  --color-paper:  #f5f2eb;
+  --color-paper2: #ede9e0;
+  --color-paper3: #e4dfd3;
+  --color-accent:  #c84b2f;
+  --color-accent2: #e8a020;
 
-  /* Font families */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-
-  /* Display font sizes */
-  --text-display-xl: 3.5rem;
-  --text-display-xl--line-height: 1.1;
-  --text-display-xl--letter-spacing: -0.02em;
-
-  --text-display-lg: 2.5rem;
-  --text-display-lg--line-height: 1.15;
-  --text-display-lg--letter-spacing: -0.01em;
-
-  --text-display-md: 2rem;
-  --text-display-md--line-height: 1.2;
-
-  --text-display-sm: 1.5rem;
-  --text-display-sm--line-height: 1.3;
+  --font-serif: 'Instrument Serif', serif;
+  --font-mono:  'DM Mono', monospace;
+  --font-sans:  'Geist', sans-serif;
 }
 
-/* Base styles */
+/* ─── CSS custom properties ─────────────────────────────── */
 :root {
-  --background: #FAF9F6;
-  --foreground: #1A1A1A;
+  --ink:    #0f0e0c;
+  --ink2:   #3a3830;
+  --ink3:   #7a7568;
+  --paper:  #f5f2eb;
+  --paper2: #ede9e0;
+  --paper3: #e4dfd3;
+  --accent:  #c84b2f;
+  --accent2: #e8a020;
+  --rule:   rgba(15, 14, 12, 0.12);
+
+  --mono:  'DM Mono', monospace;
+  --serif: 'Instrument Serif', serif;
+  --sans:  'Geist', sans-serif;
+}
+
+/* ─── Base ──────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
 }
 
 body {
-  background-color: #FAF9F6;
-  color: #1A1A1A;
-  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Selection highlight */
-::selection {
-  background-color: #FEF3C7;
-  color: #1A1A1A;
+/* Noise texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.5;
 }
 
-/* Prose / article content */
+/* ─── Typography globals ─────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--ink);
+}
+
+p {
+  color: var(--ink2);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+::selection {
+  background: rgba(232, 160, 32, 0.25);
+  color: var(--ink);
+}
+
+/* ─── Animations ─────────────────────────────────────────── */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Prose (article body text) ─────────────────────────── */
 .prose {
   max-width: 680px;
   line-height: 1.75;
   font-size: 1.0625rem;
+  font-family: var(--sans);
+  font-weight: 300;
+  color: var(--ink2);
 }
 
 .prose p {
   margin-bottom: 1.5em;
+  color: var(--ink2);
 }
 
 .prose h2 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--serif);
   font-size: 1.75rem;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.25;
   margin-top: 2.5em;
   margin-bottom: 0.75em;
-  color: #1A1A1A;
+  color: var(--ink);
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--rule);
 }
 
 .prose h3 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--serif);
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.3;
   margin-top: 2em;
   margin-bottom: 0.5em;
-  color: #1A1A1A;
+  color: var(--ink);
 }
 
 .prose ul,
@@ -98,27 +150,62 @@ body {
 }
 
 .prose li {
-  margin-bottom: 0.4em;
+  margin-bottom: 0.5em;
+  color: var(--ink2);
 }
 
 .prose a {
-  color: #2563EB;
+  color: var(--accent);
   text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .prose a:hover {
-  color: #1d4ed8;
+  color: var(--ink);
 }
 
 .prose strong {
-  font-weight: 600;
-  color: #1A1A1A;
+  font-weight: 500;
+  color: var(--ink);
 }
 
 .prose blockquote {
-  border-left: 3px solid #E5E2DC;
+  border-left: 2px solid var(--accent);
   padding-left: 1.25em;
   margin-left: 0;
-  color: #6B6B6B;
+  color: var(--ink3);
   font-style: italic;
+}
+
+/* ─── Utility classes ────────────────────────────────────── */
+.mono-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink3);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.eyebrow-text {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
 }

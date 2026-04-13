@@ -1,17 +1,20 @@
 type EvidenceLevel = "strong" | "moderate" | "emerging";
 
-const config: Record<EvidenceLevel, { label: string; className: string }> = {
+const config: Record<EvidenceLevel, { label: string; bg: string; color: string }> = {
   strong: {
     label: "Strong Evidence",
-    className: "bg-green-100 text-evidence-strong border border-green-200",
+    bg: "rgba(26, 107, 60, 0.1)",
+    color: "#1a6b3c",
   },
   moderate: {
     label: "Moderate Evidence",
-    className: "bg-amber-100 text-evidence-moderate border border-amber-200",
+    bg: "rgba(232, 160, 32, 0.12)",
+    color: "#e8a020",
   },
   emerging: {
     label: "Emerging Evidence",
-    className: "bg-purple-100 text-evidence-emerging border border-purple-200",
+    bg: "rgba(122, 117, 104, 0.12)",
+    color: "#7a7568",
   },
 };
 
@@ -20,12 +23,21 @@ interface EvidenceBadgeProps {
 }
 
 export default function EvidenceBadge({ level }: EvidenceBadgeProps) {
-  const { label, className } = config[level];
+  const { label, bg, color } = config[level];
 
   return (
     <span
-      className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wide ${className}`}
-      style={{ fontFamily: "'JetBrains Mono', monospace" }}
+      style={{
+        display: "inline-block",
+        fontFamily: "var(--mono)",
+        fontSize: "10px",
+        textTransform: "uppercase",
+        letterSpacing: "0.1em",
+        padding: "4px 10px",
+        background: bg,
+        color,
+        border: `1px solid ${color}30`,
+      }}
     >
       {label}
     </span>
