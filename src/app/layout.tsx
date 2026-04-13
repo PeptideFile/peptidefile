@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Ticker from "@/components/Ticker";
 import Footer from "@/components/Footer";
@@ -35,6 +36,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-KCQ5C5FP8J"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KCQ5C5FP8J');`}
+        </Script>
+      </head>
       <body style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
         <Header />
         <Ticker />
