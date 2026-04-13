@@ -1,5 +1,4 @@
 import Link from "next/link";
-import NewsletterSignup from "./NewsletterSignup";
 
 const footerLinks = [
   { label: "About", href: "/about" },
@@ -14,12 +13,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-border bg-paper mt-auto">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-        {/* Newsletter section */}
-        <div className="mb-12">
-          <NewsletterSignup />
-        </div>
-
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           {/* Brand */}
           <div>
             <p
