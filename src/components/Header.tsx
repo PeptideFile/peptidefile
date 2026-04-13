@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Compounds", href: "/#compounds" },
   { label: "Clinical Trials", href: "/retatrutide/clinical-trial-results" },
   { label: "Compare", href: "/compare" },
+  { label: "Author", href: "/author" },
 ];
 
 export default function Header() {
