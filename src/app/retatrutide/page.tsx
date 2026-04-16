@@ -390,9 +390,8 @@ export default function RetatrutidePage() {
                 reduction over 68 weeks in the same population (STEP 1 trial); tirzepatide 15mg
                 (Zepbound) achieves approximately 21 to 22% (SURMOUNT-1). Retatrutide at 12mg
                 represents a roughly 37% improvement in efficacy over tirzepatide and an 86%
-                improvement over semaglutide at their respective highest approved doses. This is
-                not an incremental step. It is a genuine step-change in the efficacy ceiling of
-                pharmacological weight management.
+                improvement over semaglutide at their respective highest approved doses, representing
+                a genuine step-change in the efficacy ceiling of pharmacological weight management.
               </p>
 
               <p>
@@ -414,7 +413,7 @@ export default function RetatrutidePage() {
                 Retatrutide&apos;s mechanism can be understood as three layered systems working
                 simultaneously. Each targets distinct physiological pathways; together they converge
                 on weight loss through mechanisms that are largely independent and therefore additive.
-                This is not redundancy: it is pharmacological depth.
+                These mechanisms reinforce each other, adding pharmacological depth.
               </p>
 
               <h3>
