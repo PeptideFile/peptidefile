@@ -20,29 +20,12 @@ export default function DisclaimerPage() {
         <span className="eyebrow-text">Legal</span>
       </div>
 
-      <h1
-        style={{
-          fontFamily: "var(--serif)",
-          fontSize: "clamp(32px, 4vw, 44px)",
-          color: "var(--ink)",
-          fontWeight: 400,
-          lineHeight: 1.1,
-          marginBottom: "12px",
-        }}
-      >
+      <h1 className="page-title" style={{ marginBottom: "12px" }}>
         Medical Disclaimer
       </h1>
       <p
-        style={{
-          fontFamily: "var(--mono)",
-          fontSize: "11px",
-          textTransform: "uppercase",
-          letterSpacing: "0.1em",
-          color: "var(--ink3)",
-          marginBottom: "40px",
-          paddingBottom: "32px",
-          borderBottom: "1px solid var(--rule)",
-        }}
+        className="mono-label"
+        style={{ marginBottom: "40px", paddingBottom: "32px", borderBottom: "1px solid var(--rule)" }}
       >
         Last updated: April 2026
       </p>

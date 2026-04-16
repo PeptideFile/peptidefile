@@ -64,29 +64,12 @@ export default function ComparePage() {
         <span className="eyebrow-text">Compare</span>
       </div>
 
-      <h1
-        style={{
-          fontFamily: "var(--serif)",
-          fontSize: "clamp(32px, 4vw, 44px)",
-          color: "var(--ink)",
-          fontWeight: 400,
-          lineHeight: 1.1,
-          marginBottom: "12px",
-        }}
-      >
+      <h1 className="page-title" style={{ marginBottom: "12px" }}>
         Compound Comparisons
       </h1>
       <p
-        style={{
-          fontSize: "17px",
-          color: "var(--ink2)",
-          fontWeight: 300,
-          lineHeight: 1.6,
-          maxWidth: "560px",
-          marginBottom: "48px",
-          paddingBottom: "32px",
-          borderBottom: "1px solid var(--rule)",
-        }}
+        className="page-intro"
+        style={{ maxWidth: "560px", marginBottom: "48px", paddingBottom: "32px", borderBottom: "1px solid var(--rule)" }}
       >
         Side-by-side evidence comparisons across the peptide and GLP-1 landscape
         — mechanism, efficacy, tolerability, and trial data in one place.

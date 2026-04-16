@@ -47,27 +47,12 @@ export default function AuthorPage() {
           <span className="eyebrow-text">Author</span>
         </div>
 
-        <h1
-          style={{
-            fontFamily: "var(--serif)",
-            fontSize: "clamp(32px, 4vw, 44px)",
-            color: "var(--ink)",
-            fontWeight: 400,
-            lineHeight: 1.1,
-            marginBottom: "12px",
-          }}
-        >
+        <h1 className="page-title" style={{ marginBottom: "12px" }}>
           Mark Boreland
         </h1>
         <p
-          style={{
-            fontSize: "18px",
-            color: "var(--ink3)",
-            fontWeight: 300,
-            marginBottom: "48px",
-            paddingBottom: "32px",
-            borderBottom: "1px solid var(--rule)",
-          }}
+          className="page-subtitle"
+          style={{ marginBottom: "48px", paddingBottom: "32px", borderBottom: "1px solid var(--rule)" }}
         >
           Founder &amp; Editor, Peptide File
         </p>
@@ -113,17 +98,7 @@ export default function AuthorPage() {
             borderTop: "1px solid var(--rule)",
           }}
         >
-          <Link
-            href="/"
-            style={{
-              fontFamily: "var(--mono)",
-              fontSize: "11px",
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              color: "var(--ink3)",
-              textDecoration: "none",
-            }}
-          >
+          <Link href="/" className="mono-label" style={{ textDecoration: "none" }}>
             &larr; Back to homepage
           </Link>
         </div>

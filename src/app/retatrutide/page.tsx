@@ -161,17 +161,7 @@ export default function RetatrutidePage() {
           <span className="eyebrow-text">GLP-1 / GIP / Glucagon Triple Agonist</span>
         </div>
 
-        <h1
-          style={{
-            fontFamily: "var(--serif)",
-            fontSize: "clamp(36px, 4vw, 56px)",
-            color: "var(--ink)",
-            fontWeight: 400,
-            lineHeight: 1.08,
-            marginBottom: "16px",
-            maxWidth: "760px",
-          }}
-        >
+        <h1 className="article-title" style={{ marginBottom: "16px", maxWidth: "760px" }}>
           The Retatrutide File
         </h1>
 
@@ -185,15 +175,7 @@ export default function RetatrutidePage() {
             flexWrap: "wrap",
           }}
         >
-          <span
-            style={{
-              fontFamily: "var(--mono)",
-              fontSize: "11px",
-              color: "var(--ink3)",
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-            }}
-          >
+          <span className="mono-label">
             By{" "}
             <Link
               href="/author"
@@ -206,15 +188,7 @@ export default function RetatrutidePage() {
               Mark Boreland
             </Link>
           </span>
-          <span
-            style={{
-              fontFamily: "var(--mono)",
-              fontSize: "11px",
-              color: "var(--ink3)",
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-            }}
-          >
+          <span className="mono-label">
             Last updated: April 2026 · ~5,000 words
           </span>
         </div>
@@ -224,16 +198,8 @@ export default function RetatrutidePage() {
         </div>
 
         <p
-          style={{
-            fontSize: "1.0625rem",
-            color: "var(--ink2)",
-            fontWeight: 300,
-            lineHeight: 1.75,
-            maxWidth: "680px",
-            paddingTop: "20px",
-            borderTop: "1px solid var(--rule)",
-            marginBottom: "40px",
-          }}
+          className="page-intro"
+          style={{ maxWidth: "680px", paddingTop: "20px", borderTop: "1px solid var(--rule)", marginBottom: "40px" }}
         >
           Retatrutide (LY3437943) is Eli Lilly&apos;s investigational triple agonist targeting the
           GLP-1, GIP, and glucagon receptors simultaneously. Phase III TRIUMPH-4 data showed 28.7%

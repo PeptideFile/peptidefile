@@ -20,27 +20,12 @@ export default function AboutPage() {
         <span className="eyebrow-text">About</span>
       </div>
 
-      <h1
-        style={{
-          fontFamily: "var(--serif)",
-          fontSize: "clamp(32px, 4vw, 44px)",
-          color: "var(--ink)",
-          fontWeight: 400,
-          lineHeight: 1.1,
-          marginBottom: "12px",
-        }}
-      >
+      <h1 className="page-title" style={{ marginBottom: "12px" }}>
         About Peptide File
       </h1>
       <p
-        style={{
-          fontSize: "18px",
-          color: "var(--ink3)",
-          fontWeight: 300,
-          marginBottom: "48px",
-          paddingBottom: "32px",
-          borderBottom: "1px solid var(--rule)",
-        }}
+        className="page-subtitle"
+        style={{ marginBottom: "48px", paddingBottom: "32px", borderBottom: "1px solid var(--rule)" }}
       >
         Independent. Evidence-rated. No selling.
       </p>

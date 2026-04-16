@@ -51,30 +51,12 @@ export default async function CompoundPage({ params }: PageProps) {
         </div>
 
         {/* Title */}
-        <h1
-          style={{
-            fontFamily: "var(--serif)",
-            fontSize: "clamp(36px, 4vw, 52px)",
-            color: "var(--ink)",
-            fontWeight: 400,
-            lineHeight: 1.1,
-            marginBottom: "16px",
-          }}
-        >
+        <h1 className="article-title" style={{ marginBottom: "16px" }}>
           {pillarTitle}
         </h1>
 
         {/* Status line */}
-        <p
-          style={{
-            fontFamily: "var(--mono)",
-            fontSize: "11px",
-            textTransform: "uppercase",
-            letterSpacing: "0.1em",
-            color: "var(--ink3)",
-            marginBottom: "20px",
-          }}
-        >
+        <p className="mono-label" style={{ marginBottom: "20px" }}>
           {data.status} · {data.developer}
         </p>
 
@@ -85,45 +67,18 @@ export default async function CompoundPage({ params }: PageProps) {
 
         {/* Short description */}
         <p
-          style={{
-            fontSize: "17px",
-            color: "var(--ink2)",
-            fontWeight: 300,
-            lineHeight: 1.6,
-            maxWidth: "600px",
-            marginTop: "24px",
-            paddingTop: "24px",
-            borderTop: "1px solid var(--rule)",
-          }}
+          className="page-intro"
+          style={{ maxWidth: "600px", marginTop: "24px", paddingTop: "24px", borderTop: "1px solid var(--rule)" }}
         >
           {data.shortDescription}
         </p>
 
         {/* Mechanism */}
         <section style={{ marginTop: "48px" }}>
-          <h2
-            style={{
-              fontFamily: "var(--serif)",
-              fontSize: "24px",
-              color: "var(--ink)",
-              fontWeight: 400,
-              marginBottom: "12px",
-              paddingBottom: "10px",
-              borderBottom: "1px solid var(--rule)",
-            }}
-          >
-            Mechanism
-          </h2>
-          <p
-            style={{
-              fontSize: "15px",
-              color: "var(--ink2)",
-              fontWeight: 300,
-              lineHeight: 1.7,
-            }}
-          >
-            {data.mechanism}
-          </p>
+          <div className="prose">
+            <h2>Mechanism</h2>
+            <p>{data.mechanism}</p>
+          </div>
         </section>
 
         {/* Key data */}
