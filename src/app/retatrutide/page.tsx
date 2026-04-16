@@ -187,7 +187,7 @@ export default function RetatrutidePage() {
 
         <p
           style={{
-            fontSize: "17px",
+            fontSize: "1.0625rem",
             color: "var(--ink2)",
             fontWeight: 300,
             lineHeight: 1.75,
@@ -255,7 +255,7 @@ export default function RetatrutidePage() {
           className="article-layout"
           style={{
             display: "grid",
-            gridTemplateColumns: "220px 1fr",
+            gridTemplateColumns: "220px minmax(0, 680px)",
             gap: "64px",
             alignItems: "start",
           }}
@@ -348,19 +348,19 @@ export default function RetatrutidePage() {
               <h2
                 style={{
                   fontFamily: "var(--serif)",
-                  fontSize: "28px",
+                  fontSize: "1.75rem",
                   color: "var(--ink)",
                   fontWeight: 400,
                   lineHeight: 1.25,
-                  marginBottom: "20px",
-                  paddingBottom: "12px",
+                  marginBottom: "0.75em",
+                  paddingBottom: "0.4em",
                   borderBottom: "1px solid var(--rule)",
                 }}
               >
                 What Is Retatrutide?
               </h2>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 Retatrutide (internal designation: LY3437943) is a once-weekly injectable peptide
                 developed by Eli Lilly and Company. It is currently in Phase III clinical development
                 and has not been approved by the FDA or any other regulatory agency. What makes it
@@ -370,7 +370,7 @@ export default function RetatrutidePage() {
                 glucagon receptor.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 Semaglutide — the active ingredient in Ozempic and Wegovy — is a GLP-1 single
                 agonist. Tirzepatide (Mounjaro, Zepbound) is a GLP-1/GIP dual agonist. Retatrutide
                 adds a third axis: glucagon receptor agonism. Each additional receptor pathway
@@ -379,7 +379,7 @@ export default function RetatrutidePage() {
                 achieve.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 The primary evidence comes from the TRIUMPH Phase III programme — seven trials
                 enrolling 5,800+ participants across multiple indications including obesity, type 2
                 diabetes, metabolic liver disease, and cardiovascular disease. The headline number
@@ -392,7 +392,7 @@ export default function RetatrutidePage() {
                 scale.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 For context: semaglutide 2.4mg (Wegovy) achieves approximately 15% mean body weight
                 reduction over 68 weeks in the same population (STEP 1 trial); tirzepatide 15mg
                 (Zepbound) achieves approximately 21–22% (SURMOUNT-1). Retatrutide at 12mg
@@ -402,7 +402,7 @@ export default function RetatrutidePage() {
                 pharmacological weight management.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
                 Eli Lilly has indicated that NDA submission is expected in late 2026 or early 2027.
                 If approved, retatrutide would enter a market already dominated by Lilly&apos;s own
                 tirzepatide and Novo Nordisk&apos;s semaglutide — effectively superseding tirzepatide
@@ -416,19 +416,19 @@ export default function RetatrutidePage() {
               <h2
                 style={{
                   fontFamily: "var(--serif)",
-                  fontSize: "28px",
+                  fontSize: "1.75rem",
                   color: "var(--ink)",
                   fontWeight: 400,
                   lineHeight: 1.25,
-                  marginBottom: "20px",
-                  paddingBottom: "12px",
+                  marginBottom: "0.75em",
+                  paddingBottom: "0.4em",
                   borderBottom: "1px solid var(--rule)",
                 }}
               >
                 How Retatrutide Works: The Triple Agonist Mechanism
               </h2>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 Retatrutide&apos;s mechanism can be understood as three layered systems working
                 simultaneously. Each targets distinct physiological pathways; together they converge
                 on weight loss through mechanisms that are largely independent and therefore additive.
@@ -449,7 +449,7 @@ export default function RetatrutidePage() {
                 The GLP-1 Receptor
               </h3>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 GLP-1 receptor agonism is the pharmacological foundation of the modern obesity drug
                 class. GLP-1 (glucagon-like peptide-1) is an incretin hormone secreted by L-cells in
                 the small intestine in response to food intake. When retatrutide activates GLP-1
@@ -457,7 +457,7 @@ export default function RetatrutidePage() {
                 patients eat less because they feel full sooner and hunger is suppressed between meals.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 In the gut, GLP-1 receptor activation slows gastric emptying: food moves through the
                 stomach more slowly, extending postprandial satiety and reducing caloric absorption
                 efficiency. In the pancreas, GLP-1 agonism stimulates glucose-dependent insulin
@@ -465,7 +465,7 @@ export default function RetatrutidePage() {
                 postprandial spikes without causing hypoglycaemia when glucose is normal.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 These are the same mechanisms that make semaglutide and tirzepatide effective. They
                 explain the class-wide benefits: meaningful weight loss, improved glycaemic control,
                 and cardiovascular risk reduction. The difference in retatrutide is what gets layered
@@ -486,7 +486,7 @@ export default function RetatrutidePage() {
                 The GIP Receptor
               </h3>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 GIP (glucose-dependent insulinotropic polypeptide) receptor agonism was first
                 introduced to obesity pharmacotherapy via tirzepatide. The GIP receptor&apos;s role in
                 weight regulation is more complex than GLP-1: it appears to enhance the appetite-
@@ -494,7 +494,7 @@ export default function RetatrutidePage() {
                 GLP-1 agonism alone tends to produce.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 This produces a counter-intuitive result: tirzepatide achieves greater weight loss
                 than semaglutide despite generally being better tolerated at efficacious doses. The
                 leading explanation is that GIP co-agonism amplifies the appetite-suppressive signal
@@ -502,7 +502,7 @@ export default function RetatrutidePage() {
                 improvement over GLP-1 monotherapy.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 Retatrutide carries the same GIP agonism as tirzepatide. This likely contributes to
                 its tolerability profile given the extraordinary weight loss numbers — without GIP
                 co-agonism, the GLP-1 and glucagon receptor activity at efficacious doses might
@@ -523,7 +523,7 @@ export default function RetatrutidePage() {
                 The Glucagon Receptor — The Key Differentiator
               </h3>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 The most significant pharmacological distinction between retatrutide and every prior
                 agent is glucagon receptor agonism. Glucagon is classically understood as a counter-
                 regulatory hormone: it raises blood glucose when levels fall dangerously low, acting
@@ -531,7 +531,7 @@ export default function RetatrutidePage() {
                 an initially surprising addition to a diabetes and obesity drug.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 The key insight is that glucagon receptor agonism in the context of simultaneous
                 GLP-1 agonism does not produce net hyperglycaemia — the GLP-1 component&apos;s
                 insulin-stimulating effect offsets the glucagon-induced glycaemic rise. But the
@@ -539,7 +539,7 @@ export default function RetatrutidePage() {
                 peripheral effects that drive the additional efficacy.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "12px" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "12px" }}>
                 Three key peripheral glucagon receptor effects in retatrutide:
               </p>
 
@@ -586,7 +586,7 @@ export default function RetatrutidePage() {
                 ))}
               </ul>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
                 For a detailed pharmacological breakdown of all three receptor axes, see the
                 dedicated{" "}
                 <Link
@@ -608,19 +608,19 @@ export default function RetatrutidePage() {
               <h2
                 style={{
                   fontFamily: "var(--serif)",
-                  fontSize: "28px",
+                  fontSize: "1.75rem",
                   color: "var(--ink)",
                   fontWeight: 400,
                   lineHeight: 1.25,
-                  marginBottom: "20px",
-                  paddingBottom: "12px",
+                  marginBottom: "0.75em",
+                  paddingBottom: "0.4em",
                   borderBottom: "1px solid var(--rule)",
                 }}
               >
                 The TRIUMPH Trial Programme
               </h2>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 TRIUMPH is the Phase III clinical development programme for retatrutide — seven
                 individual trials, 5,800+ participants enrolled across multiple countries, covering
                 obesity, type 2 diabetes, cardiovascular disease, metabolic liver disease, and
@@ -751,7 +751,7 @@ export default function RetatrutidePage() {
                 })}
               </div>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginTop: "8px" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginTop: "8px" }}>
                 For full trial-by-trial data and endpoint analysis, see the{" "}
                 <Link
                   href="/retatrutide/clinical-trial-results"
@@ -772,19 +772,19 @@ export default function RetatrutidePage() {
               <h2
                 style={{
                   fontFamily: "var(--serif)",
-                  fontSize: "28px",
+                  fontSize: "1.75rem",
                   color: "var(--ink)",
                   fontWeight: 400,
                   lineHeight: 1.25,
-                  marginBottom: "20px",
-                  paddingBottom: "12px",
+                  marginBottom: "0.75em",
+                  paddingBottom: "0.4em",
                   borderBottom: "1px solid var(--rule)",
                 }}
               >
                 Weight Loss: What the Data Shows
               </h2>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 The 28.7% figure from TRIUMPH-4 is the headline. The complete picture requires the
                 dose-response relationship, the responder analysis across weight loss thresholds, and
                 the trajectory over the 68-week trial period.
@@ -804,7 +804,7 @@ export default function RetatrutidePage() {
                 Dose-Response Relationship
               </h3>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 TRIUMPH-4 evaluated three active doses versus placebo. All three active doses
                 demonstrated statistically significant and clinically meaningful weight loss;
                 the dose-response relationship was clear and monotonic.
@@ -897,7 +897,7 @@ export default function RetatrutidePage() {
                 Responder Analysis at 12mg
               </h3>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 Mean weight loss figures can obscure the distribution of responses. Responder
                 analysis — the percentage of participants achieving at least a given weight loss
                 threshold — provides a more clinically meaningful picture for patient counselling.
@@ -915,7 +915,7 @@ export default function RetatrutidePage() {
                       borderBottom: "1px solid var(--rule)",
                     }}
                   >
-                    <span style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300 }}>
+                    <span style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300 }}>
                       {threshold}
                     </span>
                     <span
@@ -932,7 +932,7 @@ export default function RetatrutidePage() {
                 ))}
               </ul>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 For comparison: in STEP 1 (semaglutide), approximately 69% achieved ≥10% weight
                 loss; in SURMOUNT-1 (tirzepatide 15mg), approximately 91%. Retatrutide at 12mg
                 approaches a ceiling of response that has not previously been observed in
@@ -953,7 +953,7 @@ export default function RetatrutidePage() {
                 Weight Loss Trajectory and Plateau
               </h3>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 Unlike some earlier GLP-1 agents where weight loss plateaus relatively early,
                 TRIUMPH-4 participants on 12mg continued to show weight reduction at the 68-week
                 endpoint without an apparent plateau — suggesting that 68 weeks may not represent
@@ -975,7 +975,7 @@ export default function RetatrutidePage() {
                 Body Composition
               </h3>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "0" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "0" }}>
                 A consistent criticism of GLP-1-class weight loss drugs is the proportion of lean
                 mass (muscle) lost alongside fat. Retatrutide&apos;s body composition data from
                 TRIUMPH-4 showed fat mass loss predominating, consistent with the class. The
@@ -1002,19 +1002,19 @@ export default function RetatrutidePage() {
               <h2
                 style={{
                   fontFamily: "var(--serif)",
-                  fontSize: "28px",
+                  fontSize: "1.75rem",
                   color: "var(--ink)",
                   fontWeight: 400,
                   lineHeight: 1.25,
-                  marginBottom: "20px",
-                  paddingBottom: "12px",
+                  marginBottom: "0.75em",
+                  paddingBottom: "0.4em",
                   borderBottom: "1px solid var(--rule)",
                 }}
               >
                 Liver Fat and Metabolic Benefits
               </h2>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 Beyond the weight loss data, retatrutide&apos;s most striking single finding — and
                 the one that most clearly separates it from its predecessors — is an{" "}
                 <strong style={{ color: "var(--ink)", fontWeight: 500 }}>
@@ -1026,7 +1026,7 @@ export default function RetatrutidePage() {
                 any pharmaceutical compound in a controlled clinical trial at the time of publication.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 The mechanism is directly attributable to glucagon receptor agonism in the liver.
                 When retatrutide activates glucagon receptors in hepatocytes, it directly stimulates
                 hepatic fatty acid oxidation — liver cells burn fat at a substantially elevated rate.
@@ -1036,7 +1036,7 @@ export default function RetatrutidePage() {
                 primarily mediated through weight loss; retatrutide&apos;s is also direct.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 The clinical implications extend well beyond obesity management. Approximately 25% of
                 the global adult population has metabolic dysfunction-associated steatotic liver
                 disease (MASLD). A meaningful proportion progress to MASH (metabolic
@@ -1047,7 +1047,7 @@ export default function RetatrutidePage() {
                 dedicated MASH indication.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 Additional metabolic improvements documented in Phase 2 and supported by Phase 3 data:
               </p>
 
@@ -1107,19 +1107,19 @@ export default function RetatrutidePage() {
               <h2
                 style={{
                   fontFamily: "var(--serif)",
-                  fontSize: "28px",
+                  fontSize: "1.75rem",
                   color: "var(--ink)",
                   fontWeight: 400,
                   lineHeight: 1.25,
-                  marginBottom: "20px",
-                  paddingBottom: "12px",
+                  marginBottom: "0.75em",
+                  paddingBottom: "0.4em",
                   borderBottom: "1px solid var(--rule)",
                 }}
               >
                 Side Effects and Safety Profile
               </h2>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 Retatrutide&apos;s safety profile has two components: the class-typical
                 gastrointestinal events shared with all GLP-1 receptor agonists, and a novel adverse
                 event — dysesthesia — that appears specific to glucagon receptor agonism and is not
@@ -1140,7 +1140,7 @@ export default function RetatrutidePage() {
                 Gastrointestinal Side Effects
               </h3>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 The most commonly reported adverse events in TRIUMPH-4 were gastrointestinal:
                 nausea, diarrhoea, vomiting, and constipation. This is consistent with every
                 GLP-1-class agent and is well understood mechanistically — GLP-1 receptor agonism
@@ -1148,7 +1148,7 @@ export default function RetatrutidePage() {
                 escalation.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 GI events occurred primarily during the dose-escalation phase and largely resolved
                 or reduced in intensity once the maintenance dose was reached. Rates were broadly
                 comparable to tirzepatide at similar weight loss levels — the GIP co-agonism likely
@@ -1170,7 +1170,7 @@ export default function RetatrutidePage() {
                 Dysesthesia — The Novel Signal
               </h3>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 The most clinically distinctive adverse event in retatrutide&apos;s profile is{" "}
                 <strong style={{ color: "var(--ink)", fontWeight: 500 }}>dysesthesia</strong>:
                 abnormal, often unpleasant skin sensations including tingling, burning, numbness,
@@ -1178,7 +1178,7 @@ export default function RetatrutidePage() {
                 and legs.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 At the 12mg dose in TRIUMPH-4, dysesthesia was reported by approximately{" "}
                 <strong style={{ color: "var(--ink)", fontWeight: 500 }}>
                   20.9% of participants
@@ -1188,7 +1188,7 @@ export default function RetatrutidePage() {
                 idiosyncratic.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 The leading mechanistic hypothesis is that glucagon receptors are expressed in
                 peripheral sensory neurons and dorsal root ganglia, and that sustained glucagon
                 receptor agonism at high doses alters the excitability or firing threshold of these
@@ -1200,7 +1200,6 @@ export default function RetatrutidePage() {
               <div
                 style={{
                   padding: "20px 24px",
-                  background: "var(--paper2)",
                   border: "1px solid var(--rule)",
                   borderLeft: "3px solid #e8a020",
                   marginBottom: "20px",
@@ -1296,7 +1295,7 @@ export default function RetatrutidePage() {
                 ))}
               </ul>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
                 For complete side effect incidence rates and management guidance, see the{" "}
                 <Link
                   href="/retatrutide/side-effects"
@@ -1317,19 +1316,19 @@ export default function RetatrutidePage() {
               <h2
                 style={{
                   fontFamily: "var(--serif)",
-                  fontSize: "28px",
+                  fontSize: "1.75rem",
                   color: "var(--ink)",
                   fontWeight: 400,
                   lineHeight: 1.25,
-                  marginBottom: "20px",
-                  paddingBottom: "12px",
+                  marginBottom: "0.75em",
+                  paddingBottom: "0.4em",
                   borderBottom: "1px solid var(--rule)",
                 }}
               >
                 Retatrutide vs Semaglutide and Tirzepatide
               </h2>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 Retatrutide enters a market with two established agents. Notably, Eli Lilly itself
                 manufactures tirzepatide (Zepbound/Mounjaro), making this partly an intra-company
                 generational transition. The comparison is data-driven.
@@ -1398,7 +1397,7 @@ export default function RetatrutidePage() {
                 </div>
               </div>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 The key takeaway: retatrutide&apos;s efficacy advantage is substantial and
                 mechanistically justified. The addition of glucagon receptor agonism produces
                 genuinely independent contributions — higher energy expenditure, direct hepatic fat
@@ -1406,7 +1405,7 @@ export default function RetatrutidePage() {
                 novel adverse event at 20.9% at 12mg with no analogue in the existing class.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 For patients who achieve adequate weight loss goals at tirzepatide doses without
                 tolerability issues, escalation to retatrutide may not offer a favourable
                 benefit-risk ratio. For patients who are inadequate responders to tirzepatide or
@@ -1414,7 +1413,7 @@ export default function RetatrutidePage() {
                 considerably stronger.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
                 See the dedicated comparison files:{" "}
                 <Link
                   href="/retatrutide/vs-semaglutide"
@@ -1446,19 +1445,19 @@ export default function RetatrutidePage() {
               <h2
                 style={{
                   fontFamily: "var(--serif)",
-                  fontSize: "28px",
+                  fontSize: "1.75rem",
                   color: "var(--ink)",
                   fontWeight: 400,
                   lineHeight: 1.25,
-                  marginBottom: "20px",
-                  paddingBottom: "12px",
+                  marginBottom: "0.75em",
+                  paddingBottom: "0.4em",
                   borderBottom: "1px solid var(--rule)",
                 }}
               >
                 Dosage and Administration
               </h2>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 Retatrutide is administered as a{" "}
                 <strong style={{ color: "var(--ink)", fontWeight: 500 }}>
                   once-weekly subcutaneous injection
@@ -1518,7 +1517,7 @@ export default function RetatrutidePage() {
                 ))}
               </ul>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "0" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "0" }}>
                 The commercial dosing schedule, titration steps, and pen device design have not
                 been officially announced by Eli Lilly as of April 2026. Based on precedent from
                 tirzepatide and semaglutide, a multi-step escalation starting at a low dose (~2mg)
@@ -1544,19 +1543,19 @@ export default function RetatrutidePage() {
               <h2
                 style={{
                   fontFamily: "var(--serif)",
-                  fontSize: "28px",
+                  fontSize: "1.75rem",
                   color: "var(--ink)",
                   fontWeight: 400,
                   lineHeight: 1.25,
-                  marginBottom: "20px",
-                  paddingBottom: "12px",
+                  marginBottom: "0.75em",
+                  paddingBottom: "0.4em",
                   borderBottom: "1px solid var(--rule)",
                 }}
               >
                 FDA Approval Timeline
               </h2>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 As of April 2026, retatrutide remains investigational. No NDA has been submitted.
                 Based on Eli Lilly&apos;s public guidance, NDA submission is expected in{" "}
                 <strong style={{ color: "var(--ink)", fontWeight: 500 }}>
@@ -1634,7 +1633,7 @@ export default function RetatrutidePage() {
                 </div>
               ))}
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginTop: "24px", marginBottom: "0" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginTop: "24px", marginBottom: "0" }}>
                 Priority review designation is plausible — a 28.7% mean weight loss vs the current
                 21–22% ceiling is a meaningful step. However, it is not guaranteed given that two
                 effective agents already exist in the class. For detailed regulatory pathway analysis
@@ -1658,19 +1657,19 @@ export default function RetatrutidePage() {
               <h2
                 style={{
                   fontFamily: "var(--serif)",
-                  fontSize: "28px",
+                  fontSize: "1.75rem",
                   color: "var(--ink)",
                   fontWeight: 400,
                   lineHeight: 1.25,
-                  marginBottom: "20px",
-                  paddingBottom: "12px",
+                  marginBottom: "0.75em",
+                  paddingBottom: "0.4em",
                   borderBottom: "1px solid var(--rule)",
                 }}
               >
                 Who Will Qualify?
               </h2>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 Based on precedent from the semaglutide (Wegovy) and tirzepatide (Zepbound) labels,
                 retatrutide&apos;s obesity indication will likely cover:
               </p>
@@ -1709,14 +1708,14 @@ export default function RetatrutidePage() {
                 ))}
               </ul>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 The T2D indication, supported by TRIUMPH-1 and TRIUMPH-5 data, may result in a
                 separate label or supplemental indication — mirroring Lilly&apos;s dual-product
                 strategy with tirzepatide (Mounjaro for T2D, Zepbound for obesity). A MASH
                 indication depends entirely on TRIUMPH-6 histological endpoint data.
               </p>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
                 Insurance coverage is the dominant real-world access variable. The GLP-1 class has
                 faced persistent payer resistance for the obesity indication specifically — unlike the
                 T2D indication, obesity is frequently excluded from commercial formularies or subject
@@ -1731,19 +1730,19 @@ export default function RetatrutidePage() {
               <h2
                 style={{
                   fontFamily: "var(--serif)",
-                  fontSize: "28px",
+                  fontSize: "1.75rem",
                   color: "var(--ink)",
                   fontWeight: 400,
                   lineHeight: 1.25,
-                  marginBottom: "20px",
-                  paddingBottom: "12px",
+                  marginBottom: "0.75em",
+                  paddingBottom: "0.4em",
                   borderBottom: "1px solid var(--rule)",
                 }}
               >
                 What We Don&apos;t Yet Know
               </h2>
 
-              <p style={{ fontSize: "17px", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
+              <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, marginBottom: "1.5em" }}>
                 Retatrutide&apos;s data package is substantial but has meaningful gaps. These are
                 the key open questions as of April 2026:
               </p>
@@ -1819,12 +1818,12 @@ export default function RetatrutidePage() {
               <h2
                 style={{
                   fontFamily: "var(--serif)",
-                  fontSize: "28px",
+                  fontSize: "1.75rem",
                   color: "var(--ink)",
                   fontWeight: 400,
                   lineHeight: 1.25,
-                  marginBottom: "24px",
-                  paddingBottom: "12px",
+                  marginBottom: "0.75em",
+                  paddingBottom: "0.4em",
                   borderBottom: "1px solid var(--rule)",
                 }}
               >
@@ -1887,7 +1886,6 @@ export default function RetatrutidePage() {
               style={{
                 marginTop: "48px",
                 padding: "20px 24px",
-                background: "var(--paper2)",
                 borderTop: "2px solid var(--rule)",
               }}
             >
