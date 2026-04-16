@@ -92,11 +92,11 @@ const faqs = [
   },
   {
     q: "How does retatrutide compare to Ozempic and Wegovy (semaglutide)?",
-    a: "Retatrutide significantly outperforms semaglutide on weight loss: 28.7% mean body weight reduction at 12mg over 68 weeks versus approximately 15% for semaglutide 2.4mg (Wegovy) over the same duration. The mechanism is also distinct — semaglutide is a GLP-1 single agonist; retatrutide adds GIP and glucagon receptor agonism. Retatrutide also produces substantially greater liver fat reduction through a direct hepatic mechanism not present in semaglutide.",
+    a: "Retatrutide significantly outperforms semaglutide on weight loss: 28.7% mean body weight reduction at 12mg over 68 weeks versus approximately 15% for semaglutide 2.4mg (Wegovy) over the same duration. The mechanism is also distinct: semaglutide is a GLP-1 single agonist; retatrutide adds GIP and glucagon receptor agonism. Retatrutide also produces substantially greater liver fat reduction through a direct hepatic mechanism not present in semaglutide.",
   },
   {
     q: "What is dysesthesia and why does retatrutide cause it?",
-    a: "Dysesthesia refers to abnormal skin sensations — tingling, burning, numbness, or crawling feelings — typically in the extremities. In TRIUMPH-4, it was reported by approximately 20.9% of participants at 12mg. The leading hypothesis is that glucagon receptors are expressed in peripheral sensory neurons, and that sustained glucagon receptor agonism alters sensory neuron excitability. This is not a signal of nerve damage. In TRIUMPH-4, dysesthesia was predominantly mild to moderate and occurred most frequently during dose escalation.",
+    a: "Dysesthesia refers to abnormal skin sensations (tingling, burning, numbness, or crawling feelings) typically in the extremities. In TRIUMPH-4, it was reported by approximately 20.9% of participants at 12mg. The leading hypothesis is that glucagon receptors are expressed in peripheral sensory neurons, and that sustained glucagon receptor agonism alters sensory neuron excitability. This is not a signal of nerve damage. In TRIUMPH-4, dysesthesia was predominantly mild to moderate and occurred most frequently during dose escalation.",
   },
   {
     q: "When will retatrutide be available?",
@@ -104,7 +104,7 @@ const faqs = [
   },
   {
     q: "Is retatrutide the same as tirzepatide (Mounjaro/Zepbound)?",
-    a: "No. Both are developed by Eli Lilly but are distinct molecules. Tirzepatide is a GLP-1/GIP dual agonist. Retatrutide is a GLP-1/GIP/Glucagon triple agonist — it activates an additional receptor pathway that tirzepatide does not. This is the primary mechanistic basis for retatrutide's superior weight loss numbers and its direct liver fat-reducing effect.",
+    a: "No. Both are developed by Eli Lilly but are distinct molecules. Tirzepatide is a GLP-1/GIP dual agonist. Retatrutide is a GLP-1/GIP/Glucagon triple agonist. It activates an additional receptor pathway that tirzepatide does not. This is the primary mechanistic basis for retatrutide's superior weight loss numbers and its direct liver fat-reducing effect.",
   },
   {
     q: "What dose produced the 28.7% weight loss result?",
@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     q: "What is the TRIUMPH trial programme?",
-    a: "TRIUMPH is the Phase III development programme for retatrutide — seven trials across five indications: obesity without T2D (TRIUMPH-4, pivotal), obesity with T2D (TRIUMPH-1, 5), extended T2D evaluation (TRIUMPH-2), cardiovascular outcomes in established CVD (TRIUMPH-3, ongoing), metabolic liver disease/MASH (TRIUMPH-6), and obstructive sleep apnoea (TRIUMPH-7). Over 5,800 participants are enrolled across the programme.",
+    a: "TRIUMPH is the Phase III development programme for retatrutide, comprising seven trials across five indications: obesity without T2D (TRIUMPH-4, pivotal), obesity with T2D (TRIUMPH-1, 5), extended T2D evaluation (TRIUMPH-2), cardiovascular outcomes in established CVD (TRIUMPH-3, ongoing), metabolic liver disease/MASH (TRIUMPH-6), and obstructive sleep apnoea (TRIUMPH-7). Over 5,800 participants are enrolled across the programme.",
   },
   {
     q: "Will retatrutide be covered by insurance?",
@@ -203,7 +203,7 @@ export default function RetatrutidePage() {
         >
           Retatrutide (LY3437943) is Eli Lilly&apos;s investigational triple agonist targeting the
           GLP-1, GIP, and glucagon receptors simultaneously. Phase III TRIUMPH-4 data showed 28.7%
-          mean body weight reduction at 12mg over 68 weeks — the highest weight loss ever recorded
+          mean body weight reduction at 12mg over 68 weeks, the highest weight loss ever recorded
           in a large randomised controlled trial for any pharmacological agent. This file covers the
           mechanism, full trial programme, efficacy data, safety profile, and FDA timeline.
         </p>
@@ -364,7 +364,7 @@ export default function RetatrutidePage() {
               </p>
 
               <p>
-                Semaglutide — the active ingredient in Ozempic and Wegovy — is a GLP-1 single
+                Semaglutide (the active ingredient in Ozempic and Wegovy) is a GLP-1 single
                 agonist. Tirzepatide (Mounjaro, Zepbound) is a GLP-1/GIP dual agonist. Retatrutide
                 adds a third axis: glucagon receptor agonism. Each additional receptor pathway
                 contributes distinct physiological effects, and the combination appears to produce
@@ -373,7 +373,7 @@ export default function RetatrutidePage() {
               </p>
 
               <p>
-                The primary evidence comes from the TRIUMPH Phase III programme — seven trials
+                The primary evidence comes from the TRIUMPH Phase III programme: seven trials
                 enrolling 5,800+ participants across multiple indications including obesity, type 2
                 diabetes, metabolic liver disease, and cardiovascular disease. The headline number
                 from TRIUMPH-4, the pivotal obesity trial:{" "}
@@ -388,17 +388,17 @@ export default function RetatrutidePage() {
               <p>
                 For context: semaglutide 2.4mg (Wegovy) achieves approximately 15% mean body weight
                 reduction over 68 weeks in the same population (STEP 1 trial); tirzepatide 15mg
-                (Zepbound) achieves approximately 21–22% (SURMOUNT-1). Retatrutide at 12mg
+                (Zepbound) achieves approximately 21 to 22% (SURMOUNT-1). Retatrutide at 12mg
                 represents a roughly 37% improvement in efficacy over tirzepatide and an 86%
                 improvement over semaglutide at their respective highest approved doses. This is
-                not an incremental step — it is a genuine step-change in the efficacy ceiling of
+                not an incremental step. It is a genuine step-change in the efficacy ceiling of
                 pharmacological weight management.
               </p>
 
               <p>
                 Eli Lilly has indicated that NDA submission is expected in late 2026 or early 2027.
                 If approved, retatrutide would enter a market already dominated by Lilly&apos;s own
-                tirzepatide and Novo Nordisk&apos;s semaglutide — effectively superseding tirzepatide
+                tirzepatide and Novo Nordisk&apos;s semaglutide, effectively superseding tirzepatide
                 in the highest-efficacy segment and positioning Lilly at the leading edge of the
                 next generation of metabolic pharmacotherapy.
               </p>
@@ -414,7 +414,7 @@ export default function RetatrutidePage() {
                 Retatrutide&apos;s mechanism can be understood as three layered systems working
                 simultaneously. Each targets distinct physiological pathways; together they converge
                 on weight loss through mechanisms that are largely independent and therefore additive.
-                This is not redundancy — it is pharmacological depth.
+                This is not redundancy: it is pharmacological depth.
               </p>
 
               <h3>
@@ -425,7 +425,7 @@ export default function RetatrutidePage() {
                 GLP-1 receptor agonism is the pharmacological foundation of the modern obesity drug
                 class. GLP-1 (glucagon-like peptide-1) is an incretin hormone secreted by L-cells in
                 the small intestine in response to food intake. When retatrutide activates GLP-1
-                receptors in the hypothalamus, it reduces appetite and increases satiety signalling —
+                receptors in the hypothalamus, it reduces appetite and increases satiety signalling:
                 patients eat less because they feel full sooner and hunger is suppressed between meals.
               </p>
 
@@ -433,7 +433,7 @@ export default function RetatrutidePage() {
                 In the gut, GLP-1 receptor activation slows gastric emptying: food moves through the
                 stomach more slowly, extending postprandial satiety and reducing caloric absorption
                 efficiency. In the pancreas, GLP-1 agonism stimulates glucose-dependent insulin
-                secretion — insulin is released in response to elevated blood glucose, reducing
+                secretion: insulin is released in response to elevated blood glucose, reducing
                 postprandial spikes without causing hypoglycaemia when glucose is normal.
               </p>
 
@@ -460,13 +460,13 @@ export default function RetatrutidePage() {
                 This produces a counter-intuitive result: tirzepatide achieves greater weight loss
                 than semaglutide despite generally being better tolerated at efficacious doses. The
                 leading explanation is that GIP co-agonism amplifies the appetite-suppressive signal
-                without proportionally increasing GI side effect burden — a net pharmacodynamic
+                without proportionally increasing GI side effect burden, a net pharmacodynamic
                 improvement over GLP-1 monotherapy.
               </p>
 
               <p>
                 Retatrutide carries the same GIP agonism as tirzepatide. This likely contributes to
-                its tolerability profile given the extraordinary weight loss numbers — without GIP
+                its tolerability profile given the extraordinary weight loss numbers. Without GIP
                 co-agonism, the GLP-1 and glucagon receptor activity at efficacious doses might
                 produce an unacceptable GI burden.
               </p>
@@ -485,7 +485,7 @@ export default function RetatrutidePage() {
 
               <p>
                 The key insight is that glucagon receptor agonism in the context of simultaneous
-                GLP-1 agonism does not produce net hyperglycaemia — the GLP-1 component&apos;s
+                GLP-1 agonism does not produce net hyperglycaemia: the GLP-1 component&apos;s
                 insulin-stimulating effect offsets the glucagon-induced glycaemic rise. But the
                 glucagon receptor is expressed in tissues beyond the pancreas, and it is those
                 peripheral effects that drive the additional efficacy.
@@ -503,7 +503,7 @@ export default function RetatrutidePage() {
                   },
                   {
                     label: "Adipose tissue (thermogenesis)",
-                    text: "Glucagon receptor agonism increases thermogenesis and energy expenditure \u2014 effectively raising the resting metabolic rate. This is additive to the caloric restriction driven by GLP-1-mediated appetite suppression: weight loss is driven from two directions simultaneously.",
+                    text: "Glucagon receptor agonism increases thermogenesis and energy expenditure, effectively raising the resting metabolic rate. This is additive to the caloric restriction driven by GLP-1-mediated appetite suppression: weight loss is driven from two directions simultaneously.",
                   },
                   {
                     label: "Central nervous system (appetite suppression)",
@@ -557,7 +557,7 @@ export default function RetatrutidePage() {
               </h2>
 
               <p>
-                TRIUMPH is the Phase III clinical development programme for retatrutide — seven
+                TRIUMPH is the Phase III clinical development programme for retatrutide: seven
                 individual trials, 5,800+ participants enrolled across multiple countries, covering
                 obesity, type 2 diabetes, cardiovascular disease, metabolic liver disease, and
                 obstructive sleep apnoea. The breadth of the programme reflects Eli Lilly&apos;s
@@ -583,7 +583,7 @@ export default function RetatrutidePage() {
                     name: "TRIUMPH-3",
                     focus: "Cardiovascular Outcomes (Established CVD)",
                     status: "Ongoing",
-                    text: "Evaluating retatrutide in patients with established cardiovascular disease. This is the high-stakes outcomes trial that regulators require for obesity drugs before broad label approval. Cardiovascular outcomes trials typically run for 3\u20135 years. Results are not yet available and remain the key outstanding regulatory question.",
+                    text: "Evaluating retatrutide in patients with established cardiovascular disease. This is the high-stakes outcomes trial that regulators require for obesity drugs before broad label approval. Cardiovascular outcomes trials typically run for 3 to 5 years. Results are not yet available and remain the key outstanding regulatory question.",
                   },
                   {
                     name: "TRIUMPH-4",
@@ -595,7 +595,7 @@ export default function RetatrutidePage() {
                     name: "TRIUMPH-5",
                     focus: "Obesity with Type 2 Diabetes",
                     status: "Completed",
-                    text: "Evaluated retatrutide in the comorbid population \u2014 adults with both significant obesity and T2D. Likely represents a substantial portion of real-world prescribing given the high co-prevalence of these conditions. Results support both weight and glycaemic endpoints.",
+                    text: "Evaluated retatrutide in the comorbid population (adults with both significant obesity and T2D). Likely represents a substantial portion of real-world prescribing given the high co-prevalence of these conditions. Results support both weight and glycaemic endpoints.",
                   },
                   {
                     name: "TRIUMPH-6",
@@ -799,8 +799,8 @@ export default function RetatrutidePage() {
 
               <p>
                 Mean weight loss figures can obscure the distribution of responses. Responder
-                analysis — the percentage of participants achieving at least a given weight loss
-                threshold — provides a more clinically meaningful picture for patient counselling.
+                analysis (the percentage of participants achieving at least a given weight loss
+                threshold) provides a more clinically meaningful picture for patient counselling.
               </p>
 
               <ul style={{ listStyle: "none", padding: 0, margin: "0 0 20px 0" }}>
@@ -847,7 +847,7 @@ export default function RetatrutidePage() {
               <p>
                 Unlike some earlier GLP-1 agents where weight loss plateaus relatively early,
                 TRIUMPH-4 participants on 12mg continued to show weight reduction at the 68-week
-                endpoint without an apparent plateau — suggesting that 68 weeks may not represent
+                endpoint without an apparent plateau, suggesting that 68 weeks may not represent
                 the maximum achievable effect. Longer-duration trials or extension studies may
                 document additional weight loss beyond the primary endpoint timeframe.
               </p>
@@ -861,8 +861,8 @@ export default function RetatrutidePage() {
                 mass (muscle) lost alongside fat. Retatrutide&apos;s body composition data from
                 TRIUMPH-4 showed fat mass loss predominating, consistent with the class. The
                 glucagon receptor-mediated increase in energy expenditure may theoretically help
-                preserve metabolic rate during caloric restriction — which could partially mitigate
-                lean mass loss over time — but this requires confirmation from longer-term follow-up
+                preserve metabolic rate during caloric restriction (which could partially mitigate
+                lean mass loss over time), but this requires confirmation from longer-term follow-up
                 data. For a detailed breakdown, see the{" "}
                 <Link
                   href="/retatrutide/weight-loss"
@@ -880,8 +880,8 @@ export default function RetatrutidePage() {
               </h2>
 
               <p>
-                Beyond the weight loss data, retatrutide&apos;s most striking single finding — and
-                the one that most clearly separates it from its predecessors — is an{" "}
+                Beyond the weight loss data, retatrutide&apos;s most striking single finding (and
+                the one that most clearly separates it from its predecessors) is an{" "}
                 <strong>
                   86% relative reduction in liver fat content
                 </strong>{" "}
@@ -894,7 +894,7 @@ export default function RetatrutidePage() {
               <p>
                 The mechanism is directly attributable to glucagon receptor agonism in the liver.
                 When retatrutide activates glucagon receptors in hepatocytes, it directly stimulates
-                hepatic fatty acid oxidation — liver cells burn fat at a substantially elevated rate.
+                hepatic fatty acid oxidation: liver cells burn fat at a substantially elevated rate.
                 This hepatic fat-burning effect is independent of and additive to the secondary
                 liver fat reduction that would be expected from overall caloric restriction and weight
                 loss alone. Semaglutide and tirzepatide do reduce liver fat, but their reductions are
@@ -905,7 +905,7 @@ export default function RetatrutidePage() {
                 The clinical implications extend well beyond obesity management. Approximately 25% of
                 the global adult population has metabolic dysfunction-associated steatotic liver
                 disease (MASLD). A meaningful proportion progress to MASH (metabolic
-                dysfunction-associated steatohepatitis) — associated with progressive hepatic
+                dysfunction-associated steatohepatitis), associated with progressive hepatic
                 fibrosis, cirrhosis, and hepatocellular carcinoma risk. Current approved treatment
                 options for MASH are limited. TRIUMPH-6 was designed specifically for MASH, using
                 liver biopsy-confirmed histological endpoints to meet the regulatory bar for a
@@ -920,7 +920,7 @@ export default function RetatrutidePage() {
                 {[
                   [
                     "ALT and AST",
-                    "Liver enzymes normalised or significantly reduced in participants with elevated baseline values — a key safety and efficacy marker for hepatic health.",
+                    "Liver enzymes normalised or significantly reduced in participants with elevated baseline values, a key safety and efficacy marker for hepatic health.",
                   ],
                   [
                     "HOMA-IR",
@@ -928,11 +928,11 @@ export default function RetatrutidePage() {
                   ],
                   [
                     "Fasting triglycerides",
-                    "Reduced substantially — consistent with both the weight loss component and direct hepatic lipid metabolism effects of glucagon receptor agonism in the liver.",
+                    "Reduced substantially, consistent with both the weight loss component and direct hepatic lipid metabolism effects of glucagon receptor agonism in the liver.",
                   ],
                   [
                     "Adiponectin",
-                    "An insulin-sensitising adipokine that is paradoxically suppressed in obesity. Increased with retatrutide treatment — an independent marker of improved metabolic phenotype.",
+                    "An insulin-sensitising adipokine that is paradoxically suppressed in obesity. Increased with retatrutide treatment, an independent marker of improved metabolic phenotype.",
                   ],
                 ].map(([label, text]) => (
                   <li
@@ -976,7 +976,7 @@ export default function RetatrutidePage() {
               <p>
                 Retatrutide&apos;s safety profile has two components: the class-typical
                 gastrointestinal events shared with all GLP-1 receptor agonists, and a novel adverse
-                event — dysesthesia — that appears specific to glucagon receptor agonism and is not
+                event (dysesthesia) that appears specific to glucagon receptor agonism and is not
                 seen with semaglutide or tirzepatide.
               </p>
 
@@ -987,7 +987,7 @@ export default function RetatrutidePage() {
               <p>
                 The most commonly reported adverse events in TRIUMPH-4 were gastrointestinal:
                 nausea, diarrhoea, vomiting, and constipation. This is consistent with every
-                GLP-1-class agent and is well understood mechanistically — GLP-1 receptor agonism
+                GLP-1-class agent and is well understood mechanistically: GLP-1 receptor agonism
                 in the gut slows gastric emptying and alters gut motility, particularly during dose
                 escalation.
               </p>
@@ -995,7 +995,7 @@ export default function RetatrutidePage() {
               <p>
                 GI events occurred primarily during the dose-escalation phase and largely resolved
                 or reduced in intensity once the maintenance dose was reached. Rates were broadly
-                comparable to tirzepatide at similar weight loss levels — the GIP co-agonism likely
+                comparable to tirzepatide at similar weight loss levels: the GIP co-agonism likely
                 moderates the nausea burden that would otherwise be expected from the degree of
                 GLP-1 and glucagon receptor stimulation.
               </p>
@@ -1008,7 +1008,7 @@ export default function RetatrutidePage() {
                 The most clinically distinctive adverse event in retatrutide&apos;s profile is{" "}
                 <strong>dysesthesia</strong>:
                 abnormal, often unpleasant skin sensations including tingling, burning, numbness,
-                crawling, or electric feelings, primarily in the extremities — hands, feet, arms,
+                crawling, or electric feelings, primarily in the extremities: hands, feet, arms,
                 and legs.
               </p>
 
@@ -1017,7 +1017,7 @@ export default function RetatrutidePage() {
                 <strong>
                   20.9% of participants
                 </strong>
-                . At 8mg, the rate was lower; at 4mg, lower still — a clear dose-dependent
+                . At 8mg, the rate was lower; at 4mg, lower still, a clear dose-dependent
                 relationship that strongly suggests the effect is pharmacodynamic rather than
                 idiosyncratic.
               </p>
@@ -1027,7 +1027,7 @@ export default function RetatrutidePage() {
                 peripheral sensory neurons and dorsal root ganglia, and that sustained glucagon
                 receptor agonism at high doses alters the excitability or firing threshold of these
                 neurons. This would classify dysesthesia as a pharmacodynamic effect analogous to
-                how GLP-1 receptor agonism causes GI symptoms — rather than a signal of peripheral
+                how GLP-1 receptor agonism causes GI symptoms, rather than a signal of peripheral
                 nerve damage or toxicity.
               </p>
 
@@ -1056,8 +1056,8 @@ export default function RetatrutidePage() {
                   In TRIUMPH-4, dysesthesia was predominantly mild to moderate. A meaningful
                   proportion of cases emerged during dose escalation with some improvement after
                   dose stabilisation. Discontinuation due to dysesthesia occurred in a small but
-                  clinically significant proportion at 12mg. Full characterisation of the signal —
-                  mechanism, risk factors, and reversibility — is one of the key open questions
+                  clinically significant proportion at 12mg. Full characterisation of the signal
+                  (mechanism, risk factors, and reversibility) is one of the key open questions
                   that will need to be addressed in the prescribing information.
                 </p>
               </div>
@@ -1070,7 +1070,7 @@ export default function RetatrutidePage() {
                 {[
                   [
                     "Heart rate",
-                    "A modest resting heart rate increase (2\u20134 bpm) is a class-wide effect of GLP-1 receptor agonism. Observed with retatrutide at rates consistent with the class. Not considered a significant safety signal in otherwise healthy adults.",
+                    "A modest resting heart rate increase (2 to 4 bpm) is a class-wide effect of GLP-1 receptor agonism. Observed with retatrutide at rates consistent with the class. Not considered a significant safety signal in otherwise healthy adults.",
                   ],
                   [
                     "Gallbladder events",
@@ -1201,8 +1201,8 @@ export default function RetatrutidePage() {
               <p>
                 The key takeaway: retatrutide&apos;s efficacy advantage is substantial and
                 mechanistically justified. The addition of glucagon receptor agonism produces
-                genuinely independent contributions — higher energy expenditure, direct hepatic fat
-                clearance — that dual agonism cannot replicate. The trade-off is dysesthesia, a
+                genuinely independent contributions (higher energy expenditure, direct hepatic fat
+                clearance) that dual agonism cannot replicate. The trade-off is dysesthesia, a
                 novel adverse event at 20.9% at 12mg with no analogue in the existing class.
               </p>
 
@@ -1242,7 +1242,7 @@ export default function RetatrutidePage() {
                 <strong>
                   once-weekly subcutaneous injection
                 </strong>{" "}
-                — the same delivery format as semaglutide and tirzepatide. Phase III used a
+                , the same delivery format as semaglutide and tirzepatide. Phase III used a
                 gradual dose-escalation protocol designed to minimise GI side effects during the
                 adjustment period.
               </p>
@@ -1259,7 +1259,7 @@ export default function RetatrutidePage() {
                   ],
                   [
                     "12mg weekly",
-                    "Highest dose studied. 28.7% mean weight loss. Highest efficacy — and highest dysesthesia rate at approximately 20.9%.",
+                    "Highest dose studied. 28.7% mean weight loss. Highest efficacy, and the highest dysesthesia rate at approximately 20.9%.",
                   ],
                 ].map(([dose, desc]) => (
                   <li
@@ -1302,7 +1302,7 @@ export default function RetatrutidePage() {
                 The commercial dosing schedule, titration steps, and pen device design have not
                 been officially announced by Eli Lilly as of April 2026. Based on precedent from
                 tirzepatide and semaglutide, a multi-step escalation starting at a low dose (~2mg)
-                is expected. The optimal maintenance dose will likely be individualised — patients
+                is expected. The optimal maintenance dose will likely be individualised: patients
                 achieving their goals at 8mg and tolerating it well may not need to escalate to
                 12mg given the higher dysesthesia burden. See the full{" "}
                 <Link
@@ -1399,8 +1399,8 @@ export default function RetatrutidePage() {
               ))}
 
               <p style={{ marginTop: "24px" }}>
-                Priority review designation is plausible — a 28.7% mean weight loss vs the current
-                21–22% ceiling is a meaningful step. However, it is not guaranteed given that two
+                Priority review designation is plausible: a 28.7% mean weight loss vs the current
+                21 to 22% ceiling is a meaningful step. However, it is not guaranteed given that two
                 effective agents already exist in the class. For detailed regulatory pathway analysis
                 and PDUFA projections, see the{" "}
                 <Link
@@ -1426,7 +1426,7 @@ export default function RetatrutidePage() {
               <ul style={{ listStyle: "none", padding: 0, margin: "0 0 20px 0" }}>
                 {[
                   "Adults with a BMI of ≥30 kg/m² (obesity class I or higher)",
-                  "Adults with a BMI of ≥27 kg/m² plus at least one weight-related comorbidity — hypertension, dyslipidaemia, type 2 diabetes, obstructive sleep apnoea, or cardiovascular disease",
+                  "Adults with a BMI of ≥27 kg/m² plus at least one weight-related comorbidity (hypertension, dyslipidaemia, type 2 diabetes, obstructive sleep apnoea, or cardiovascular disease)",
                 ].map((item) => (
                   <li
                     key={item}
@@ -1456,14 +1456,14 @@ export default function RetatrutidePage() {
 
               <p>
                 The T2D indication, supported by TRIUMPH-1 and TRIUMPH-5 data, may result in a
-                separate label or supplemental indication — mirroring Lilly&apos;s dual-product
+                separate label or supplemental indication, mirroring Lilly&apos;s dual-product
                 strategy with tirzepatide (Mounjaro for T2D, Zepbound for obesity). A MASH
                 indication depends entirely on TRIUMPH-6 histological endpoint data.
               </p>
 
               <p>
                 Insurance coverage is the dominant real-world access variable. The GLP-1 class has
-                faced persistent payer resistance for the obesity indication specifically — unlike the
+                faced persistent payer resistance for the obesity indication specifically. Unlike the
                 T2D indication, obesity is frequently excluded from commercial formularies or subject
                 to high prior-authorisation burdens. Retatrutide will face the same structural
                 barrier, and access will depend heavily on commercial pricing and formulary
@@ -1498,7 +1498,7 @@ export default function RetatrutidePage() {
                   },
                   {
                     title: "TRIUMPH-6 MASH histology",
-                    body: "Whether the 86% liver fat reduction from Phase 2 translates into MASH resolution and fibrosis regression on biopsy — the endpoints required for a dedicated MASH regulatory indication.",
+                    body: "Whether the 86% liver fat reduction from Phase 2 translates into MASH resolution and fibrosis regression on biopsy, the endpoints required for a dedicated MASH regulatory indication.",
                   },
                   {
                     title: "Optimal maintenance dose strategy",
