@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import EvidenceBadge from "@/components/EvidenceBadge";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import { articleSchema, faqSchema, breadcrumbSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "The Retatrutide File — Complete Phase III Evidence Review | Peptide File",
@@ -119,71 +120,38 @@ const faqs = [
   },
 ];
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
+const articleJsonLd = articleSchema({
   headline: "The Retatrutide File — Complete Phase III Evidence Review",
   description:
     "Comprehensive review of retatrutide: 28.7% weight loss at 12mg, 86% liver fat reduction, TRIUMPH trial programme, dysesthesia profile, dosage, and FDA timeline. Updated April 2026.",
   datePublished: "2026-04-16",
   dateModified: "2026-04-16",
-  author: {
-    "@type": "Person",
-    name: "Mark Boreland",
-    url: "https://peptidefile.com/author",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Peptide File",
-  },
-};
+  authorName: "Mark Boreland",
+  authorUrl: "https://peptidefile.com/author",
+  publisherName: "Peptide File",
+});
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: f.a,
-    },
-  })),
-};
+const faqJsonLd = faqSchema(faqs);
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://peptidefile.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Retatrutide",
-      item: "https://peptidefile.com/retatrutide",
-    },
-  ],
-};
+const breadcrumbJsonLd = breadcrumbSchema([
+  { name: "Home", item: "https://peptidefile.com" },
+  { name: "Retatrutide", item: "https://peptidefile.com/retatrutide" },
+]);
 
 export default function RetatrutidePage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "64px 48px 0" }}>
 
