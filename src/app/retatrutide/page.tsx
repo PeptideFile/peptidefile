@@ -7,7 +7,7 @@ import { articleSchema, faqSchema, breadcrumbSchema } from "@/lib/schemas";
 export const metadata: Metadata = {
   title: "The Retatrutide File — Complete Phase III Evidence Review | Peptide File",
   description:
-    "Comprehensive review of retatrutide: 28.7% weight loss at 12mg, 86% liver fat reduction, TRIUMPH trial programme, dysesthesia profile, dosage, and FDA timeline. Updated April 2026.",
+    "Retatrutide: 28.7% weight loss at 12mg in Phase III (TRIUMPH-4). Mechanism, trial data, side effects, dosage, and FDA timeline. Evidence-rated review.",
   alternates: { canonical: "https://peptidefile.com/retatrutide" },
   openGraph: {
     title: "The Retatrutide File — Complete Phase III Evidence Review",
