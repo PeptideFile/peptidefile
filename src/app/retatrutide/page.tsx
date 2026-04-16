@@ -1200,6 +1200,7 @@ export default function RetatrutidePage() {
               <div
                 style={{
                   padding: "20px 24px",
+                  background: "var(--paper2)",
                   border: "1px solid var(--rule)",
                   borderLeft: "3px solid #e8a020",
                   marginBottom: "20px",
