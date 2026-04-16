@@ -574,7 +574,7 @@ export default function RetatrutidePage() {
                     </span>
                     <span
                       style={{
-                        fontSize: "17px",
+                        fontSize: "1.0625rem",
                         color: "var(--ink2)",
                         fontWeight: 300,
                         lineHeight: 1.75,
@@ -737,7 +737,7 @@ export default function RetatrutidePage() {
                       </div>
                       <p
                         style={{
-                          fontSize: "17px",
+                          fontSize: "1.0625rem",
                           color: "var(--ink2)",
                           fontWeight: 300,
                           lineHeight: 1.75,
@@ -1089,7 +1089,7 @@ export default function RetatrutidePage() {
                     </span>
                     <span
                       style={{
-                        fontSize: "17px",
+                        fontSize: "1.0625rem",
                         color: "var(--ink2)",
                         fontWeight: 300,
                         lineHeight: 1.75,
@@ -1220,7 +1220,7 @@ export default function RetatrutidePage() {
                 </p>
                 <p
                   style={{
-                    fontSize: "17px",
+                    fontSize: "1.0625rem",
                     color: "var(--ink2)",
                     fontWeight: 300,
                     lineHeight: 1.75,
@@ -1284,7 +1284,7 @@ export default function RetatrutidePage() {
                     </span>
                     <span
                       style={{
-                        fontSize: "17px",
+                        fontSize: "1.0625rem",
                         color: "var(--ink2)",
                         fontWeight: 300,
                         lineHeight: 1.75,
@@ -1506,7 +1506,7 @@ export default function RetatrutidePage() {
                     </span>
                     <span
                       style={{
-                        fontSize: "17px",
+                        fontSize: "1.0625rem",
                         color: "var(--ink2)",
                         fontWeight: 300,
                         lineHeight: 1.75,
@@ -1623,7 +1623,7 @@ export default function RetatrutidePage() {
                     style={{
                       padding: "13px 0 13px 20px",
                       borderLeft: "2px solid var(--rule)",
-                      fontSize: "17px",
+                      fontSize: "1.0625rem",
                       color: "var(--ink2)",
                       fontWeight: 300,
                       lineHeight: 1.75,
@@ -1687,7 +1687,7 @@ export default function RetatrutidePage() {
                       gap: "12px",
                       padding: "11px 0",
                       borderBottom: "1px solid var(--rule)",
-                      fontSize: "17px",
+                      fontSize: "1.0625rem",
                       color: "var(--ink2)",
                       fontWeight: 300,
                       lineHeight: 1.75,
@@ -1800,7 +1800,7 @@ export default function RetatrutidePage() {
                     </p>
                     <p
                       style={{
-                        fontSize: "17px",
+                        fontSize: "1.0625rem",
                         color: "var(--ink2)",
                         fontWeight: 300,
                         lineHeight: 1.75,
@@ -1867,7 +1867,7 @@ export default function RetatrutidePage() {
                     </summary>
                     <p
                       style={{
-                        fontSize: "17px",
+                        fontSize: "1.0625rem",
                         color: "var(--ink2)",
                         fontWeight: 300,
                         lineHeight: 1.75,
