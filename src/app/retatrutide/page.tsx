@@ -129,6 +129,7 @@ const articleJsonLd = articleSchema({
   authorName: "Mark Boreland",
   authorUrl: "https://peptidefile.com/author",
   publisherName: "Peptide File",
+  image: "https://peptidefile.com/og-retatrutide.png",
 });
 
 const faqJsonLd = faqSchema(faqs);

@@ -6,6 +6,7 @@ export interface ArticleSchemaInput {
   authorName: string;
   authorUrl: string;
   publisherName: string;
+  image?: string;
 }
 
 export interface FaqItem {
@@ -18,14 +19,21 @@ export interface BreadcrumbItem {
   item: string;
 }
 
+/** Normalises a date string to ISO 8601 with UTC offset.
+ *  Accepts "YYYY-MM-DD" or any string already containing "T". */
+function toIso8601Utc(date: string): string {
+  if (date.includes("T")) return date;
+  return `${date}T00:00:00+00:00`;
+}
+
 export function articleSchema(article: ArticleSchemaInput) {
-  return {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.headline,
     description: article.description,
-    datePublished: article.datePublished,
-    dateModified: article.dateModified,
+    datePublished: toIso8601Utc(article.datePublished),
+    dateModified: toIso8601Utc(article.dateModified),
     author: {
       "@type": "Person",
       name: article.authorName,
@@ -36,6 +44,8 @@ export function articleSchema(article: ArticleSchemaInput) {
       name: article.publisherName,
     },
   };
+  if (article.image) schema.image = article.image;
+  return schema;
 }
 
 export function faqSchema(faqs: FaqItem[]) {
