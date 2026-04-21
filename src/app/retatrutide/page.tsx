@@ -1557,7 +1557,6 @@ export default function RetatrutidePage() {
                 {faqs.map((item) => (
                   <details
                     key={item.q}
-                    open
                     style={{ borderBottom: "1px solid var(--rule)" }}
                   >
                     <summary
