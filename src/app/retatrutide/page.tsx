@@ -45,7 +45,7 @@ const clusterLinks = [
   { href: "/retatrutide/side-effects", label: "Side Effects" },
   { href: "/retatrutide/dosage", label: "Dosage Guide" },
   { href: "/retatrutide/fda-approval", label: "FDA Approval" },
-  { href: "/retatrutide/weight-loss", label: "Weight Loss" },
+  { href: "/retatrutide/weight-loss-projections", label: "Weight Loss Projections" },
   { href: "/retatrutide/mechanism", label: "Mechanism" },
 ];
 
