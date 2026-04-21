@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { articleSchema, faqSchema, breadcrumbSchema } from "@/lib/schemas";
 
+const TITLE = "How Does Retatrutide Work? Triple Agonist Mechanism Explained";
+const DESCRIPTION =
+  "How does retatrutide work? The first triple agonist activating GLP-1, GIP, and glucagon receptors, driving 28.7% weight loss through combined mechanisms.";
 const SLUG = "retatrutide/how-it-works";
 const CANONICAL = `https://peptidefile.com/${SLUG}`;
 const PUBLISHED = "2026-04-21T00:00:00+00:00";
 const MODIFIED = "2026-04-21T00:00:00+00:00";
 
 export const metadata: Metadata = {
-  title: "How Does Retatrutide Work? Triple Agonist Mechanism Explained | Peptide File",
-  description:
-    "How does retatrutide work? The first triple agonist activating GLP-1, GIP, and glucagon receptors, driving 28.7% weight loss through combined mechanisms.",
-  alternates: { canonical: CANONICAL },
+  title: `${TITLE} | Peptide File`,
+  description: DESCRIPTION,
   openGraph: {
-    title: "How Does Retatrutide Work? Triple Agonist Mechanism Explained",
-    description:
-      "Full mechanism of action: GLP-1 appetite suppression, GIP metabolic signalling, and glucagon-driven energy expenditure combined in one weekly peptide.",
+    title: TITLE,
+    description: DESCRIPTION,
     type: "article",
     publishedTime: PUBLISHED,
     modifiedTime: MODIFIED,
@@ -25,9 +25,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How Does Retatrutide Work? Triple Agonist Mechanism Explained",
-    description:
-      "GLP-1, GIP, and glucagon receptors activated simultaneously. Full mechanism of action explained.",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  alternates: {
+    canonical: CANONICAL,
   },
 };
 
@@ -67,18 +69,19 @@ const faqs = [
 ];
 
 export default function RetatrutideHowItWorksPage() {
-  const article = articleSchema({
-    headline: "How Does Retatrutide Work? Triple Agonist Mechanism Explained",
-    description:
-      "Full mechanism of action: GLP-1 appetite suppression, GIP metabolic signalling, and glucagon-driven energy expenditure combined in one weekly peptide.",
+  const articleJsonLd = articleSchema({
+    headline: TITLE,
+    description: DESCRIPTION,
     datePublished: PUBLISHED,
     dateModified: MODIFIED,
-    url: CANONICAL,
+    authorName: "Mark Boreland",
+    authorUrl: "https://peptidefile.com/author",
+    publisherName: "Peptide File",
   });
 
-  const faq = faqSchema(faqs);
+  const faqJsonLd = faqSchema(faqs);
 
-  const breadcrumb = breadcrumbSchema([
+  const breadcrumbJsonLd = breadcrumbSchema([
     { name: "Home", item: "https://peptidefile.com" },
     { name: "Retatrutide", item: "https://peptidefile.com/retatrutide" },
     { name: "How It Works", item: CANONICAL },
@@ -88,27 +91,51 @@ export default function RetatrutideHowItWorksPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      {/* Page header */}
+      {/* PAGE HEADER */}
       <div
         style={{
-          borderBottom: "1px solid #e5e5e0",
-          paddingBottom: "2rem",
-          marginBottom: "2.5rem",
+          maxWidth: "1200px",
+          margin: "0 auto",
+          padding: "64px 32px 40px",
+          borderBottom: "1px solid var(--rule)",
         }}
       >
-        <div className="mono-label" style={{ marginBottom: "0.75rem" }}>
-          Retatrutide File · Mechanism
+        <div
+          className="mono-label"
+          style={{
+            display: "flex",
+            gap: "16px",
+            alignItems: "center",
+            marginBottom: "24px",
+            flexWrap: "wrap",
+          }}
+        >
+          <span>Mechanism File</span>
+          <span style={{ opacity: 0.4 }}>/</span>
+          <span>Triple Agonist</span>
+          <span style={{ opacity: 0.4 }}>/</span>
+          <span
+            style={{
+              background: "var(--accent)",
+              color: "var(--paper)",
+              padding: "3px 8px",
+              borderRadius: "2px",
+              fontSize: "10px",
+            }}
+          >
+            Evidence: Strong
+          </span>
         </div>
 
         <h1 className="article-title">
@@ -116,181 +143,162 @@ export default function RetatrutideHowItWorksPage() {
         </h1>
 
         <p className="page-intro">
-          Retatrutide activates three hormone receptors simultaneously:
-          GLP-1, GIP, and glucagon. Each adds a distinct weight loss
-          mechanism. The combined effect produced 28.7% body weight
-          reduction at 12mg over 68 weeks in Phase III TRIUMPH-4, exceeding
-          any single or dual-receptor compound studied to date.
+          Retatrutide activates three hormone receptors simultaneously: GLP-1,
+          GIP, and glucagon. Each adds a distinct weight-loss mechanism. The
+          combined effect produced 28.7% body weight reduction at 12mg over 68
+          weeks in Phase III TRIUMPH-4, exceeding any single or dual-receptor
+          compound studied to date.
         </p>
 
         <div
+          className="mono-label"
           style={{
             display: "flex",
+            gap: "24px",
+            marginTop: "32px",
             flexWrap: "wrap",
-            gap: "1.5rem",
-            alignItems: "center",
-            marginTop: "1.5rem",
-            fontSize: "0.875rem",
-            color: "#555",
+            fontSize: "11px",
+            opacity: 0.7,
           }}
         >
-          <span className="mono-label">
+          <span>
             By{" "}
-            <Link
-              href="/author"
-              style={{ color: "#555", textDecoration: "underline" }}
-            >
+            <Link href="/author" style={{ color: "inherit", textDecoration: "underline" }}>
               Mark Boreland
             </Link>
           </span>
-          <span className="mono-label">Last updated: April 2026</span>
-          <span className="mono-label">~2,000 words</span>
-          <span
-            style={{
-              display: "inline-block",
-              padding: "0.25rem 0.625rem",
-              background: "#e8f0e8",
-              color: "#2d5a2d",
-              border: "1px solid #b8d4b8",
-              borderRadius: "3px",
-              fontSize: "0.75rem",
-              fontWeight: 600,
-              letterSpacing: "0.05em",
-              textTransform: "uppercase",
-              fontFamily: "ui-monospace, monospace",
-            }}
-          >
-            Evidence: Strong
-          </span>
+          <span>Last updated: April 2026</span>
+          <span>~2,000 words</span>
         </div>
       </div>
 
-      {/* Key data grid */}
+      {/* KEY DATA GRID */}
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-          gap: "1px",
-          background: "#e5e5e0",
-          border: "1px solid #e5e5e0",
-          marginBottom: "3rem",
+          maxWidth: "1200px",
+          margin: "0 auto",
+          padding: "32px",
         }}
       >
-        {[
-          { label: "Receptor 1", value: "GLP-1" },
-          { label: "Receptor 2", value: "GIP" },
-          { label: "Receptor 3", value: "Glucagon" },
-          { label: "Development Code", value: "LY3437943" },
-          { label: "Half-Life", value: "~6 days" },
-          { label: "Mechanism Class", value: "Triple Agonist" },
-          { label: "Phase III Efficacy", value: "28.7%" },
-          { label: "Administration", value: "Weekly SC" },
-        ].map((cell) => (
-          <div
-            key={cell.label}
-            style={{
-              background: "#fafaf7",
-              padding: "1.25rem 1rem",
-              textAlign: "center",
-            }}
-          >
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: "1px",
+            background: "var(--rule)",
+            border: "1px solid var(--rule)",
+          }}
+        >
+          {[
+            { stat: "GLP-1", label: "Receptor 1 — appetite & satiety" },
+            { stat: "GIP", label: "Receptor 2 — metabolic signalling" },
+            { stat: "Glucagon", label: "Receptor 3 — energy expenditure" },
+            { stat: "LY3437943", label: "Development code" },
+            { stat: "~6 days", label: "Plasma half-life" },
+            { stat: "28.7%", label: "Phase III weight loss, 12mg" },
+            { stat: "86%", label: "Liver fat reduction, Phase II" },
+            { stat: "Weekly SC", label: "Administration" },
+          ].map((item) => (
             <div
+              key={item.stat}
               style={{
-                fontSize: "1.5rem",
-                fontWeight: 700,
-                fontFamily: "Georgia, 'Times New Roman', serif",
-                color: "#1a1a1a",
-                marginBottom: "0.25rem",
+                background: "var(--paper)",
+                padding: "20px 24px",
               }}
             >
-              {cell.value}
+              <div
+                style={{
+                  fontFamily: "var(--serif)",
+                  fontSize: "32px",
+                  color: "var(--accent)",
+                  lineHeight: 1,
+                  marginBottom: "6px",
+                }}
+              >
+                {item.stat}
+              </div>
+              <div
+                className="mono-label"
+                style={{ fontSize: "10px", lineHeight: 1.4 }}
+              >
+                {item.label}
+              </div>
             </div>
-            <div
-              style={{
-                fontSize: "0.7rem",
-                letterSpacing: "0.05em",
-                textTransform: "uppercase",
-                color: "#666",
-                fontFamily: "ui-monospace, monospace",
-              }}
-            >
-              {cell.label}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* Main layout */}
+      {/* MAIN CONTENT LAYOUT */}
       <div
         style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          padding: "40px 32px 80px",
           display: "grid",
-          gridTemplateColumns: "minmax(0, 1fr) 260px",
-          gap: "3rem",
-          alignItems: "start",
+          gridTemplateColumns: "minmax(0, 1fr) 280px",
+          gap: "64px",
         }}
       >
+        {/* ARTICLE BODY */}
         <article className="prose">
           <p>
-            Retatrutide is the first triple agonist peptide to reach Phase
-            III clinical trials. It activates three different hormone
-            receptors with a single molecule given once weekly by
-            subcutaneous injection: the GLP-1 receptor, the GIP receptor,
-            and the glucagon receptor. Each of these receptors contributes
-            a different mechanism of weight loss, and the combined effect
-            drives the efficacy numbers that put the compound ahead of
-            every approved obesity drug.
+            Retatrutide is the first triple agonist peptide to reach Phase III
+            clinical trials. It activates three different hormone receptors with
+            a single molecule given once weekly by subcutaneous injection: the
+            GLP-1 receptor, the GIP receptor, and the glucagon receptor. Each
+            of these receptors contributes a different mechanism of weight loss,
+            and the combined effect drives the efficacy numbers that put the
+            compound ahead of every approved obesity drug.
           </p>
 
           <p>
-            The comparison across the class is clean. Semaglutide activates
-            one receptor (GLP-1) and produces 14.9% weight loss at top dose.
+            The comparison across the class is clean. Semaglutide activates one
+            receptor (GLP-1) and produces 14.9% weight loss at top dose.
             Tirzepatide activates two (GLP-1 plus GIP) and produces 22.5%.
-            Retatrutide activates three and produces 28.7%. Each added
-            receptor step adds roughly 5-7 percentage points of weight loss,
-            suggesting that the mechanisms combine rather than compete.
+            Retatrutide activates three and produces 28.7%. Each added receptor
+            step adds roughly 5–7 percentage points of weight loss, suggesting
+            that the mechanisms combine rather than compete.
           </p>
 
           <p>
-            This article explains what each receptor does, why activating
-            all three at once produces better results than any combination
-            of individual drugs, how the peptide is designed to do this
-            without falling apart in the bloodstream, and what the
-            mechanism implies for the safety profile (including the
-            dysesthesia signal that appeared in Phase III).
+            This article explains what each receptor does, why activating all
+            three at once produces better results than any combination of
+            individual drugs, how the peptide is designed to do this without
+            falling apart in the bloodstream, and what the mechanism implies for
+            the safety profile — including the dysesthesia signal that appeared
+            in Phase III.
           </p>
 
           <h2 id="what-it-is">What retatrutide is at the molecular level</h2>
 
           <p>
-            Retatrutide (development code LY3437943) is a 39-amino-acid
-            peptide. Its sequence is engineered to bind three different
-            receptors with high affinity: the GLP-1 receptor, the GIP
-            receptor, and the glucagon receptor. Native peptides that
-            activate these receptors (GLP-1, GIP, and glucagon) each bind
-            only their own receptor. Retatrutide was designed by stitching
-            together structural motifs from all three natural peptides
-            into a single chimeric molecule.
+            Retatrutide (development code LY3437943) is a 39-amino-acid peptide.
+            Its sequence is engineered to bind three different receptors with
+            high affinity: the GLP-1 receptor, the GIP receptor, and the
+            glucagon receptor. Native peptides that activate these receptors
+            (GLP-1, GIP, and glucagon) each bind only their own receptor.
+            Retatrutide was designed by stitching together structural motifs from
+            all three natural peptides into a single chimeric molecule.
           </p>
 
           <p>
-            Beyond receptor binding, the molecule includes a fatty acid
-            chain (a C20 diacid, attached via a linker) that binds to
-            serum albumin in the bloodstream. This albumin binding slows
-            renal clearance and extends the plasma half-life to
-            approximately six days, long enough to support once-weekly
-            dosing. The same albumin-binding strategy is used in
-            semaglutide (C18 diacid) and tirzepatide (C20 diacid), though
-            the specific linker chemistry differs for each compound.
+            Beyond receptor binding, the molecule includes a fatty acid chain
+            (a C20 diacid, attached via a linker) that binds to serum albumin
+            in the bloodstream. This albumin binding slows renal clearance and
+            extends the plasma half-life to approximately six days, long enough
+            to support once-weekly dosing. The same albumin-binding strategy is
+            used in semaglutide (C18 diacid) and tirzepatide (C20 diacid),
+            though the specific linker chemistry differs for each compound.
           </p>
 
           <p>
-            Administration is subcutaneous, with the peptide absorbed from
-            the injection site into the bloodstream over hours. The pen
-            device used in TRIUMPH trials is similar to Lilly's existing
-            Mounjaro and Zepbound pens. Once in circulation, the
-            albumin-bound peptide distributes throughout the body and binds
-            its target receptors on relevant tissues: pancreatic beta cells,
-            the gut, the hypothalamus, the liver, and adipose tissue.
+            Administration is subcutaneous, with the peptide absorbed from the
+            injection site into the bloodstream over hours. The pen device used
+            in TRIUMPH trials is similar to Lilly's existing Mounjaro and Zepbound
+            pens. Once in circulation, the albumin-bound peptide distributes
+            throughout the body and binds its target receptors on relevant
+            tissues: pancreatic beta cells, the gut, the hypothalamus, the liver,
+            and adipose tissue.
           </p>
 
           <h2 id="what-the-research-says">
@@ -298,91 +306,85 @@ export default function RetatrutideHowItWorksPage() {
           </h2>
 
           <p>
-            Understanding retatrutide means understanding what each of its
-            three target receptors does individually, then seeing how they
-            combine. The mechanisms are well-characterised because GLP-1
-            and GIP have been studied for decades, and glucagon has been
-            understood for even longer. What is new is using all three
-            pathways simultaneously as a weight loss strategy.
+            Understanding retatrutide means understanding what each of its three
+            target receptors does individually, then seeing how they combine. The
+            mechanisms are well-characterised because GLP-1 and GIP have been
+            studied for decades, and glucagon has been understood for even longer.
+            What is new is using all three pathways simultaneously as a weight
+            loss strategy.
           </p>
 
           <h3>GLP-1 receptor: appetite and gastric emptying</h3>
 
           <p>
-            Glucagon-like peptide-1 is a hormone released from intestinal
-            L-cells in response to food intake. Its natural role is to
-            tell the pancreas to release insulin and tell the brain that
-            feeding should stop. Activating the GLP-1 receptor produces
-            three weight-loss-relevant effects: increased satiety (you
-            feel full sooner and stay full longer), slowed gastric
-            emptying (food sits in the stomach longer, extending the
-            fullness signal), and reduced food reward signalling in the
-            brain (you think about food less often).
+            Glucagon-like peptide-1 is a hormone released from intestinal L-cells
+            in response to food intake. Its natural role is to tell the pancreas
+            to release insulin and tell the brain that feeding should stop.
+            Activating the GLP-1 receptor produces three weight-loss-relevant
+            effects: increased satiety (you feel full sooner and stay full
+            longer), slowed gastric emptying (food sits in the stomach longer,
+            extending the fullness signal), and reduced food reward signalling in
+            the brain (you think about food less often).
           </p>
 
           <p>
             The GLP-1 mechanism is the dominant driver of weight loss for
             semaglutide and contributes substantially to tirzepatide and
-            retatrutide. Most of the appetite suppression that participants
-            report comes from this pathway. It is also the pathway
-            responsible for the gastrointestinal side effects
-            (nausea, vomiting, delayed gastric emptying) that dominate the
-            early titration period.
+            retatrutide. Most of the appetite suppression that participants report
+            comes from this pathway. It is also the pathway responsible for the
+            gastrointestinal side effects (nausea, vomiting, delayed gastric
+            emptying) that dominate the early titration period.
           </p>
 
           <h3>GIP receptor: metabolic signalling</h3>
 
           <p>
-            Glucose-dependent insulinotropic polypeptide is another
-            incretin hormone, released from intestinal K-cells. GIP
-            activity adds to weight loss in a less obvious way than GLP-1.
-            It improves insulin sensitivity, modulates fat cell function
-            (affecting how adipose tissue stores and releases fat), and
-            appears to reduce nausea compared with GLP-1 alone, which is
-            why tirzepatide tolerability at high doses is slightly better
-            than expected.
+            Glucose-dependent insulinotropic polypeptide is another incretin
+            hormone, released from intestinal K-cells. GIP activity adds to
+            weight loss in a less obvious way than GLP-1. It improves insulin
+            sensitivity, modulates fat cell function (affecting how adipose tissue
+            stores and releases fat), and appears to reduce nausea compared with
+            GLP-1 alone — which is why tirzepatide tolerability at high doses is
+            slightly better than expected.
           </p>
 
           <p>
-            The GIP mechanism alone does not produce meaningful weight
-            loss (GIP-only drugs have been tested and underperform GLP-1
-            agonists). But combined with GLP-1 activation, GIP adds
-            efficacy on top of what GLP-1 produces alone. The addition of
-            GIP in tirzepatide took class weight loss from 14.9%
-            (semaglutide) to 22.5%, a step-change that established dual
-            agonism as the new standard.
+            The GIP mechanism alone does not produce meaningful weight loss
+            (GIP-only drugs have been tested and underperform GLP-1 agonists).
+            But combined with GLP-1 activation, GIP adds efficacy on top of what
+            GLP-1 produces alone. The addition of GIP in tirzepatide took class
+            weight loss from 14.9% (semaglutide) to 22.5%, a step-change that
+            established dual agonism as the new standard.
           </p>
 
           <h3>Glucagon receptor: energy expenditure</h3>
 
           <p>
-            Glucagon is the hormone responsible for raising blood sugar
-            when it is low, released from pancreatic alpha cells. Its
-            weight-loss-relevant effect is different: glucagon receptor
-            activation increases resting energy expenditure (the rate at
-            which the body burns calories when at rest) and promotes
-            hepatic fat oxidation (the liver burning stored fat for fuel).
-            In other words, glucagon agonism makes the body burn more
+            Glucagon is the hormone responsible for raising blood sugar when it
+            is low, released from pancreatic alpha cells. Its weight-loss-relevant
+            effect is different: glucagon receptor activation increases resting
+            energy expenditure (the rate at which the body burns calories when at
+            rest) and promotes hepatic fat oxidation (the liver burning stored fat
+            for fuel). In other words, glucagon agonism makes the body burn more
             calories, particularly from fat stores.
           </p>
 
           <p>
-            Pure glucagon agonism has never been a viable weight loss
-            strategy because it raises blood sugar and causes metabolic
-            disruption. What makes retatrutide work is that the
-            simultaneous GLP-1 and GIP activation counteracts the glucose-
-            raising effect. The net result is glucose lowering (not
-            raising), combined with the fat-burning and energy-expenditure
-            effects that glucagon uniquely provides.
+            Pure glucagon agonism has never been a viable weight loss strategy
+            because it raises blood sugar and causes metabolic disruption. What
+            makes retatrutide work is that the simultaneous GLP-1 and GIP
+            activation counteracts the glucose-raising effect. The net result is
+            glucose lowering (not raising), combined with the fat-burning and
+            energy-expenditure effects that glucagon uniquely provides.
           </p>
 
           <p>
             The evidence for the glucagon receptor contribution came from
             preclinical work and Phase II human data. The Phase II trial
-            (Jastreboff et al., New England Journal of Medicine, 2023,
-            PMID: 37366315) was the first human demonstration that triple
-            agonism produced weight loss beyond what dual agonism could.
-            TRIUMPH-4 confirms this in Phase III at larger scale.
+            (Jastreboff et al., <em>New England Journal of Medicine</em>, 2023,
+            PMID: 37366315) was the first human demonstration that triple agonism
+            produced weight loss beyond what dual agonism could. TRIUMPH-4
+            confirms this in Phase III at larger scale.
           </p>
 
           <h2 id="practical-breakdown">
@@ -390,37 +392,34 @@ export default function RetatrutideHowItWorksPage() {
           </h2>
 
           <p>
-            Weight loss comes from two fundamental variables: caloric
-            intake and caloric expenditure. Every weight loss intervention
-            works by changing one or both. Diet interventions reduce
-            intake. Exercise interventions increase expenditure. Most
-            weight loss drugs in history have attacked intake only, with
-            poor results because the body compensates by lowering
-            expenditure when intake drops (this is the adaptive
+            Weight loss comes from two fundamental variables: caloric intake and
+            caloric expenditure. Every weight loss intervention works by changing
+            one or both. Diet interventions reduce intake. Exercise interventions
+            increase expenditure. Most weight loss drugs in history have attacked
+            intake only, with poor results because the body compensates by
+            lowering expenditure when intake drops (this is the adaptive
             thermogenesis that makes sustained weight loss difficult).
           </p>
 
           <p>
-            Retatrutide is the first pharmacotherapy to work on both sides
-            of the equation through complementary mechanisms. GLP-1 and
-            GIP activation reduce caloric intake by reducing appetite and
-            food reward. Glucagon activation increases caloric expenditure
-            by raising resting metabolic rate. The body cannot easily
-            compensate because the drug is imposing both effects
-            simultaneously: if expenditure drops as a compensatory
+            Retatrutide is the first pharmacotherapy to work on both sides of the
+            equation through complementary mechanisms. GLP-1 and GIP activation
+            reduce caloric intake by reducing appetite and food reward. Glucagon
+            activation increases caloric expenditure by raising resting metabolic
+            rate. The body cannot easily compensate because the drug is imposing
+            both effects simultaneously: if expenditure drops as a compensatory
             response, the drug raises it back up through glucagon activity.
           </p>
 
           <p>
-            This dual-axis mechanism explains why retatrutide produces
-            weight loss beyond what was previously thought achievable with
-            any pharmacotherapy. It also explains why the weight loss is
-            predominantly fat mass: glucagon-driven fat oxidation
-            preferentially targets stored triglycerides. The Phase II body
-            composition data suggested approximately 85% of total weight
-            loss was fat mass, with 15% lean mass. Full TRIUMPH-4 body
-            composition data has not yet been published. For projected
-            weight loss by starting weight, see{" "}
+            This dual-axis mechanism explains why retatrutide produces weight loss
+            beyond what was previously thought achievable with any
+            pharmacotherapy. It also explains why the weight loss is predominantly
+            fat mass: glucagon-driven fat oxidation preferentially targets stored
+            triglycerides. The Phase II body composition data suggested
+            approximately 85% of total weight loss was fat mass, with 15% lean
+            mass. Full TRIUMPH-4 body composition data has not yet been published.
+            For projected weight loss by starting weight, see{" "}
             <Link href="/retatrutide/weight-loss-projections">
               Retatrutide Weight Loss Projections
             </Link>
@@ -430,28 +429,23 @@ export default function RetatrutideHowItWorksPage() {
           <h3>The dysesthesia signal: a mechanism hypothesis</h3>
 
           <p>
-            TRIUMPH-4 reported dysesthesia (abnormal skin sensation) in
-            20.9% of 12mg participants versus 0.7% on placebo. This signal
-            did not appear with semaglutide or tirzepatide, so the glucagon
-            receptor component is the leading suspect. The mechanism has
-            not been established, but the leading hypothesis is that
-            glucagon receptor activity on peripheral small nerve fibres
-            produces transient dysfunction that resolves on dose reduction
-            or discontinuation.
+            TRIUMPH-4 reported dysesthesia (abnormal skin sensation) in 20.9% of
+            12mg participants versus 0.7% on placebo. This signal did not appear
+            with semaglutide or tirzepatide, so the glucagon receptor component
+            is the leading suspect. The mechanism has not been established, but
+            the leading hypothesis is that glucagon receptor activity on
+            peripheral small nerve fibres produces transient dysfunction that
+            resolves on dose reduction or discontinuation.
           </p>
 
           <p>
-            If this hypothesis is correct, dysesthesia is an intrinsic
-            trade-off of the glucagon receptor mechanism rather than a
-            drug-specific flaw that future compounds will solve. Whether
-            the next generation of triple or quadruple agonists can
-            retain the metabolic benefits while avoiding this signal is a
-            research question that will take years to answer. For the
-            current safety picture see{" "}
-            <Link href="/retatrutide/side-effects">
-              Retatrutide Side Effects
-            </Link>
-            .
+            If this hypothesis is correct, dysesthesia is an intrinsic trade-off
+            of the glucagon receptor mechanism rather than a drug-specific flaw
+            that future compounds will solve. Whether the next generation of
+            triple or quadruple agonists can retain the metabolic benefits while
+            avoiding this signal is a research question that will take years to
+            answer. For the current safety picture see{" "}
+            <Link href="/retatrutide/side-effects">Retatrutide Side Effects</Link>.
           </p>
 
           <h2 id="comparison">
@@ -460,49 +454,38 @@ export default function RetatrutideHowItWorksPage() {
 
           <div
             style={{
-              border: "1px solid #d4d4cc",
-              background: "#fafaf7",
-              padding: "1.5rem",
-              margin: "1.5rem 0",
-              borderRadius: "2px",
+              overflowX: "auto",
+              margin: "24px 0",
+              border: "1px solid var(--rule)",
             }}
           >
-            <div
-              style={{
-                fontSize: "0.75rem",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: "#666",
-                fontFamily: "ui-monospace, monospace",
-                marginBottom: "1rem",
-              }}
-            >
-              Mechanism Class Comparison
-            </div>
             <table
               style={{
                 width: "100%",
                 borderCollapse: "collapse",
-                fontSize: "0.9rem",
+                fontSize: "14px",
               }}
             >
               <thead>
-                <tr style={{ borderBottom: "2px solid #1a1a1a" }}>
-                  <th style={{ textAlign: "left", padding: "0.5rem 0" }}>
-                    Compound
-                  </th>
-                  <th style={{ textAlign: "left", padding: "0.5rem" }}>
-                    GLP-1
-                  </th>
-                  <th style={{ textAlign: "left", padding: "0.5rem" }}>
-                    GIP
-                  </th>
-                  <th style={{ textAlign: "left", padding: "0.5rem" }}>
-                    Glucagon
-                  </th>
-                  <th style={{ textAlign: "right", padding: "0.5rem 0 0.5rem 0.75rem" }}>
-                    Weight Loss
-                  </th>
+                <tr style={{ background: "var(--paper2)" }}>
+                  {["Compound", "GLP-1", "GIP", "Glucagon", "Weight Loss"].map(
+                    (h, i) => (
+                      <th
+                        key={h}
+                        style={{
+                          textAlign: i === 4 ? "right" : "left",
+                          padding: "12px 16px",
+                          fontFamily: "var(--mono)",
+                          fontSize: "10px",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.05em",
+                          borderBottom: "1px solid var(--rule)",
+                        }}
+                      >
+                        {h}
+                      </th>
+                    )
+                  )}
                 </tr>
               </thead>
               <tbody>
@@ -511,26 +494,40 @@ export default function RetatrutideHowItWorksPage() {
                   ["Semaglutide (Wegovy)", "✓", "", "", "-14.9%"],
                   ["Tirzepatide (Zepbound)", "✓", "✓", "", "-22.5%"],
                   ["Retatrutide", "✓", "✓", "✓", "-28.7%"],
-                ].map((row) => (
-                  <tr key={row[0]} style={{ borderBottom: "1px solid #e5e5e0" }}>
-                    <td style={{ padding: "0.5rem 0" }}>
-                      <strong>{row[0]}</strong>
+                ].map((row, i) => (
+                  <tr
+                    key={row[0]}
+                    style={{
+                      borderBottom: "1px solid var(--rule)",
+                      background: i % 2 === 0 ? "var(--paper)" : "transparent",
+                    }}
+                  >
+                    <td style={{ padding: "12px 16px", fontWeight: 500 }}>
+                      {row[0]}
                     </td>
-                    <td style={{ padding: "0.5rem", textAlign: "center", color: "#2d5a2d", fontWeight: 600 }}>
-                      {row[1]}
-                    </td>
-                    <td style={{ padding: "0.5rem", textAlign: "center", color: "#2d5a2d", fontWeight: 600 }}>
-                      {row[2]}
-                    </td>
-                    <td style={{ padding: "0.5rem", textAlign: "center", color: "#2d5a2d", fontWeight: 600 }}>
-                      {row[3]}
-                    </td>
+                    {[row[1], row[2], row[3]].map((cell, ci) => (
+                      <td
+                        key={ci}
+                        style={{
+                          padding: "12px 16px",
+                          textAlign: "center",
+                          color: cell ? "var(--accent)" : "var(--ink3)",
+                          fontWeight: cell ? 600 : 400,
+                        }}
+                      >
+                        {cell || "—"}
+                      </td>
+                    ))}
                     <td
                       style={{
-                        padding: "0.5rem 0 0.5rem 0.75rem",
+                        padding: "12px 16px",
                         textAlign: "right",
-                        fontFamily: "ui-monospace, monospace",
+                        fontFamily: "var(--mono)",
                         fontWeight: 600,
+                        color:
+                          row[0] === "Retatrutide"
+                            ? "var(--accent)"
+                            : "inherit",
                       }}
                     >
                       {row[4]}
@@ -542,12 +539,11 @@ export default function RetatrutideHowItWorksPage() {
           </div>
 
           <p>
-            The pattern is consistent: adding receptor mechanisms adds
-            weight loss efficacy. Whether this pattern continues with
-            quadruple agonists (adding amylin or other receptors) is an
-            active research question. Early-stage compounds in development
-            include CagriSema (a semaglutide-plus-amylin combination, not
-            technically a single molecule) and various quadruple agonist
+            The pattern is consistent: adding receptor mechanisms adds weight
+            loss efficacy. Whether this pattern continues with quadruple agonists
+            (adding amylin or other receptors) is an active research question.
+            Early-stage compounds in development include CagriSema (a
+            semaglutide-plus-amylin combination) and various quadruple agonist
             candidates in preclinical and Phase I testing.
           </p>
 
@@ -566,88 +562,114 @@ export default function RetatrutideHowItWorksPage() {
             </Link>
             .
           </p>
-        </article>
 
-        {/* Sidebar */}
-        <aside
-          style={{
-            position: "sticky",
-            top: "2rem",
-            fontSize: "0.875rem",
-            alignSelf: "start",
-          }}
-        >
+          <h2 id="faq">Frequently asked questions</h2>
+
+          <div style={{ margin: "16px 0" }}>
+            {faqs.map((faq, i) => (
+              <details
+                key={i}
+                style={{
+                  borderBottom: "1px solid var(--rule)",
+                  padding: "16px 0",
+                }}
+              >
+                <summary
+                  style={{
+                    cursor: "pointer",
+                    fontFamily: "var(--serif)",
+                    fontSize: "20px",
+                    lineHeight: 1.3,
+                    listStyle: "none",
+                  }}
+                >
+                  {faq.q}
+                </summary>
+                <p style={{ marginTop: "12px", marginBottom: 0 }}>{faq.a}</p>
+              </details>
+            ))}
+          </div>
+
+          {/* MEDICAL DISCLAIMER */}
           <div
             style={{
-              borderTop: "2px solid #1a1a1a",
-              paddingTop: "1rem",
-              marginBottom: "2.5rem",
+              marginTop: "48px",
+              padding: "24px 28px",
+              background: "var(--paper2)",
+              border: "1px solid var(--rule)",
+              borderLeft: "3px solid var(--accent)",
             }}
           >
             <div
-              style={{
-                fontSize: "0.7rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                color: "#666",
-                fontFamily: "ui-monospace, monospace",
-                marginBottom: "0.75rem",
-              }}
+              className="mono-label"
+              style={{ marginBottom: "8px", color: "var(--accent)" }}
+            >
+              Medical Disclaimer
+            </div>
+            <p style={{ margin: 0, fontSize: "14px", lineHeight: 1.6 }}>
+              This article is for informational and educational purposes only and
+              does not constitute medical advice. Retatrutide is an
+              investigational drug. It has not been approved by the FDA, EMA,
+              MHRA, or any other regulatory agency as of April 2026. Mechanistic
+              descriptions presented here synthesise published preclinical and
+              clinical research. Some mechanisms (particularly those underlying
+              the dysesthesia signal) are hypothesised rather than established.
+              Consult a licensed healthcare provider before starting, stopping,
+              or changing any medication.
+            </p>
+          </div>
+        </article>
+
+        {/* STICKY SIDEBAR */}
+        <aside
+          style={{
+            position: "sticky",
+            top: "96px",
+            alignSelf: "start",
+            fontSize: "13px",
+          }}
+        >
+          <div style={{ marginBottom: "40px" }}>
+            <div
+              className="mono-label"
+              style={{ marginBottom: "12px", fontSize: "10px" }}
             >
               On this page
             </div>
-            <ul
-              style={{
-                listStyle: "none",
-                padding: 0,
-                margin: 0,
-                lineHeight: "1.8",
-              }}
-            >
+            <nav style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               {[
                 ["what-it-is", "The molecule"],
                 ["what-the-research-says", "Each receptor's role"],
                 ["practical-breakdown", "Combined mechanism"],
                 ["comparison", "Class comparison"],
-                ["faq", "FAQ"],
+                ["faq", "Frequently asked questions"],
               ].map(([id, label]) => (
-                <li key={id}>
-                  <a
-                    href={`#${id}`}
-                    style={{
-                      color: "#333",
-                      textDecoration: "none",
-                      borderBottom: "1px dotted #999",
-                    }}
-                  >
-                    {label}
-                  </a>
-                </li>
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  style={{
+                    color: "var(--ink2)",
+                    textDecoration: "none",
+                    borderLeft: "1px solid var(--rule)",
+                    paddingLeft: "12px",
+                    fontSize: "13px",
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {label}
+                </a>
               ))}
-            </ul>
+            </nav>
           </div>
 
-          <div style={{ borderTop: "2px solid #1a1a1a", paddingTop: "1rem" }}>
+          <div>
             <div
-              style={{
-                fontSize: "0.7rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                color: "#666",
-                fontFamily: "ui-monospace, monospace",
-                marginBottom: "0.75rem",
-              }}
+              className="mono-label"
+              style={{ marginBottom: "12px", fontSize: "10px" }}
             >
-              Related Files
+              Related files
             </div>
-            <ul
-              style={{
-                listStyle: "none",
-                padding: 0,
-                margin: 0,
-                lineHeight: "1.6",
-              }}
-            >
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               {[
                 ["/retatrutide", "The Retatrutide File"],
                 ["/retatrutide/clinical-trial-results", "Clinical Trial Results"],
@@ -657,185 +679,103 @@ export default function RetatrutideHowItWorksPage() {
                 ["/retatrutide/vs-tirzepatide", "vs Tirzepatide"],
                 ["/retatrutide/vs-semaglutide", "vs Semaglutide"],
               ].map(([href, label]) => (
-                <li key={href} style={{ marginBottom: "0.5rem" }}>
-                  <Link
-                    href={href}
-                    style={{
-                      color: "#333",
-                      textDecoration: "none",
-                      borderBottom: "1px dotted #999",
-                    }}
-                  >
-                    {label}
-                  </Link>
-                </li>
+                <Link
+                  key={href}
+                  href={href}
+                  style={{
+                    color: "var(--ink)",
+                    textDecoration: "none",
+                    fontFamily: "var(--serif)",
+                    fontSize: "15px",
+                    lineHeight: 1.3,
+                    borderBottom: "1px solid var(--rule)",
+                    paddingBottom: "8px",
+                  }}
+                >
+                  {label}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
         </aside>
       </div>
 
-      {/* FAQ */}
-      <div style={{ marginTop: "4rem", maxWidth: "720px" }}>
-        <article className="prose">
-          <h2 id="faq">Frequently Asked Questions</h2>
-        </article>
-
-        <div style={{ marginTop: "1.5rem" }}>
-          {faqs.map((faq, i) => (
-            <details
-              key={i}
+      {/* NEWSLETTER SECTION */}
+      <section
+        style={{
+          borderTop: "1px solid var(--rule)",
+          background: "var(--paper2)",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "64px 32px",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "48px",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <h2
               style={{
-                borderBottom: "1px solid #e5e5e0",
-                padding: "1.25rem 0",
+                fontFamily: "var(--serif)",
+                fontSize: "40px",
+                lineHeight: 1.1,
+                margin: 0,
+                border: "none",
               }}
             >
-              <summary
-                style={{
-                  cursor: "pointer",
-                  fontSize: "1.0625rem",
-                  fontWeight: 600,
-                  fontFamily: "Georgia, 'Times New Roman', serif",
-                  color: "#1a1a1a",
-                  listStyle: "none",
-                }}
-              >
-                {faq.q}
-              </summary>
-              <div
-                style={{
-                  marginTop: "0.75rem",
-                  color: "#333",
-                  lineHeight: "1.7",
-                }}
-              >
-                {faq.a}
-              </div>
-            </details>
-          ))}
-        </div>
-      </div>
-
-      {/* Medical disclaimer */}
-      <div
-        style={{
-          marginTop: "4rem",
-          maxWidth: "720px",
-          border: "1px solid #d4c5a9",
-          background: "#faf6ee",
-          padding: "1.5rem",
-          borderRadius: "2px",
-        }}
-      >
-        <div
-          style={{
-            fontSize: "0.7rem",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            color: "#8a6d3b",
-            fontFamily: "ui-monospace, monospace",
-            fontWeight: 700,
-            marginBottom: "0.75rem",
-          }}
-        >
-          Medical Disclaimer
-        </div>
-        <p style={{ margin: 0, fontSize: "0.9rem", lineHeight: "1.7", color: "#4a3f24" }}>
-          This article is for informational and educational purposes only and
-          does not constitute medical advice. Retatrutide is an investigational
-          drug. It has not been approved by the FDA, EMA, MHRA, or any other
-          regulatory agency. Mechanistic descriptions presented here
-          synthesise published preclinical and clinical research. Some
-          mechanisms (particularly those underlying the dysesthesia signal)
-          are hypothesised rather than established. Consult a licensed
-          healthcare provider before starting, stopping, or changing any
-          medication. Peptide File reports on research and does not sell,
-          prescribe, or recommend sources for any compound discussed.
-        </p>
-      </div>
-
-      {/* Newsletter */}
-      <div
-        style={{
-          marginTop: "4rem",
-          maxWidth: "720px",
-          border: "2px solid #1a1a1a",
-          padding: "2rem",
-          background: "#fafaf7",
-        }}
-      >
-        <div
-          style={{
-            fontSize: "0.7rem",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            color: "#666",
-            fontFamily: "ui-monospace, monospace",
-            marginBottom: "0.5rem",
-          }}
-        >
-          The Peptide File Newsletter
-        </div>
-        <h3
-          style={{
-            fontFamily: "Georgia, 'Times New Roman', serif",
-            fontSize: "1.5rem",
-            margin: "0 0 0.75rem",
-            color: "#1a1a1a",
-          }}
-        >
-          Mechanism research as it develops
-        </h3>
-        <p
-          style={{
-            margin: "0 0 1.25rem",
-            color: "#444",
-            lineHeight: "1.6",
-          }}
-        >
-          Triple agonism is the current frontier. Quadruple agonists and
-          novel receptor combinations are in development. Get plain-English
-          updates as the evidence base expands. No spam, no affiliate
-          pitches.
-        </p>
-        <form
-          style={{
-            display: "flex",
-            gap: "0.5rem",
-            flexWrap: "wrap",
-          }}
-        >
-          <input
-            type="email"
-            placeholder="you@example.com"
+              The weekly peptide brief.
+            </h2>
+            <p style={{ marginTop: "16px", fontSize: "15px", color: "var(--ink2)" }}>
+              New trial readouts, mechanism breakdowns, and FDA updates. One
+              email per week. No filler.
+            </p>
+          </div>
+          <form
             style={{
-              flex: "1 1 240px",
-              padding: "0.75rem 1rem",
-              border: "1px solid #1a1a1a",
-              background: "#fff",
-              fontSize: "0.95rem",
-              fontFamily: "inherit",
-            }}
-          />
-          <button
-            type="submit"
-            style={{
-              padding: "0.75rem 1.5rem",
-              background: "#1a1a1a",
-              color: "#fff",
-              border: "none",
-              fontSize: "0.9rem",
-              fontWeight: 600,
-              letterSpacing: "0.03em",
-              textTransform: "uppercase",
-              cursor: "pointer",
-              fontFamily: "ui-monospace, monospace",
+              display: "flex",
+              gap: "8px",
+              border: "1px solid var(--rule)",
+              background: "var(--paper)",
+              padding: "6px",
             }}
           >
-            Subscribe
-          </button>
-        </form>
-      </div>
+            <input
+              type="email"
+              placeholder="your@email.com"
+              style={{
+                flex: 1,
+                border: "none",
+                background: "transparent",
+                padding: "12px 14px",
+                fontFamily: "var(--sans)",
+                fontSize: "14px",
+                outline: "none",
+              }}
+            />
+            <button
+              type="submit"
+              style={{
+                background: "var(--accent)",
+                color: "var(--paper)",
+                border: "none",
+                padding: "12px 20px",
+                fontFamily: "var(--mono)",
+                fontSize: "11px",
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+                cursor: "pointer",
+              }}
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
     </>
   );
 }
