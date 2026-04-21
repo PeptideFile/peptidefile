@@ -3,10 +3,11 @@ export interface ArticleSchemaInput {
   description: string;
   datePublished: string;
   dateModified: string;
-  authorName: string;
-  authorUrl: string;
-  publisherName: string;
+  authorName?: string;
+  authorUrl?: string;
+  publisherName?: string;
   image?: string;
+  url?: string;
 }
 
 export interface FaqItem {
@@ -34,17 +35,19 @@ export function articleSchema(article: ArticleSchemaInput) {
     description: article.description,
     datePublished: toIso8601Utc(article.datePublished),
     dateModified: toIso8601Utc(article.dateModified),
-    author: {
+  };
+  if (article.authorName) {
+    schema.author = {
       "@type": "Person",
       name: article.authorName,
-      url: article.authorUrl,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: article.publisherName,
-    },
-  };
+      ...(article.authorUrl ? { url: article.authorUrl } : {}),
+    };
+  }
+  if (article.publisherName) {
+    schema.publisher = { "@type": "Organization", name: article.publisherName };
+  }
   if (article.image) schema.image = article.image;
+  if (article.url) schema.url = article.url;
   return schema;
 }
 
