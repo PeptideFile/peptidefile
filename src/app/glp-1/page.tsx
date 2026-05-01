@@ -1,78 +1,111 @@
-import Link from "next/link";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { articleSchema, faqSchema, breadcrumbSchema } from "@/lib/schemas";
 
-const SLUG = "glp-1";
-const CANONICAL = `https://peptidefile.com/${SLUG}`;
-const PUBLISHED = "2026-04-15T00:00:00+00:00";
-const MODIFIED = "2026-04-15T00:00:00+00:00";
-
 export const metadata: Metadata = {
-  title: "The GLP-1 File: GLP-1 Peptides Explained (2026) | Peptide File",
+  title: "The GLP-1 File — GLP-1 Peptides Explained (2026) | Peptide File",
   description:
-    "Complete reference on GLP-1 peptides. Mechanism, the full agonist class from liraglutide to retatrutide, weight loss data up to 28.7%, safety, and the 2026 pipeline.",
+    "GLP-1 receptor agonists explained: mechanism, the full class from liraglutide to retatrutide, weight loss data up to 28.7%, safety, and the 2026 pipeline.",
+  alternates: { canonical: "https://peptidefile.com/glp-1" },
   openGraph: {
-    title: "The GLP-1 File: GLP-1 Peptides Explained (2026)",
+    title: "The GLP-1 File — GLP-1 Peptides Explained (2026)",
     description:
-      "Complete reference on GLP-1 peptides. Mechanism, the full agonist class from liraglutide to retatrutide, weight loss data up to 28.7%, safety, and the 2026 pipeline.",
-    type: "article",
-    publishedTime: PUBLISHED,
-    modifiedTime: MODIFIED,
-    authors: ["Mark Boreland"],
-    siteName: "Peptide File",
-    url: CANONICAL,
+      "Mechanism, the full GLP-1 agonist class, weight loss data, safety, and the 2026 pipeline. Evidence-rated review.",
+    url: "https://peptidefile.com/glp-1",
   },
   twitter: {
     card: "summary_large_image",
-    title: "The GLP-1 File: GLP-1 Peptides Explained (2026)",
+    title: "The GLP-1 File — GLP-1 Peptides Explained (2026)",
     description:
-      "Complete reference on GLP-1 peptides. Mechanism, the full agonist class, weight loss data up to 28.7%, safety, and the 2026 pipeline.",
+      "Mechanism, the full GLP-1 agonist class, weight loss data, safety, and the 2026 pipeline. Evidence-rated review.",
   },
-  alternates: { canonical: CANONICAL },
 };
 
+const tocSections = [
+  { id: "what-is-glp-1", label: "What Is GLP-1?" },
+  { id: "how-it-works", label: "How GLP-1 Agonists Work" },
+  { id: "the-class", label: "The GLP-1 Agonist Class" },
+  { id: "weight-loss-data", label: "Weight Loss Data" },
+  { id: "glp-1-vs-gip", label: "GLP-1 vs GIP" },
+  { id: "triple-vs-dual", label: "Triple vs Dual Agonism" },
+  { id: "safety", label: "Safety Profile" },
+  { id: "natural-boosters", label: "Natural GLP-1 Boosters" },
+  { id: "practical", label: "Practical Considerations" },
+  { id: "pipeline", label: "The 2026 Pipeline" },
+  { id: "unknowns", label: "What We Don't Know Yet" },
+  { id: "faq", label: "FAQ" },
+];
+
 const clusterLinks = [
+  { href: "/glp-1/how-glp-1-agonists-work", label: "How GLP-1 Agonists Work" },
+  { href: "/glp-1/comparison-chart-2026", label: "Comparison Chart 2026" },
+  { href: "/glp-1/natural-boosters", label: "Natural GLP-1 Boosters" },
+  { href: "/glp-1/vs-gip", label: "GLP-1 vs GIP" },
+  { href: "/glp-1/triple-vs-dual-agonism", label: "Triple vs Dual Agonism" },
+  { href: "/glp-1/semaglutide-vs-tirzepatide", label: "Semaglutide vs Tirzepatide" },
+  { href: "/glp-1/safety-profile", label: "GLP-1 Safety Profile" },
+];
+
+const keyStats = [
+  { stat: "28.7%", label: "Top weight loss (retatrutide 12mg)" },
+  { stat: "22.5%", label: "Tirzepatide 15mg, SURMOUNT-1" },
+  { stat: "14.9%", label: "Semaglutide 2.4mg, STEP 1" },
+  { stat: "8.0%", label: "Liraglutide 3.0mg, SCALE" },
+  { stat: "20%", label: "MACE reduction in SELECT" },
+  { stat: "5+", label: "Approved GLP-1 agonists" },
+  { stat: "L-cells", label: "Endogenous source" },
+  { stat: "2027", label: "Retatrutide expected approval" },
+];
+
+const classRows = [
+  ["Liraglutide", "GLP-1", "Daily SC", "8.0% (SCALE, 56wk)", "Approved 2010"],
+  ["Semaglutide", "GLP-1", "Weekly SC / Daily oral", "14.9% (STEP 1, 68wk)", "Approved 2017"],
+  ["Dulaglutide", "GLP-1", "Weekly SC", "2 to 5%", "Approved 2014"],
+  ["Tirzepatide", "GLP-1 / GIP", "Weekly SC", "22.5% (SURMOUNT-1, 72wk)", "Approved 2022"],
+  ["Retatrutide", "GLP-1 / GIP / Glucagon", "Weekly SC", "28.7% (TRIUMPH-4, 68wk)", "Phase III"],
+  ["Orforglipron", "GLP-1 (oral non-peptide)", "Daily oral", "14.7% (Phase II, 36wk)", "Phase III"],
+];
+
+const comparisonRows = [
+  ["Mechanism", "GLP-1 only", "GLP-1 + GIP", "GLP-1 + GIP + Glucagon"],
+  ["Mean weight loss", "~15% (STEP 1)", "~22% (SURMOUNT-1)", "28.7% (TRIUMPH-4)"],
+  ["Head-to-head", "13.7% in SURMOUNT-5", "20.2% in SURMOUNT-5", "Pending"],
+  ["CV outcomes", "20% MACE reduction (SELECT)", "Pending (SURMOUNT-MMO)", "Pending (TRIUMPH-3)"],
+  ["GI side effects", "74.2% in STEP 1", "Comparable, possibly lower", "Comparable"],
+  ["Novel adverse events", "—", "—", "Dysesthesia 20.9% at 12mg"],
+  ["FDA status", "Approved", "Approved", "NDA expected 2026/27"],
+];
+
+const pipelineItems = [
   {
-    href: "/glp-1/how-glp-1-agonists-work",
-    label: "How GLP-1 Agonists Work",
-    excerpt:
-      "The full mechanism of GLP-1 receptor agonism, from L-cell secretion to gastric emptying and central appetite signalling.",
+    date: "Late 2026",
+    text: "Retatrutide NDA expected from Eli Lilly. Multiple TRIUMPH Phase III readouts continuing through 2026.",
+    highlight: true,
   },
   {
-    href: "/glp-1/comparison-chart-2026",
-    label: "GLP-1 Comparison Chart 2026",
-    excerpt:
-      "Every approved and Phase III GLP-1 agonist compared on dose, efficacy, half-life, route, and approval status.",
+    date: "2026",
+    text: "Orforglipron Phase III readouts expected (ATTAIN obesity programme). First oral non-peptide GLP-1 agonist.",
+    highlight: false,
   },
   {
-    href: "/glp-1/natural-boosters",
-    label: "Natural GLP-1 Boosters",
-    excerpt:
-      "What the evidence actually shows for protein, fibre, fermented foods, and short-chain fatty acids on endogenous GLP-1.",
+    date: "2026",
+    text: "CagriSema (semaglutide + cagrilintide amylin co-agonist) Phase III REDEFINE readouts. Novo Nordisk's response to tirzepatide.",
+    highlight: false,
   },
   {
-    href: "/glp-1/vs-gip",
-    label: "GLP-1 vs GIP Explained",
-    excerpt:
-      "Two incretin hormones, two receptors, and why GIP co-agonism became the basis of tirzepatide's efficacy edge.",
+    date: "2026 / 2027",
+    text: "Survodutide (GLP-1 + glucagon dual, Boehringer Ingelheim) Phase III SYNCHRONIZE readouts.",
+    highlight: false,
   },
   {
-    href: "/glp-1/triple-vs-dual-agonism",
-    label: "Why Triple > Dual Agonism",
-    excerpt:
-      "The metabolic logic for adding glucagon to GLP-1 + GIP, and why retatrutide's TRIUMPH-4 result changes the field.",
+    date: "2027",
+    text: "MariTide (Amgen, GLP-1 agonist + GIP receptor antagonist antibody) Phase III readouts. Monthly dosing claimed.",
+    highlight: false,
   },
   {
-    href: "/glp-1/semaglutide-vs-tirzepatide",
-    label: "Semaglutide vs Tirzepatide",
-    excerpt:
-      "Head-to-head on STEP 1 vs SURMOUNT-1, the SURMOUNT-5 direct comparison, side effect profile, and cost.",
-  },
-  {
-    href: "/glp-1/safety-profile",
-    label: "GLP-1 Safety Profile",
-    excerpt:
-      "Long-term safety data: GI tolerability, pancreatitis signal, thyroid C-cell findings, and what SELECT confirmed about cardiovascular risk.",
+    date: "2027+",
+    text: "Retatrutide FDA approval and launch expected. Mid-2027 with priority review, late 2027 standard.",
+    highlight: true,
   },
 ];
 
@@ -83,11 +116,11 @@ const faqs = [
   },
   {
     q: "Are GLP-1 peptides the same thing as Ozempic or Wegovy?",
-    a: "Ozempic and Wegovy are brand names for semaglutide, one specific GLP-1 receptor agonist. The class includes liraglutide (Saxenda, Victoza), semaglutide (Ozempic, Wegovy, Rybelsus), dulaglutide (Trulicity), and the dual GLP-1/GIP agonist tirzepatide (Mounjaro, Zepbound). Retatrutide is a Phase III triple agonist.",
+    a: "Ozempic and Wegovy are brand names for semaglutide, one specific GLP-1 receptor agonist. The class includes liraglutide (Saxenda, Victoza), semaglutide (Ozempic, Wegovy, Rybelsus), dulaglutide (Trulicity), and the dual GLP-1/GIP agonist tirzepatide (Mounjaro, Zepbound). Retatrutide is a Phase III triple agonist that adds glucagon receptor activity.",
   },
   {
     q: "How much weight loss is realistic on a GLP-1 agonist?",
-    a: "Trial averages by compound: liraglutide 8.0% (SCALE, 56 weeks), semaglutide 14.9% (STEP 1, 68 weeks), tirzepatide 22.5% (SURMOUNT-1 at 15mg, 72 weeks), retatrutide 28.7% (TRIUMPH-4 at 12mg, 68 weeks). Real-world weight loss typically runs 60-75% of trial figures because of adherence, dose titration, and access issues.",
+    a: "Trial averages by compound: liraglutide 8.0% (SCALE, 56 weeks), semaglutide 14.9% (STEP 1, 68 weeks), tirzepatide 22.5% (SURMOUNT-1 at 15mg, 72 weeks), retatrutide 28.7% (TRIUMPH-4 at 12mg, 68 weeks). Real-world weight loss typically runs 60 to 75% of trial figures because of adherence, dose titration, and access issues.",
   },
   {
     q: "What is the difference between GLP-1, GIP, and glucagon agonism?",
@@ -95,11 +128,11 @@ const faqs = [
   },
   {
     q: "Are natural ways to boost GLP-1 effective?",
-    a: "Endogenous GLP-1 release rises modestly with protein-rich meals, soluble fibre, fermented foods, and short-chain fatty acids from gut microbiota. The effect size is real but small relative to pharmacological agonism. Diet alone cannot reproduce the 14 to 28 percent weight loss seen in trials. See the natural boosters cluster article for the actual evidence.",
+    a: "Endogenous GLP-1 release rises modestly with protein-rich meals, soluble fibre, fermented foods, and short-chain fatty acids from gut microbiota. The effect size is real but small relative to pharmacological agonism. Diet alone cannot reproduce the 14 to 28% weight loss seen in trials. See the natural boosters cluster article for the actual evidence.",
   },
   {
     q: "Are GLP-1 agonists safe long term?",
-    a: "Cardiovascular safety is now established. The SELECT trial (semaglutide, 17,604 patients) showed a 20 percent reduction in major adverse cardiovascular events in patients with established cardiovascular disease. Common side effects are gastrointestinal: nausea, vomiting, constipation. Pancreatitis is a known but rare signal. Thyroid C-cell findings in rodents prompted boxed warnings, though human data has not confirmed the risk.",
+    a: "Cardiovascular safety is established. The SELECT trial (semaglutide, 17,604 patients) showed a 20% reduction in major adverse cardiovascular events in patients with established cardiovascular disease. Common side effects are gastrointestinal: nausea, vomiting, constipation. Pancreatitis is a known but rare signal. Thyroid C-cell findings in rodents prompted boxed warnings, though human data has not confirmed the risk.",
   },
   {
     q: "Can GLP-1 agonists be used without obesity?",
@@ -107,7 +140,7 @@ const faqs = [
   },
   {
     q: "Why is retatrutide considered the next step beyond tirzepatide?",
-    a: "Retatrutide adds glucagon receptor agonism to the GLP-1 plus GIP combination already used by tirzepatide. The glucagon component drives energy expenditure through hepatic and brown adipose tissue activity. TRIUMPH-4 reported 28.7 percent weight loss at 12mg over 68 weeks, the strongest figure ever recorded for an obesity drug.",
+    a: "Retatrutide adds glucagon receptor agonism to the GLP-1 plus GIP combination already used by tirzepatide. The glucagon component drives energy expenditure through hepatic and brown adipose tissue activity. TRIUMPH-4 reported 28.7% weight loss at 12mg over 68 weeks — the strongest figure ever recorded for an obesity drug.",
   },
   {
     q: "Will compounded semaglutide remain available?",
@@ -119,1098 +152,1098 @@ const faqs = [
   },
 ];
 
-const tocItems = [
-  { id: "what-it-is", label: "What GLP-1 Is" },
-  { id: "evidence-base", label: "The Evidence Base" },
-  { id: "how-glp-1-works", label: "How GLP-1 Agonists Work" },
-  { id: "comparison-chart", label: "Comparison Chart 2026" },
-  { id: "natural-boosters", label: "Natural GLP-1 Boosters" },
-  { id: "glp-1-vs-gip", label: "GLP-1 vs GIP" },
-  { id: "triple-vs-dual", label: "Triple vs Dual Agonism" },
-  { id: "semaglutide-vs-tirzepatide", label: "Semaglutide vs Tirzepatide" },
-  { id: "safety-profile", label: "Safety Profile" },
-  { id: "practical", label: "Practical Considerations" },
-  { id: "comparison-landscape", label: "Comparison Landscape" },
-  { id: "cluster-articles", label: "All GLP-1 Cluster Articles" },
-  { id: "faq", label: "FAQ" },
-];
+const articleJsonLd = articleSchema({
+  headline: "The GLP-1 File — GLP-1 Peptides Explained (2026)",
+  description:
+    "Comprehensive review of GLP-1 receptor agonists: mechanism, the full class from liraglutide to retatrutide, weight loss data up to 28.7%, cardiovascular outcomes, safety, and the 2026 pipeline.",
+  datePublished: "2026-04-16",
+  dateModified: "2026-04-16",
+  authorName: "Mark Boreland",
+  authorUrl: "https://peptidefile.com/author",
+  publisherName: "Peptide File",
+  image: "https://peptidefile.com/og-glp-1.png",
+});
 
-export default function GLP1Pillar() {
-  const article = articleSchema({
-    headline: "The GLP-1 File: GLP-1 Peptides Explained (2026)",
-    description:
-      "Complete reference on GLP-1 peptides. Mechanism, the full agonist class from liraglutide to retatrutide, weight loss data up to 28.7%, safety, and the 2026 pipeline.",
-    datePublished: PUBLISHED,
-    dateModified: MODIFIED,
-    url: CANONICAL,
-  });
-  const faq = faqSchema(faqs);
-  const breadcrumbs = breadcrumbSchema([
-    { name: "Home", item: "https://peptidefile.com" },
-    { name: "The GLP-1 File", item: CANONICAL },
-  ]);
+const faqJsonLd = faqSchema(faqs);
 
+const breadcrumbJsonLd = breadcrumbSchema([
+  { name: "Home", item: "https://peptidefile.com" },
+  { name: "GLP-1", item: "https://peptidefile.com/glp-1" },
+]);
+
+export default function GLP1Page() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      {/* Page header */}
-      <header
+      {/* PAGE HEADER */}
+      <div
         style={{
-          borderBottom: "1px solid #d4d4cc",
-          paddingBottom: "2rem",
-          marginBottom: "2.5rem",
+          maxWidth: "1200px",
+          margin: "0 auto",
+          padding: "64px 32px 40px",
+          borderBottom: "1px solid var(--rule)",
         }}
       >
-        <div className="mono-label" style={{ marginBottom: "0.75rem" }}>
-          PILLAR FILE · INCRETIN CLASS
-        </div>
-        <h1 className="article-title">
-          The GLP-1 File: GLP-1 Peptides Explained
-        </h1>
-        <p className="page-intro">
-          The complete reference on GLP-1 receptor agonists. Mechanism, the full
-          class from liraglutide to retatrutide, weight loss outcomes up to 28.7
-          percent of body weight, safety signals, and the 2026 pipeline.
-        </p>
         <div
+          className="mono-label"
           style={{
             display: "flex",
-            flexWrap: "wrap",
-            gap: "1.25rem",
+            gap: "16px",
             alignItems: "center",
-            marginTop: "1.25rem",
-            fontSize: "0.875rem",
-            color: "#555",
+            marginBottom: "24px",
+            flexWrap: "wrap",
           }}
         >
-          <span className="mono-label">
-            By{" "}
-            <Link href="/author" style={{ color: "#1a1a1a" }}>
-              Mark Boreland
-            </Link>
-          </span>
-          <span className="mono-label">Last updated: April 2026</span>
-          <span className="mono-label">~4,500 words</span>
+          <span>Incretin Class — GLP-1 Receptor Agonists</span>
+          <span style={{ opacity: 0.4 }}>/</span>
+          <span>Pillar File</span>
+          <span style={{ opacity: 0.4 }}>/</span>
           <span
             style={{
-              display: "inline-block",
-              padding: "0.2rem 0.6rem",
-              border: "1px solid #1a1a1a",
+              background: "var(--accent)",
+              color: "var(--paper)",
+              padding: "3px 8px",
               borderRadius: "2px",
-              fontSize: "0.75rem",
-              fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
-              letterSpacing: "0.05em",
-              textTransform: "uppercase",
+              fontSize: "10px",
             }}
           >
             Evidence: Strong
           </span>
         </div>
-      </header>
 
-      {/* Key data grid */}
-      <section
-        aria-label="Key data"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-          gap: "1px",
-          backgroundColor: "#d4d4cc",
-          border: "1px solid #d4d4cc",
-          marginBottom: "3rem",
-        }}
-      >
-        {[
-          { v: "5+", l: "Approved GLP-1 agonists" },
-          { v: "28.7%", l: "Top weight loss (retatrutide 12mg)" },
-          { v: "22.5%", l: "Tirzepatide 15mg, SURMOUNT-1" },
-          { v: "14.9%", l: "Semaglutide 2.4mg, STEP 1" },
-          { v: "20%", l: "MACE reduction in SELECT" },
-          { v: "L-cells", l: "Endogenous source" },
-          { v: "Once weekly", l: "Standard dosing schedule" },
-          { v: "2027", l: "Retatrutide expected approval" },
-        ].map((item) => (
-          <div
-            key={item.l}
-            style={{
-              backgroundColor: "#fafaf7",
-              padding: "1.25rem 1rem",
-              textAlign: "center",
-            }}
-          >
-            <div
-              style={{
-                fontFamily: "Georgia, serif",
-                fontSize: "1.5rem",
-                fontWeight: 600,
-                color: "#1a1a1a",
-                marginBottom: "0.25rem",
-              }}
-            >
-              {item.v}
-            </div>
-            <div
-              style={{
-                fontSize: "0.75rem",
-                color: "#555",
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-              }}
-            >
-              {item.l}
-            </div>
-          </div>
-        ))}
-      </section>
+        <h1 className="article-title">The GLP-1 File</h1>
 
-      {/* Two-column layout */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(0, 1fr) 280px",
-          gap: "3rem",
-          alignItems: "start",
-        }}
-      >
-        {/* Main article */}
-        <article className="prose">
-          <p>
-            GLP-1 receptor agonists changed obesity medicine. The class has gone
-            from a niche type 2 diabetes treatment to the most-prescribed weight
-            loss therapy in history, with a clinical efficacy ceiling that keeps
-            climbing. Liraglutide produced 8 percent body weight loss. Semaglutide
-            doubled that to 14.9 percent. Tirzepatide, the first dual incretin
-            agonist, hit 22.5 percent. Retatrutide, the first triple agonist, has
-            now reported 28.7 percent at 12mg over 68 weeks in TRIUMPH-4.
-          </p>
-          <p>
-            Each step on that ladder corresponds to adding a new receptor target.
-            GLP-1 alone, then GLP-1 plus GIP, then GLP-1 plus GIP plus glucagon.
-            That progression is the central story of incretin therapy in 2026,
-            and it explains why the field has moved so fast in such a short
-            window. The biology was clarified in the 1980s. The first GLP-1
-            agonist (exenatide) was approved in 2005. The class then sat at modest
-            efficacy for 15 years until the dose ceiling on semaglutide was
-            pushed in STEP 1, and tirzepatide proved that adding a second
-            receptor mattered.
-          </p>
-          <p>
-            This file covers the full landscape. What GLP-1 actually does in the
-            body, the trial evidence behind every approved compound, the
-            differences between mono, dual, and triple agonism, the safety
-            picture after a decade of post-marketing data, and the pipeline
-            heading into 2027 and beyond. Each of the seven cluster articles
-            below goes deeper on a specific topic. Use the table of contents on
-            the right to jump to the section you need, or read top to bottom for
-            the full reference.
-          </p>
-          <p>
-            One framing note. GLP-1 agonist therapy is now sitting at the
-            intersection of obesity medicine, cardiometabolic disease, and a
-            growing list of indications including chronic kidney disease, sleep
-            apnoea, and possibly Alzheimer&rsquo;s disease and addiction. The
-            class is no longer about weight loss in isolation. It is becoming a
-            metabolic platform.
-          </p>
-          <p>
-            A second framing note on terminology. GLP-1 (the hormone), GLP-1R
-            (the receptor), GLP-1 receptor agonist (the drug class), and GLP-1
-            analogue (a subset of agonists with structural similarity to native
-            GLP-1) are often used interchangeably in lay coverage and even in
-            some clinical writing. The distinction matters when discussing
-            tirzepatide and retatrutide, which are not pure GLP-1 agonists but
-            multi-receptor agonists with GLP-1 activity. Throughout this file,
-            the term GLP-1 agonist refers to the broader functional class
-            including dual and triple agonists, with receptor specificity called
-            out where it changes the clinical picture.
-          </p>
+        <p className="page-intro">
+          GLP-1 receptor agonists changed obesity medicine. The class moved from a niche type 2
+          diabetes treatment to the most-prescribed weight loss therapy in history, with a clinical
+          efficacy ceiling that keeps climbing — liraglutide produced 8% weight loss, semaglutide
+          doubled that to 14.9%, tirzepatide hit 22.5%, and retatrutide has now reported 28.7%. This
+          file covers the mechanism, the full agonist class, weight loss outcomes, the safety
+          picture, and the 2026 pipeline.
+        </p>
 
-          <h2 id="what-it-is">What GLP-1 Is</h2>
-          <p>
-            Glucagon-like peptide-1 (GLP-1) is a 30-amino-acid incretin hormone
-            released by intestinal L-cells in response to nutrient intake. It is
-            cleaved from the proglucagon gene product, the same precursor that
-            produces glucagon and GLP-2. Postprandial GLP-1 secretion peaks
-            within 15 to 30 minutes and falls back to baseline within an hour.
-          </p>
-          <p>
-            Endogenous GLP-1 has a half-life of around 2 minutes. The native
-            peptide is rapidly degraded by dipeptidyl peptidase-4 (DPP-4) at the
-            second N-terminal amino acid. This is why DPP-4 inhibitors (sitagliptin,
-            linagliptin) work as a separate diabetes drug class: they prolong
-            endogenous GLP-1 by blocking its degradation, though to a much lesser
-            effect than receptor agonism.
-          </p>
-          <p>
-            The receptor for GLP-1 (GLP-1R) is a class B G-protein-coupled
-            receptor expressed on pancreatic beta cells, gastric smooth muscle,
-            cardiac myocytes, vagal afferents, and several hypothalamic and
-            brainstem nuclei. The distribution of the receptor is what gives the
-            class its broad effects beyond glycaemic control. Receptor agonism in
-            the arcuate nucleus and area postrema is the basis of the
-            appetite-suppressing and nausea-inducing effects. Receptor agonism in
-            cardiac and vascular tissue is the basis of the cardiovascular
-            outcomes seen in SELECT and similar trials.
-          </p>
-          <p>
-            A GLP-1 receptor agonist is any molecule that binds and activates
-            GLP-1R. The class includes peptide agonists (liraglutide, semaglutide,
-            tirzepatide, retatrutide), oral non-peptide small molecules
-            (orforglipron, in late-stage trials), and antibody-conjugated
-            agonists (MariTide). The biological effect is driven by receptor
-            binding affinity, plasma half-life, and tissue distribution.
-            Engineering for half-life through fatty acid conjugation
-            (semaglutide, liraglutide) or Fc-fusion (dulaglutide, retatrutide) is
-            what enables once-weekly dosing.
-          </p>
-          <p>
-            The historical arc is worth noting. Exendin-4, the active component
-            of exenatide, was isolated from the venom of the Gila monster
-            (Heloderma suspectum) by John Eng at the Bronx VA Medical Center in
-            1992. Exendin-4 shares 53 percent sequence identity with native human
-            GLP-1 but resists DPP-4 cleavage, giving it a much longer half-life.
-            Exenatide became the first approved GLP-1 receptor agonist in 2005,
-            dosed twice daily. Liraglutide followed in 2010 with the addition of
-            a fatty acid side chain that bound albumin, extending half-life to
-            13 hours and enabling once-daily dosing. Semaglutide, approved in
-            2017, used a longer fatty acid chain plus amino acid substitutions
-            to achieve a 7-day half-life. Each engineering advance was
-            incremental, but together they took the class from twice-daily
-            injections producing modest glycaemic improvement to once-weekly
-            injections producing transformative weight loss.
-          </p>
-
-          <h2 id="evidence-base">The Evidence Base</h2>
-          <p>
-            GLP-1 agonism is one of the best-evidenced drug classes in modern
-            metabolic medicine. The trial programmes for the major compounds
-            include over 100,000 randomised patients across diabetes, obesity,
-            cardiovascular disease, and kidney disease populations. Every claim
-            in this file is from published Phase III data or peer-reviewed
-            mechanistic studies, with PubMed identifiers cited where appropriate.
-          </p>
-          <p>
-            Liraglutide&rsquo;s SCALE programme established that a GLP-1 agonist
-            could produce clinically meaningful weight loss in non-diabetic
-            obesity. The pivotal SCALE Obesity and Prediabetes trial (Pi-Sunyer
-            et al., NEJM 2015, PMID: 26132939) reported 8.0 percent weight loss
-            at 3.0mg over 56 weeks versus 2.6 percent on placebo. That was
-            sufficient to secure FDA approval in 2014 for chronic weight
-            management.
-          </p>
-          <p>
-            Semaglutide&rsquo;s STEP programme moved the ceiling. STEP 1
-            (Wilding et al., NEJM 2021, PMID: 33567185) reported 14.9 percent
-            weight loss at 2.4mg over 68 weeks versus 2.4 percent on placebo. The
-            programme has since expanded to STEP 2 (type 2 diabetes), STEP 5 (104
-            weeks), STEP-HFpEF (heart failure with preserved ejection fraction),
-            SELECT (cardiovascular outcomes), FLOW (chronic kidney disease), and
-            STEP 9 (knee osteoarthritis). Every readout has confirmed the central
-            efficacy and safety findings.
-          </p>
-          <p>
-            Tirzepatide&rsquo;s SURMOUNT programme proved that adding GIP to
-            GLP-1 increased efficacy. SURMOUNT-1 (Jastreboff et al., NEJM 2022,
-            PMID: 35658024) reported 22.5 percent weight loss at 15mg over 72
-            weeks. SURMOUNT-5 (Aronne et al., NEJM 2025) was the first head-to-head
-            against semaglutide, with tirzepatide reporting 20.2 percent vs
-            13.7 percent for semaglutide at 72 weeks. The programme has expanded
-            into SURMOUNT-OSA (sleep apnoea, approved 2024) and SURMOUNT-MMO
-            (cardiovascular outcomes, ongoing).
-          </p>
-          <p>
-            Retatrutide&rsquo;s TRIUMPH programme has so far reported the
-            strongest weight loss in any obesity drug trial. TRIUMPH-4 (December
-            2025) reported 28.7 percent weight loss at 12mg over 68 weeks. The
-            full Phase III readout is expected through 2026, with FDA submission
-            in late 2026 and approval expected mid to late 2027. See the{" "}
-            <Link href="/retatrutide">Retatrutide File</Link> for the complete
-            picture on this compound, including the dysesthesia safety signal
-            (20.9 percent at 12mg) flagged in TRIUMPH-4.
-          </p>
-          <p>
-            Three points are worth holding in mind when reading the trial data.
-            First, the comparator matters. STEP 1 compared semaglutide 2.4mg
-            against placebo in patients with obesity but without diabetes.
-            SURMOUNT-1 used the same design for tirzepatide. The headline
-            efficacy figures are not directly comparable across compounds
-            without correction for trial design, population BMI, and duration.
-            SURMOUNT-5 was the first true head-to-head of semaglutide vs
-            tirzepatide and confirmed the efficacy ranking suggested by indirect
-            comparison.
-          </p>
-          <p>
-            Second, the trial populations were typically high-BMI (mean BMI 35
-            to 40) and excluded patients with diabetes or significant
-            comorbidities in the obesity trials. Real-world populations include
-            more variability in baseline BMI, more diabetes, more medication
-            interactions, and more variable adherence. The 60 to 75 percent
-            real-world adherence rule (real-world weight loss runs 60 to 75
-            percent of trial figures) is a useful heuristic across the class.
-          </p>
-          <p>
-            Third, the GLP-1 class has produced cardiovascular outcomes data
-            beyond what was originally required for FDA approval. The 2008 FDA
-            guidance on cardiovascular safety in diabetes drugs was meant to
-            ensure new drugs did not increase cardiovascular risk. The class
-            has now produced multiple trials demonstrating cardiovascular
-            benefit: LEADER (liraglutide, 2016), SUSTAIN-6 (semaglutide
-            diabetes, 2016), REWIND (dulaglutide, 2019), and SELECT (semaglutide
-            in obesity without diabetes, 2023). The transition from a safety
-            requirement to an efficacy indication has reshaped how the class is
-            prescribed in patients with established cardiovascular disease.
-          </p>
-
-          <h2 id="how-glp-1-works">How GLP-1 Agonists Work</h2>
-          <p>
-            The mechanism is multi-organ. GLP-1 agonists hit the pancreas, gut,
-            brain, and cardiovascular system simultaneously, which is why the
-            clinical picture spans glycaemic control, weight loss, and reduced
-            cardiovascular events from a single drug.
-          </p>
-          <h3>Pancreatic effects</h3>
-          <p>
-            GLP-1 agonism stimulates glucose-dependent insulin secretion from
-            pancreatic beta cells. The glucose dependency is critical: insulin
-            release rises only when blood glucose is elevated, which is why GLP-1
-            agonists carry low intrinsic hypoglycaemia risk in non-diabetic
-            patients. GLP-1 also suppresses glucagon secretion from alpha cells,
-            reducing hepatic glucose production. The net effect is improved
-            postprandial glycaemia and HbA1c reductions of 1.0 to 1.8
-            percentage points in type 2 diabetes trials.
-          </p>
-          <h3>Gastric effects</h3>
-          <p>
-            GLP-1 agonism slows gastric emptying. Food remains in the stomach
-            longer, blunting the postprandial glucose excursion and prolonging
-            satiety. The slowed emptying is also responsible for much of the
-            class&rsquo;s side effect profile: nausea, vomiting, and early
-            satiety are reported by 20 to 50 percent of patients during dose
-            titration, depending on the compound and dose.
-          </p>
-          <h3>Central effects</h3>
-          <p>
-            The hypothalamic arcuate nucleus and the area postrema express GLP-1
-            receptors. Agonism activates POMC neurons (anorexigenic) and inhibits
-            NPY/AgRP neurons (orexigenic), producing a sustained reduction in
-            appetite and food preference. Functional MRI studies have shown
-            reduced reward-system activation in response to high-calorie food
-            cues, which may explain the reported reductions in food noise that
-            patients describe.
-          </p>
-          <p>
-            Food noise is the colloquial term for the constant intrusive
-            cognition about food that many patients with obesity describe. It
-            shows up in qualitative interviews and in patient-reported outcome
-            measures across the major trials. Pharmacologically, the
-            phenomenon maps onto the mesolimbic dopamine system: GLP-1 agonism
-            in the ventral tegmental area and nucleus accumbens reduces
-            dopaminergic response to palatable food. The same neural circuits
-            are implicated in addiction, which is why ongoing trials are
-            examining GLP-1 agonism in alcohol use disorder, opioid use
-            disorder, and gambling disorder. Early signals are positive but
-            preliminary.
-          </p>
-          <h3>Cardiovascular effects</h3>
-          <p>
-            GLP-1 receptors are expressed on cardiac myocytes and vascular
-            endothelium. Agonism produces modest blood pressure reduction, lipid
-            improvements, and direct anti-inflammatory effects on the
-            vasculature. The SELECT trial confirmed a 20 percent reduction in
-            major adverse cardiovascular events (cardiovascular death, non-fatal
-            myocardial infarction, non-fatal stroke) over a mean follow-up of
-            39.8 months in patients with established cardiovascular disease and
-            BMI 27 or higher.
-          </p>
-          <p>
-            The full mechanistic picture, including the GIP and glucagon arms
-            relevant to dual and triple agonists, is covered in detail in the{" "}
-            <Link href="/glp-1/how-glp-1-agonists-work">
-              How GLP-1 Agonists Work
-            </Link>{" "}
-            cluster article.
-          </p>
-
-          <h2 id="comparison-chart">Comparison Chart 2026</h2>
-          <p>
-            The class spans five approved compounds plus retatrutide in late
-            Phase III. Headline differences:
-          </p>
-          <ul>
-            <li>
-              <strong>Liraglutide</strong> (Saxenda 3.0mg, Victoza 1.8mg). Daily
-              subcutaneous. Half-life 13 hours. 8.0 percent weight loss at 3.0mg
-              over 56 weeks (SCALE). Approved 2010 for diabetes, 2014 for weight
-              management.
-            </li>
-            <li>
-              <strong>Semaglutide</strong> (Ozempic 2.0mg, Wegovy 2.4mg, Rybelsus
-              14mg oral). Once weekly subcutaneous or daily oral. Half-life 7
-              days. 14.9 percent weight loss at 2.4mg over 68 weeks (STEP 1).
-              Approved 2017 for diabetes, 2021 for weight management, 2024 for
-              cardiovascular risk reduction.
-            </li>
-            <li>
-              <strong>Dulaglutide</strong> (Trulicity 0.75 to 4.5mg). Once
-              weekly. Half-life 5 days. Modest weight loss (2 to 5 percent) but
-              strong cardiovascular outcomes (REWIND). Approved 2014.
-            </li>
-            <li>
-              <strong>Tirzepatide</strong> (Mounjaro 5 to 15mg, Zepbound 5 to
-              15mg). Dual GLP-1/GIP agonist. Once weekly. Half-life 5 days. 22.5
-              percent weight loss at 15mg over 72 weeks (SURMOUNT-1). Approved
-              2022 for diabetes, 2023 for weight management, 2024 for sleep
-              apnoea.
-            </li>
-            <li>
-              <strong>Retatrutide</strong> (LY3437943, investigational). Triple
-              GLP-1/GIP/glucagon agonist. Once weekly. Half-life 6 days. 28.7
-              percent weight loss at 12mg over 68 weeks (TRIUMPH-4). FDA
-              submission expected late 2026, approval expected mid to late 2027.
-            </li>
-            <li>
-              <strong>Orforglipron</strong> (Lilly, Phase III). Oral non-peptide
-              GLP-1 agonist. Daily oral, no food restrictions (unlike Rybelsus).
-              Phase II reported 14.7 percent weight loss at 45mg over 36 weeks.
-              Phase III readouts expected 2026.
-            </li>
-          </ul>
-          <p>
-            The full side-by-side, including cost in major markets, route of
-            administration nuances, and head-to-head trial data, is in the{" "}
-            <Link href="/glp-1/comparison-chart-2026">
-              GLP-1 Comparison Chart 2026
-            </Link>{" "}
-            cluster article.
-          </p>
-
-          <h2 id="natural-boosters">Natural GLP-1 Boosters</h2>
-          <p>
-            The endogenous GLP-1 axis is sensitive to diet composition. Reliable
-            stimulators of postprandial GLP-1 secretion include: protein-rich
-            meals (especially whey and casein, with a 30 to 50 percent rise in
-            postprandial GLP-1), soluble fibre (oats, legumes, psyllium, with
-            secondary effects via short-chain fatty acid production by gut
-            microbiota), monounsaturated fats (olive oil, avocado), and
-            fermented foods (some evidence for kimchi, kefir, and yoghurt).
-            Bitter compounds (gentian, hops, coffee) acutely raise GLP-1 via
-            taste receptor signalling in the gut.
-          </p>
-          <p>
-            The honest framing: these effects are real but modest. A protein-rich
-            meal might double postprandial GLP-1 from baseline. A weekly
-            semaglutide injection produces sustained plasma agonist levels
-            roughly 1,000 times higher than physiological postprandial peaks.
-            The clinical effect sizes match: diet alone produces 3 to 5 percent
-            weight loss in well-conducted trials over a year. GLP-1 agonists
-            produce 8 to 28 percent over similar timeframes.
-          </p>
-          <p>
-            For most readers the practical takeaway is that diet composition
-            matters for endogenous GLP-1 in the same way that walking matters
-            for cardiovascular health. It is genuinely beneficial and worth
-            doing, but it does not substitute for the pharmacological
-            intervention when the latter is indicated. Full evidence rundown in
-            the{" "}
-            <Link href="/glp-1/natural-boosters">Natural GLP-1 Boosters</Link>{" "}
-            cluster.
-          </p>
-
-          <h2 id="glp-1-vs-gip">GLP-1 vs GIP</h2>
-          <p>
-            GIP (glucose-dependent insulinotropic polypeptide) is the second
-            incretin hormone. It is released by K-cells in the duodenum and
-            jejunum, while GLP-1 is released by L-cells primarily in the ileum
-            and colon. GIP and GLP-1 together account for the incretin effect:
-            the observation that oral glucose produces a larger insulin response
-            than intravenous glucose at matched plasma glucose levels.
-          </p>
-          <p>
-            GIP receptor (GIPR) biology was historically considered less
-            interesting than GLP-1R because GIP appeared to have minimal effect
-            on appetite and was thought to be ineffective in type 2 diabetes
-            (GIP signalling is reduced in diabetic patients). The development of
-            tirzepatide changed that view. Combined GLP-1R and GIPR agonism
-            produced weight loss exceeding what semaglutide could achieve at any
-            tolerable dose. The mechanism is still being mapped, but current
-            evidence suggests GIP component contributes via improved insulin
-            sensitivity, possibly improved tolerability of GI side effects, and
-            direct effects on adipose tissue.
-          </p>
-          <p>
-            The deep dive on receptor biology, GIP knockout mouse data, and the
-            unresolved question of whether GIPR antagonism (the MariTide
-            approach) could outperform GIPR agonism is in the{" "}
-            <Link href="/glp-1/vs-gip">GLP-1 vs GIP Explained</Link> cluster
-            article.
-          </p>
-
-          <h2 id="triple-vs-dual">Triple vs Dual Agonism</h2>
-          <p>
-            Adding glucagon receptor agonism to GLP-1 plus GIP introduces a third
-            mechanism: increased energy expenditure. GLP-1 and GIP together
-            reduce energy intake (appetite suppression, slowed gastric emptying,
-            improved insulin sensitivity). Glucagon raises energy expenditure
-            through hepatic glucose output, lipolysis, and brown adipose tissue
-            activation. The combined effect is a larger negative energy balance
-            than dual agonism can achieve.
-          </p>
-          <p>
-            The risk with glucagon agonism is hyperglycaemia. Glucagon raises
-            blood glucose by definition. Retatrutide solves this by combining
-            glucagon agonism with strong GLP-1 plus GIP agonism, so the
-            insulinotropic effect of the incretin component dominates. TRIUMPH-2
-            data in type 2 diabetes confirmed glycaemic improvement despite the
-            glucagon component, with HbA1c reductions of around 2.0 percentage
-            points.
-          </p>
-          <p>
-            The 28.7 percent figure from TRIUMPH-4 is roughly 6 percentage
-            points above tirzepatide&rsquo;s 22.5 percent in SURMOUNT-1 (with
-            differences in trial population and duration noted). That gap is
-            consistent with the pattern of approximately 5 to 7 percentage
-            points added per receptor target. Whether this pattern continues
-            with quad agonists (GLP-1, GIP, glucagon, plus a fourth target like
-            amylin or PYY) is the open question for the next decade.
-          </p>
-          <p>
-            The mechanistic logic, the trial data on glucagon mono-agonism, and
-            the question of whether a quad agonist makes biological sense are
-            covered in the{" "}
-            <Link href="/glp-1/triple-vs-dual-agonism">
-              Why Triple &gt; Dual Agonism
-            </Link>{" "}
-            cluster article.
-          </p>
-
-          <h2 id="semaglutide-vs-tirzepatide">Semaglutide vs Tirzepatide</h2>
-          <p>
-            The most-asked question in the class. Both are once-weekly. Both
-            have FDA approvals for diabetes and weight management. The honest
-            answer from the evidence is that tirzepatide produces more weight
-            loss on average. SURMOUNT-5 confirmed this directly: tirzepatide
-            20.2 percent vs semaglutide 13.7 percent at 72 weeks, head-to-head,
-            in the same patient population.
-          </p>
-          <p>
-            Where semaglutide wins is depth of evidence in non-weight indications.
-            Cardiovascular outcomes (SELECT), chronic kidney disease (FLOW), and
-            heart failure (STEP-HFpEF) all have published positive trials for
-            semaglutide. Tirzepatide&rsquo;s parallel programme (SURMOUNT-MMO
-            for cardiovascular outcomes) has not yet read out. For a patient
-            with established cardiovascular disease, semaglutide currently has
-            the stronger label.
-          </p>
-          <p>
-            Side effect profiles are broadly similar in proportion, though
-            tirzepatide patients in SURMOUNT-5 reported slightly fewer GI side
-            effects than semaglutide patients in the same trial, possibly
-            related to GIP signalling. Cost varies by market and insurance
-            coverage. The full head-to-head, including the SURMOUNT-5 readout
-            in detail, is in the{" "}
-            <Link href="/glp-1/semaglutide-vs-tirzepatide">
-              Semaglutide vs Tirzepatide
-            </Link>{" "}
-            cluster article.
-          </p>
-
-          <h2 id="safety-profile">Safety Profile</h2>
-          <p>
-            After almost two decades of post-marketing data on the class, the
-            safety picture is reasonably settled. The common side effects are
-            gastrointestinal: nausea, vomiting, diarrhoea, constipation. These
-            affect 20 to 50 percent of patients during dose titration and
-            typically resolve within 4 to 8 weeks of dose stabilisation. Slow
-            dose escalation reduces incidence and severity.
-          </p>
-          <p>
-            Pancreatitis is a known but rare signal. Background incidence in
-            type 2 diabetes is elevated regardless of treatment. Meta-analyses
-            of GLP-1 agonist trials have not shown a significant increase over
-            comparator therapies, though FDA labels carry warnings.
-            Gallbladder-related events (cholecystitis, cholelithiasis) are more
-            common with GLP-1 agonists than placebo, particularly with rapid
-            weight loss.
-          </p>
-          <p>
-            Thyroid C-cell tumours occurred in rodent toxicology studies of
-            liraglutide and exenatide, leading to boxed warnings about medullary
-            thyroid carcinoma and contraindications in patients with personal or
-            family history of MTC or MEN 2. Human data over 15 years has not
-            confirmed an increased risk in clinical populations, but the
-            warnings remain.
-          </p>
-          <p>
-            Cardiovascular safety is now established as net positive. SELECT
-            (semaglutide), LEADER (liraglutide), REWIND (dulaglutide), and
-            SUSTAIN-6 (semaglutide diabetes) all reported MACE reductions in
-            high-risk populations. The class went from a cardiovascular safety
-            requirement under FDA guidance to a cardiovascular benefit indication
-            within a decade.
-          </p>
-          <p>
-            Newer signals being monitored include: dysesthesia (reported in 20.9
-            percent of retatrutide 12mg patients in TRIUMPH-4, the first time
-            this signal has emerged in the class), suicidal ideation (an EMA and
-            FDA review in 2023 to 2024 did not find a causal link, but
-            monitoring continues), and post-bariatric hypoglycaemia in patients
-            with previous gastric surgery. The full safety synthesis is in the{" "}
-            <Link href="/glp-1/safety-profile">GLP-1 Safety Profile</Link>{" "}
-            cluster article.
-          </p>
-          <p>
-            Body composition is the other open question. Rapid weight loss of
-            any kind, including via GLP-1 agonism, includes loss of lean mass
-            alongside fat mass. DXA substudies in STEP 1 reported approximately
-            40 percent of total weight loss came from lean mass, with the
-            remaining 60 percent from fat. The proportion is similar to what is
-            seen with bariatric surgery and dietary weight loss at matched rate.
-            The clinical concern is whether this reduces bone density and
-            increases fracture risk in older patients. Trial data so far has
-            not shown an excess fracture rate, but most trial populations were
-            younger than the typical osteoporosis-risk demographic. Resistance
-            training during weight loss is the standard mitigation, with growing
-            interest in adjunctive therapies (myostatin inhibitors, activin
-            inhibitors) that preserve lean mass during caloric deficit.
-          </p>
-          <p>
-            One last note on safety reporting. Comparing side effect rates
-            across trials requires care because dose titration schedules and
-            placebo run-in periods differ. STEP 1 reported gastrointestinal
-            adverse events in 74.2 percent of semaglutide patients and 47.9
-            percent of placebo, but the gap narrowed substantially after dose
-            stabilisation at week 16. Similar patterns appear in SURMOUNT-1 and
-            TRIUMPH-4. Headline rates can overstate the chronic burden of side
-            effects on the drug.
-          </p>
-
-          <h2 id="practical">Practical Considerations</h2>
-          <h3>Dosing and titration</h3>
-          <p>
-            Every approved GLP-1 agonist requires gradual dose titration, with
-            increases every 4 weeks until the target dose is reached.
-            Semaglutide 2.4mg starts at 0.25mg and steps through 0.5, 1.0, 1.7
-            to 2.4. Tirzepatide steps through 2.5, 5, 7.5, 10, 12.5, 15.
-            Skipping titration steps increases GI side effect severity and
-            discontinuation risk.
-          </p>
-          <h3>Administration</h3>
-          <p>
-            All approved GLP-1 agonists except oral Rybelsus and oral
-            orforglipron are subcutaneous injection, typically into the abdomen,
-            thigh, or upper arm. Pen devices are pre-filled and self-administered.
-            Once-weekly dosing should occur on the same day each week, with up to
-            48 hours of flexibility.
-          </p>
-          <h3>Cost and access</h3>
-          <p>
-            US list prices in 2026: Wegovy 2.4mg around $1,350 per month, Zepbound
-            5 to 15mg around $1,060 per month, Ozempic 2.0mg around $1,000 per
-            month, Mounjaro 15mg around $1,070 per month. Insurance coverage for
-            obesity (as opposed to diabetes) varies widely and is the dominant
-            access barrier in the US. Prices in Europe and the UK are
-            substantially lower under negotiated reimbursement.
-          </p>
-          <h3>Compounded versions</h3>
-          <p>
-            Compounded semaglutide and tirzepatide flooded the US market during
-            the 2022 to 2024 shortages. The FDA designated both as resolved
-            shortages in late 2024 and early 2025, removing the legal basis for
-            routine 503A compounding. Specific patient-need exceptions remain,
-            and the compounding pharmacy market has shifted toward research
-            peptides. Quality and purity vary widely. Independent third-party
-            testing is the only way to verify what is in any compounded product.
-          </p>
-          <h3>Discontinuation and weight regain</h3>
-          <p>
-            Stopping a GLP-1 agonist results in significant weight regain. The
-            STEP 1 extension trial showed that participants who stopped
-            semaglutide regained roughly two-thirds of their lost weight within
-            one year. This is consistent with the framing of obesity as a
-            chronic disease requiring ongoing treatment, similar to hypertension
-            or hyperlipidaemia. Maintenance dosing rather than discontinuation
-            is the current clinical norm for patients who tolerate the drug.
-          </p>
-
-          <h2 id="comparison-landscape">Comparison Landscape</h2>
-          <p>
-            GLP-1 agonism sits alongside several other approaches to obesity
-            management, with different efficacy ceilings and risk profiles.
-          </p>
-          <ul>
-            <li>
-              <strong>Bariatric surgery</strong>: Roux-en-Y gastric bypass
-              produces 30 to 35 percent total weight loss at 1 to 2 years and
-              has the most durable long-term data. Sleeve gastrectomy produces
-              25 to 30 percent. Surgery is more invasive but produces effects
-              that persist after the procedure, unlike pharmacotherapy.
-            </li>
-            <li>
-              <strong>Older anti-obesity drugs</strong>: Phentermine,
-              phentermine-topiramate, naltrexone-bupropion, and orlistat produce
-              5 to 10 percent weight loss with various tolerability and safety
-              concerns. The GLP-1 class has displaced these for most clinical
-              use.
-            </li>
-            <li>
-              <strong>Diet and exercise alone</strong>: Well-conducted lifestyle
-              intervention trials (Look AHEAD, Diabetes Prevention Program)
-              produce 5 to 8 percent weight loss at 1 year, with regression to
-              baseline in many patients by year 4. Maintenance is the issue.
-            </li>
-            <li>
-              <strong>Other peptide approaches</strong>: AOD-9604, CJC-1295,
-              tesamorelin, and MOTS-c are sometimes marketed as fat loss
-              peptides but have substantially weaker evidence. See the{" "}
-              <Link href="/fat-loss">Fat Loss File</Link> for the full breakdown
-              of where these compounds actually sit on the evidence ladder.
-            </li>
-          </ul>
-          <p>
-            The next generation of incretin therapies is in late-stage trials:
-            CagriSema (semaglutide plus cagrilintide), survodutide (GLP-1 plus
-            glucagon), MariTide (GLP-1 antibody plus GIP antagonist), and
-            orforglipron (oral GLP-1). Multiple readouts will arrive in 2026 and
-            2027. The class continues to expand, and the efficacy ceiling
-            continues to climb.
-          </p>
-          <p>
-            A useful frame for thinking about the trajectory: in 2014, an 8
-            percent weight loss drug (liraglutide) was a meaningful clinical
-            advance. In 2021, semaglutide nearly doubled that. In 2023,
-            tirzepatide pushed past 20 percent. In 2025, retatrutide reported
-            close to 30 percent. The same biology, at progressively higher
-            receptor coverage and dose, has produced an efficacy curve more
-            similar to early statins than to historical anti-obesity drugs.
-            Whether the curve plateaus, continues, or steepens further depends
-            on the next two pillars of incretin biology: oral bioavailability
-            (orforglipron, oral semaglutide at higher doses, and the next wave
-            of small-molecule agonists) and complementary mechanisms (amylin
-            co-agonism via cagrilintide, glucagon co-agonism via survodutide
-            and retatrutide, and the speculative quad-agonist designs in
-            preclinical work).
-          </p>
-
-          {/* Cluster Grid */}
-          <h2 id="cluster-articles">All GLP-1 Cluster Articles</h2>
-          <p>
-            Each of the seven cluster articles below goes deeper on a specific
-            topic from this file. They are written for both first-time readers
-            and clinicians, with consistent referencing and the same evidence
-            standards used here.
-          </p>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "1rem",
-              marginTop: "1.5rem",
-              marginBottom: "2rem",
-            }}
-          >
-            {clusterLinks.map((c) => (
-              <Link
-                key={c.href}
-                href={c.href}
-                style={{
-                  display: "block",
-                  backgroundColor: "#fafaf7",
-                  border: "1px solid #d4d4cc",
-                  padding: "1.25rem",
-                  borderRadius: "2px",
-                  textDecoration: "none",
-                  color: "inherit",
-                  transition: "border-color 0.15s ease",
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "Georgia, serif",
-                    fontSize: "1.125rem",
-                    fontWeight: 600,
-                    color: "#1a1a1a",
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  {c.label}
-                </div>
-                <div
-                  style={{
-                    fontSize: "0.875rem",
-                    color: "#555",
-                    lineHeight: 1.6,
-                  }}
-                >
-                  {c.excerpt}
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <h2 id="faq">Frequently Asked Questions</h2>
-          {faqs.map((f, i) => (
-            <details
-              key={i}
-              style={{
-                borderBottom: "1px solid #d4d4cc",
-                padding: "1rem 0",
-              }}
-            >
-              <summary
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: "1.0625rem",
-                  fontWeight: 600,
-                  cursor: "pointer",
-                  color: "#1a1a1a",
-                }}
-              >
-                {f.q}
-              </summary>
-              <div
-                style={{
-                  marginTop: "0.75rem",
-                  fontSize: "0.9375rem",
-                  lineHeight: 1.7,
-                  color: "#333",
-                }}
-              >
-                {f.a}
-              </div>
-            </details>
-          ))}
-
-          {/* Disclaimer */}
-          <aside
-            style={{
-              marginTop: "3rem",
-              padding: "1.5rem",
-              backgroundColor: "#fafaf7",
-              border: "1px solid #d4d4cc",
-              borderLeft: "3px solid #1a1a1a",
-              borderRadius: "2px",
-            }}
-          >
-            <div
-              className="mono-label"
-              style={{ marginBottom: "0.5rem", color: "#1a1a1a" }}
-            >
-              MEDICAL DISCLAIMER
-            </div>
-            <p
-              style={{
-                fontSize: "0.875rem",
-                lineHeight: 1.6,
-                color: "#333",
-                margin: 0,
-              }}
-            >
-              This article is for informational and educational purposes only. It
-              is not medical advice and should not be used as a substitute for
-              consultation with a licensed healthcare provider. GLP-1 receptor
-              agonists are prescription medications with significant side
-              effects and contraindications. Retatrutide is investigational and
-              not approved by the FDA or any other regulatory body. Compounded
-              versions of GLP-1 agonists carry quality and purity risks that
-              vary by source. Do not start, stop, or modify any medication
-              without speaking to a qualified clinician familiar with your
-              medical history.
-            </p>
-          </aside>
-
-          {/* Newsletter */}
-          <section
-            style={{
-              marginTop: "3rem",
-              padding: "2rem",
-              backgroundColor: "#1a1a1a",
-              color: "#fafaf7",
-              borderRadius: "2px",
-            }}
-          >
-            <div
-              className="mono-label"
-              style={{ marginBottom: "0.75rem", color: "#fafaf7" }}
-            >
-              THE PEPTIDE FILE NEWSLETTER
-            </div>
-            <h3
-              style={{
-                fontFamily: "Georgia, serif",
-                fontSize: "1.5rem",
-                fontWeight: 600,
-                margin: "0 0 0.75rem 0",
-                color: "#fafaf7",
-              }}
-            >
-              New trial readouts, decoded.
-            </h3>
-            <p
-              style={{
-                fontSize: "0.9375rem",
-                lineHeight: 1.6,
-                margin: "0 0 1.25rem 0",
-                color: "#d4d4cc",
-              }}
-            >
-              Phase III data on retatrutide, orforglipron, CagriSema, MariTide,
-              and the rest of the 2026 pipeline. One email a week. No hype.
-            </p>
-            <Link
-              href="/newsletter"
-              style={{
-                display: "inline-block",
-                padding: "0.625rem 1.25rem",
-                backgroundColor: "#fafaf7",
-                color: "#1a1a1a",
-                textDecoration: "none",
-                fontWeight: 600,
-                fontSize: "0.875rem",
-                borderRadius: "2px",
-              }}
-            >
-              Subscribe
-            </Link>
-          </section>
-        </article>
-
-        {/* Sidebar */}
-        <aside
+        <div
+          className="mono-label"
           style={{
-            position: "sticky",
-            top: "2rem",
-            fontSize: "0.875rem",
+            display: "flex",
+            gap: "24px",
+            marginTop: "32px",
+            flexWrap: "wrap",
+            fontSize: "11px",
+            opacity: 0.7,
           }}
         >
-          {/* TOC */}
-          <nav
-            style={{
-              borderTop: "2px solid #1a1a1a",
-              paddingTop: "1rem",
-              marginBottom: "2rem",
-            }}
-          >
+          <span>
+            By{" "}
+            <Link href="/author" style={{ color: "inherit", textDecoration: "underline" }}>
+              Mark Boreland
+            </Link>
+          </span>
+          <span>Last updated: April 2026</span>
+          <span>~4,500 words</span>
+        </div>
+      </div>
+
+      {/* KEY DATA GRID */}
+      <div
+        style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          padding: "32px",
+        }}
+      >
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: "1px",
+            background: "var(--rule)",
+            border: "1px solid var(--rule)",
+          }}
+        >
+          {keyStats.map((item) => (
             <div
-              className="mono-label"
-              style={{ marginBottom: "0.75rem", color: "#1a1a1a" }}
-            >
-              IN THIS FILE
-            </div>
-            <ul
+              key={item.stat}
               style={{
-                listStyle: "none",
-                padding: 0,
-                margin: 0,
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.5rem",
+                background: "var(--paper)",
+                padding: "20px 24px",
               }}
             >
-              {tocItems.map((item) => (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
+              <div
+                style={{
+                  fontFamily: "var(--serif)",
+                  fontSize: "32px",
+                  color: "var(--accent)",
+                  lineHeight: 1,
+                  marginBottom: "6px",
+                }}
+              >
+                {item.stat}
+              </div>
+              <div className="mono-label" style={{ fontSize: "10px", lineHeight: 1.4 }}>
+                {item.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* MAIN CONTENT LAYOUT */}
+      <div
+        style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          padding: "40px 32px 80px",
+          display: "grid",
+          gridTemplateColumns: "minmax(0, 1fr) 280px",
+          gap: "64px",
+        }}
+      >
+        {/* ARTICLE BODY */}
+        <article className="prose">
+
+          {/* ── SECTION 1: What Is GLP-1 ── */}
+          <section id="what-is-glp-1" style={{ marginBottom: "80px" }}>
+            <h2>What Is GLP-1?</h2>
+
+            <p>
+              Glucagon-like peptide-1 (GLP-1) is a 30-amino-acid incretin hormone released by
+              intestinal L-cells in response to nutrient intake. It is cleaved from the proglucagon
+              gene product — the same precursor that produces glucagon and GLP-2. Postprandial
+              GLP-1 secretion peaks within 15 to 30 minutes of eating and falls back to baseline
+              within an hour.
+            </p>
+
+            <p>
+              Endogenous GLP-1 has a half-life of roughly 2 minutes. The native peptide is rapidly
+              degraded by dipeptidyl peptidase-4 (DPP-4) at the second N-terminal amino acid. This
+              is why DPP-4 inhibitors (sitagliptin, linagliptin) work as a separate diabetes drug
+              class: they prolong endogenous GLP-1 by blocking its degradation, though to a much
+              smaller effect than receptor agonism.
+            </p>
+
+            <p>
+              The receptor for GLP-1 (GLP-1R) is a class B G-protein-coupled receptor expressed on
+              pancreatic beta cells, gastric smooth muscle, cardiac myocytes, vagal afferents, and
+              several hypothalamic and brainstem nuclei. The distribution of the receptor is what
+              gives the class its broad effects beyond glycaemic control. Receptor agonism in the
+              arcuate nucleus and area postrema is the basis of the appetite-suppressing and
+              nausea-inducing effects. Receptor agonism in cardiac and vascular tissue is the basis
+              of the cardiovascular outcomes seen in SELECT and similar trials.
+            </p>
+
+            <p>
+              A GLP-1 receptor agonist is any molecule that binds and activates GLP-1R. The class
+              includes peptide agonists (liraglutide, semaglutide, tirzepatide, retatrutide), oral
+              non-peptide small molecules (orforglipron, in late-stage trials), and
+              antibody-conjugated agonists (MariTide). The biological effect is driven by receptor
+              binding affinity, plasma half-life, and tissue distribution. Engineering for half-life
+              through fatty acid conjugation (semaglutide, liraglutide) or Fc-fusion (dulaglutide,
+              retatrutide) is what enables once-weekly dosing.
+            </p>
+
+            <p>
+              The historical arc is worth noting. Exendin-4, the active component of exenatide, was
+              isolated from the venom of the Gila monster (Heloderma suspectum) by John Eng at the
+              Bronx VA Medical Center in 1992. Exendin-4 shares 53% sequence identity with native
+              human GLP-1 but resists DPP-4 cleavage, giving it a much longer half-life. Exenatide
+              became the first approved GLP-1 receptor agonist in 2005, dosed twice daily.
+              Liraglutide followed in 2010 with the addition of a fatty acid side chain that bound
+              albumin, extending half-life to 13 hours. Semaglutide, approved in 2017, used a
+              longer fatty acid chain plus amino acid substitutions to achieve a 7-day half-life.
+              Each engineering advance was incremental, but together they took the class from
+              twice-daily injections producing modest glycaemic improvement to once-weekly
+              injections producing transformative weight loss.
+            </p>
+          </section>
+
+          {/* ── SECTION 2: How It Works ── */}
+          <section id="how-it-works" style={{ marginBottom: "80px" }}>
+            <h2>How GLP-1 Agonists Work</h2>
+
+            <p>
+              The mechanism is multi-organ. GLP-1 agonists hit the pancreas, gut, brain, and
+              cardiovascular system simultaneously, which is why the clinical picture spans
+              glycaemic control, weight loss, and reduced cardiovascular events from a single drug.
+            </p>
+
+            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 16px 0" }}>
+              {[
+                {
+                  label: "Pancreas (glucose-dependent insulin)",
+                  text: "GLP-1R agonism stimulates insulin secretion from beta cells only when blood glucose is elevated. The glucose dependency is critical: insulin release rises only at hyperglycaemia, which is why the class carries low intrinsic hypoglycaemia risk in non-diabetic patients. GLP-1 also suppresses glucagon from alpha cells, reducing hepatic glucose output. Net effect: HbA1c reductions of 1.0 to 1.8 percentage points in T2D trials.",
+                },
+                {
+                  label: "Stomach (delayed gastric emptying)",
+                  text: "GLP-1 agonism slows gastric emptying. Food remains in the stomach longer, blunting the postprandial glucose excursion and prolonging satiety. The slowed emptying is also responsible for much of the class's side effect profile: nausea, vomiting, and early satiety affect 20 to 50% of patients during dose titration.",
+                },
+                {
+                  label: "Brain (hypothalamic appetite suppression)",
+                  text: "The hypothalamic arcuate nucleus and area postrema express GLP-1 receptors. Agonism activates POMC neurons (anorexigenic) and inhibits NPY/AgRP neurons (orexigenic), producing sustained reductions in appetite and food preference. fMRI studies show reduced reward-system activation in response to high-calorie food cues — the neural substrate of the 'food noise' reduction patients describe.",
+                },
+                {
+                  label: "Cardiovascular (direct vascular effects)",
+                  text: "GLP-1 receptors are expressed on cardiac myocytes and vascular endothelium. Agonism produces modest blood pressure reduction, lipid improvements, and direct anti-inflammatory effects. SELECT confirmed a 20% MACE reduction over a mean 39.8 months in patients with established cardiovascular disease and BMI ≥27.",
+                },
+              ].map((item) => (
+                <li
+                  key={item.label}
+                  style={{ padding: "14px 0", borderBottom: "1px solid var(--rule)", marginBottom: 0 }}
+                >
+                  <span
                     style={{
-                      color: "#333",
-                      textDecoration: "none",
-                      lineHeight: 1.4,
+                      fontFamily: "var(--mono)",
+                      fontSize: "10px",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.08em",
+                      color: "var(--ink3)",
                       display: "block",
+                      marginBottom: "6px",
                     }}
                   >
                     {item.label}
-                  </a>
+                  </span>
+                  <span style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
+                    {item.text}
+                  </span>
                 </li>
               ))}
             </ul>
-          </nav>
 
-          {/* Related Files */}
-          <div
-            style={{
-              borderTop: "2px solid #1a1a1a",
-              paddingTop: "1rem",
-            }}
-          >
+            <p>
+              The full mechanistic picture, including the GIP and glucagon arms relevant to dual
+              and triple agonists, is covered in the dedicated{" "}
+              <Link href="/glp-1/how-glp-1-agonists-work">how GLP-1 agonists work article</Link>.
+            </p>
+          </section>
+
+          {/* ── SECTION 3: The Class ── */}
+          <section id="the-class" style={{ marginBottom: "80px" }}>
+            <h2>The GLP-1 Agonist Class</h2>
+
+            <p>
+              The class spans five approved compounds plus retatrutide in late Phase III, with
+              orforglipron in Phase III as the first oral non-peptide candidate. The progression
+              maps onto receptor coverage: GLP-1 alone, then GLP-1 plus GIP, then GLP-1 plus GIP
+              plus glucagon. Each step adds approximately 5 to 7 percentage points of weight loss
+              over the previous one.
+            </p>
+
             <div
-              className="mono-label"
-              style={{ marginBottom: "0.75rem", color: "#1a1a1a" }}
-            >
-              RELATED FILES
-            </div>
-            <ul
               style={{
-                listStyle: "none",
-                padding: 0,
-                margin: 0,
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.625rem",
+                overflowX: "auto",
+                margin: "24px 0",
+                border: "1px solid var(--rule)",
               }}
             >
-              <li>
-                <Link
-                  href="/retatrutide"
-                  style={{ color: "#1a1a1a", textDecoration: "none" }}
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px" }}>
+                <thead>
+                  <tr style={{ background: "var(--paper2)" }}>
+                    {["Compound", "Receptors", "Route", "Weight loss (trial)", "Status"].map((h) => (
+                      <th
+                        key={h}
+                        style={{
+                          textAlign: "left",
+                          padding: "12px 16px",
+                          fontFamily: "var(--mono)",
+                          fontSize: "10px",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.05em",
+                          borderBottom: "1px solid var(--rule)",
+                        }}
+                      >
+                        {h}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {classRows.map((row, ri) => (
+                    <tr
+                      key={ri}
+                      style={{
+                        borderBottom: ri < classRows.length - 1 ? "1px solid var(--rule)" : "none",
+                        background: ri % 2 === 0 ? "var(--paper)" : "transparent",
+                      }}
+                    >
+                      <td style={{ padding: "12px 16px", fontFamily: "var(--mono)", fontSize: "13px", color: "var(--ink)" }}>
+                        {row[0]}
+                      </td>
+                      <td style={{ padding: "12px 16px", color: "var(--ink2)", fontWeight: 300, fontSize: "13px" }}>
+                        {row[1]}
+                      </td>
+                      <td style={{ padding: "12px 16px", color: "var(--ink2)", fontWeight: 300, fontSize: "13px" }}>
+                        {row[2]}
+                      </td>
+                      <td
+                        style={{
+                          padding: "12px 16px",
+                          fontFamily: "var(--serif)",
+                          fontSize: "16px",
+                          color: row[0] === "Retatrutide" ? "var(--accent)" : "var(--ink)",
+                          fontWeight: row[0] === "Retatrutide" ? 500 : 400,
+                        }}
+                      >
+                        {row[3]}
+                      </td>
+                      <td style={{ padding: "12px 16px", color: "var(--ink3)", fontWeight: 300, fontSize: "13px" }}>
+                        {row[4]}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <p>
+              For the full side-by-side including dose ranges, half-life, brand names, and cost in
+              major markets, see the{" "}
+              <Link href="/glp-1/comparison-chart-2026">GLP-1 comparison chart for 2026</Link>.
+            </p>
+          </section>
+
+          {/* ── SECTION 4: Weight Loss Data ── */}
+          <section id="weight-loss-data" style={{ marginBottom: "80px" }}>
+            <h2>Weight Loss: What the Data Shows</h2>
+
+            <p>
+              Three points are worth holding in mind when reading trial data across the class.
+              First, the comparator matters. STEP 1 compared semaglutide 2.4mg against placebo in
+              patients with obesity but without diabetes. SURMOUNT-1 used the same design for
+              tirzepatide. The headline efficacy figures are not directly comparable across
+              compounds without correcting for trial design, baseline BMI, and duration. SURMOUNT-5
+              was the first true head-to-head of semaglutide vs tirzepatide and confirmed the
+              efficacy ranking suggested by indirect comparison.
+            </p>
+
+            <h3>Trial Headlines</h3>
+
+            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 20px 0" }}>
+              {[
+                ["Liraglutide 3.0mg", "8.0% weight loss at 56 weeks. SCALE Obesity and Prediabetes (Pi-Sunyer et al., NEJM 2015, PMID 26132939). The first GLP-1 agonist to secure an obesity indication."],
+                ["Semaglutide 2.4mg", "14.9% weight loss at 68 weeks. STEP 1 (Wilding et al., NEJM 2021, PMID 33567185). The trial that broke the 10% ceiling and reset class expectations."],
+                ["Tirzepatide 15mg", "22.5% weight loss at 72 weeks. SURMOUNT-1 (Jastreboff et al., NEJM 2022, PMID 35658024). First dual GLP-1/GIP agonist; first time the 20% line was crossed."],
+                ["SURMOUNT-5 head-to-head", "Tirzepatide 20.2% vs semaglutide 13.7% at 72 weeks (Aronne et al., NEJM 2025). The first direct comparison of the two leading approved agents."],
+                ["Retatrutide 12mg", "28.7% weight loss at 68 weeks. TRIUMPH-4 (Phase III, December 2025 data). The strongest weight loss ever recorded in a randomised obesity trial."],
+              ].map(([compound, text]) => (
+                <li
+                  key={compound}
+                  style={{
+                    padding: "14px 0",
+                    borderBottom: "1px solid var(--rule)",
+                    display: "flex",
+                    gap: "20px",
+                    alignItems: "baseline",
+                    marginBottom: 0,
+                  }}
                 >
-                  The Retatrutide File
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/fat-loss"
-                  style={{ color: "#1a1a1a", textDecoration: "none" }}
-                >
-                  The Fat Loss File
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/retatrutide/vs-semaglutide"
-                  style={{ color: "#1a1a1a", textDecoration: "none" }}
-                >
-                  Retatrutide vs Semaglutide
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/retatrutide/vs-tirzepatide"
-                  style={{ color: "#1a1a1a", textDecoration: "none" }}
-                >
-                  Retatrutide vs Tirzepatide
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/retatrutide/clinical-trial-results"
-                  style={{ color: "#1a1a1a", textDecoration: "none" }}
-                >
-                  Phase III Trial Results
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/retatrutide/weight-loss-projections"
-                  style={{ color: "#1a1a1a", textDecoration: "none" }}
-                >
-                  Weight Loss Projections
-                </Link>
-              </li>
+                  <span
+                    style={{
+                      fontFamily: "var(--mono)",
+                      fontSize: "12px",
+                      color: "var(--ink)",
+                      minWidth: "180px",
+                      flexShrink: 0,
+                    }}
+                  >
+                    {compound}
+                  </span>
+                  <span style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
+                    {text}
+                  </span>
+                </li>
+              ))}
             </ul>
+
+            <h3>The Real-World Discount</h3>
+
+            <p>
+              Trial populations were typically high-BMI (mean BMI 35 to 40) and excluded patients
+              with significant comorbidities or polypharmacy. Real-world populations include more
+              variability in baseline BMI, more diabetes, more medication interactions, and more
+              variable adherence. The 60 to 75% real-world adherence rule — that real-world weight
+              loss runs 60 to 75% of trial figures — is a useful heuristic across the class.
+            </p>
+
+            <h3>Cardiovascular Benefit, Beyond Weight</h3>
+
+            <p>
+              The GLP-1 class has produced cardiovascular outcomes data well beyond what FDA approval
+              originally required. The 2008 FDA cardiovascular safety guidance for diabetes drugs
+              was meant to ensure new drugs did not increase risk. The class has now produced
+              multiple trials demonstrating cardiovascular benefit: LEADER (liraglutide, 2016),
+              SUSTAIN-6 (semaglutide diabetes, 2016), REWIND (dulaglutide, 2019), and SELECT
+              (semaglutide in obesity without diabetes, 2023). The transition from a safety
+              requirement to an efficacy indication has reshaped how the class is prescribed in
+              patients with established cardiovascular disease.
+            </p>
+          </section>
+
+          {/* ── SECTION 5: GLP-1 vs GIP ── */}
+          <section id="glp-1-vs-gip" style={{ marginBottom: "80px" }}>
+            <h2>GLP-1 vs GIP</h2>
+
+            <p>
+              GIP (glucose-dependent insulinotropic polypeptide) is the second incretin hormone.
+              It is released by K-cells in the duodenum and jejunum, while GLP-1 is released by
+              L-cells primarily in the ileum and colon. GIP and GLP-1 together account for the
+              incretin effect: the observation that oral glucose produces a larger insulin response
+              than intravenous glucose at matched plasma glucose levels.
+            </p>
+
+            <p>
+              GIP receptor (GIPR) biology was historically considered less interesting than GLP-1R.
+              GIP appeared to have minimal effect on appetite and was thought to be ineffective in
+              type 2 diabetes (GIP signalling is reduced in diabetic patients). Tirzepatide changed
+              that view. Combined GLP-1R and GIPR agonism produced weight loss exceeding what
+              semaglutide could achieve at any tolerable dose.
+            </p>
+
+            <div
+              style={{
+                padding: "20px 24px",
+                background: "var(--paper2)",
+                border: "1px solid var(--rule)",
+                borderLeft: "3px solid #e8a020",
+                marginBottom: "20px",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "var(--mono)",
+                  fontSize: "10px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  color: "#e8a020",
+                  marginBottom: "8px",
+                }}
+              >
+                Open Question
+              </p>
+              <p style={{ margin: 0 }}>
+                Whether GIP receptor agonism or GIP receptor antagonism is the better approach
+                remains unresolved. Tirzepatide is a GIPR agonist. Amgen's MariTide is a GIPR
+                antagonist combined with GLP-1 agonism, and has reported competitive weight loss
+                in early trials. The biology is not fully understood, and Phase III data through
+                2026 and 2027 will help settle it.
+              </p>
+            </div>
+
+            <p>
+              The deep dive on receptor biology, GIP knockout mouse data, and the unresolved
+              question of agonism versus antagonism is in the{" "}
+              <Link href="/glp-1/vs-gip">GLP-1 vs GIP cluster article</Link>.
+            </p>
+          </section>
+
+          {/* ── SECTION 6: Triple vs Dual ── */}
+          <section id="triple-vs-dual" style={{ marginBottom: "80px" }}>
+            <h2>Triple vs Dual Agonism</h2>
+
+            <p>
+              Adding glucagon receptor agonism to GLP-1 plus GIP introduces a third mechanism:
+              increased energy expenditure. GLP-1 and GIP together reduce energy intake. Glucagon
+              raises energy expenditure through hepatic glucose output, lipolysis, and brown
+              adipose tissue activation. The combined effect is a larger negative energy balance
+              than dual agonism can achieve.
+            </p>
+
+            <p>
+              The risk with glucagon agonism is hyperglycaemia — glucagon raises blood glucose by
+              definition. Retatrutide solves this by combining glucagon agonism with strong GLP-1
+              plus GIP agonism, so the insulinotropic effect of the incretin component dominates.
+              TRIUMPH-2 data in type 2 diabetes confirmed glycaemic improvement despite the
+              glucagon component, with HbA1c reductions of around 2.0 percentage points.
+            </p>
+
+            <p>
+              The 28.7% figure from TRIUMPH-4 is roughly 6 percentage points above tirzepatide's
+              22.5% in SURMOUNT-1 (with differences in trial population and duration noted). That
+              gap is consistent with the pattern of approximately 5 to 7 percentage points added
+              per receptor target. Whether this pattern continues with quad agonists (GLP-1, GIP,
+              glucagon, plus a fourth target like amylin or PYY) is the open question for the next
+              decade.
+            </p>
+
+            <p>
+              Full analysis, the trial data on glucagon mono-agonism, and the question of whether
+              a quad agonist makes biological sense are covered in the{" "}
+              <Link href="/glp-1/triple-vs-dual-agonism">triple vs dual agonism cluster</Link>.
+              For the head-to-head specifically on retatrutide vs the dual agonist class, see{" "}
+              <Link href="/retatrutide/vs-tirzepatide">retatrutide vs tirzepatide</Link>.
+            </p>
+          </section>
+
+          {/* ── SECTION 7: Safety ── */}
+          <section id="safety" style={{ marginBottom: "80px" }}>
+            <h2>Safety Profile</h2>
+
+            <p>
+              After almost two decades of post-marketing data, the safety picture is reasonably
+              settled. The common side effects are gastrointestinal: nausea, vomiting, diarrhoea,
+              constipation. These affect 20 to 50% of patients during dose titration and typically
+              resolve within 4 to 8 weeks of dose stabilisation. Slow dose escalation reduces
+              incidence and severity.
+            </p>
+
+            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 20px 0" }}>
+              {[
+                [
+                  "Pancreatitis",
+                  "Known but rare signal. Background incidence in T2D is elevated regardless of treatment. Meta-analyses have not shown significant increases over comparators, though FDA labels carry warnings.",
+                ],
+                [
+                  "Gallbladder events",
+                  "Cholecystitis and cholelithiasis are more common with GLP-1 agonists than placebo, particularly with rapid weight loss. Mechanism is partly the weight loss itself, partly direct GI effects.",
+                ],
+                [
+                  "Thyroid C-cell signal",
+                  "Tumours observed in rodent toxicology studies of liraglutide and exenatide, leading to boxed warnings about medullary thyroid carcinoma and contraindications in MTC or MEN 2. Human data over 15 years has not confirmed an increased risk.",
+                ],
+                [
+                  "Cardiovascular outcome",
+                  "Net positive across the class. SELECT (semaglutide), LEADER (liraglutide), REWIND (dulaglutide), and SUSTAIN-6 all reported MACE reductions in high-risk populations. The class moved from a CV safety requirement to a CV benefit indication within a decade.",
+                ],
+                [
+                  "Suicidal ideation",
+                  "EMA and FDA review in 2023 to 2024 did not find a causal link. Monitoring continues. Trial populations report rates similar to placebo.",
+                ],
+                [
+                  "Dysesthesia (retatrutide-specific)",
+                  "Reported in 20.9% of retatrutide 12mg patients in TRIUMPH-4. The first time this signal has emerged in the class. Not seen with semaglutide or tirzepatide. Linked to glucagon receptor activity.",
+                ],
+                [
+                  "Lean mass loss",
+                  "Approximately 40% of total weight loss came from lean mass in DXA substudies of STEP 1, with 60% from fat. Proportions are similar to bariatric surgery and dietary weight loss at matched rate. Trial fracture rates have not been elevated, but most trial populations were younger than the typical osteoporosis-risk demographic.",
+                ],
+              ].map(([label, text]) => (
+                <li
+                  key={label}
+                  style={{ padding: "12px 0", borderBottom: "1px solid var(--rule)", marginBottom: 0 }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "var(--mono)",
+                      fontSize: "10px",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.08em",
+                      color: "var(--ink3)",
+                      display: "block",
+                      marginBottom: "4px",
+                    }}
+                  >
+                    {label}
+                  </span>
+                  <span style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
+                    {text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <p>
+              The full safety synthesis, including comparisons of dose-titration tolerability across
+              compounds, is in the{" "}
+              <Link href="/glp-1/safety-profile">GLP-1 safety profile cluster article</Link>.
+            </p>
+          </section>
+
+          {/* ── SECTION 8: Natural Boosters ── */}
+          <section id="natural-boosters" style={{ marginBottom: "80px" }}>
+            <h2>Natural GLP-1 Boosters</h2>
+
+            <p>
+              The endogenous GLP-1 axis is sensitive to diet composition. Reliable stimulators of
+              postprandial GLP-1 secretion include protein-rich meals (especially whey and casein,
+              with a 30 to 50% rise in postprandial GLP-1), soluble fibre (oats, legumes, psyllium,
+              with secondary effects via short-chain fatty acid production by gut microbiota),
+              monounsaturated fats (olive oil, avocado), and fermented foods (some evidence for
+              kimchi, kefir, and yoghurt). Bitter compounds (gentian, hops, coffee) acutely raise
+              GLP-1 via taste receptor signalling in the gut.
+            </p>
+
+            <p>
+              The honest framing: these effects are real but modest. A protein-rich meal might
+              double postprandial GLP-1 from baseline. A weekly semaglutide injection produces
+              sustained plasma agonist levels roughly 1,000 times higher than physiological
+              postprandial peaks. The clinical effect sizes match: diet alone produces 3 to 5%
+              weight loss in well-conducted trials over a year. GLP-1 agonists produce 8 to 28%
+              over similar timeframes.
+            </p>
+
+            <p>
+              For most readers the practical takeaway is that diet composition matters for
+              endogenous GLP-1 in the same way that walking matters for cardiovascular health: it
+              is genuinely beneficial and worth doing, but it does not substitute for the
+              pharmacological intervention when the latter is indicated. The full evidence rundown
+              is in the{" "}
+              <Link href="/glp-1/natural-boosters">natural GLP-1 boosters cluster</Link>.
+            </p>
+          </section>
+
+          {/* ── SECTION 9: Practical Considerations ── */}
+          <section id="practical" style={{ marginBottom: "80px" }}>
+            <h2>Practical Considerations</h2>
+
+            <h3>Dosing and Titration</h3>
+
+            <p>
+              Every approved GLP-1 agonist requires gradual dose titration, with increases every 4
+              weeks until the target dose is reached. Semaglutide 2.4mg starts at 0.25mg and steps
+              through 0.5, 1.0, 1.7 to 2.4. Tirzepatide steps through 2.5, 5, 7.5, 10, 12.5, 15.
+              Skipping titration steps increases GI side effect severity and discontinuation risk.
+            </p>
+
+            <h3>Cost and Access</h3>
+
+            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 20px 0" }}>
+              {[
+                ["Wegovy 2.4mg", "~$1,350 / month US list price"],
+                ["Zepbound 5–15mg", "~$1,060 / month US list price"],
+                ["Ozempic 2.0mg", "~$1,000 / month US list price"],
+                ["Mounjaro 15mg", "~$1,070 / month US list price"],
+                ["UK / EU prices", "Substantially lower under negotiated reimbursement"],
+              ].map(([drug, price]) => (
+                <li
+                  key={drug}
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "baseline",
+                    padding: "10px 0",
+                    borderBottom: "1px solid var(--rule)",
+                    marginBottom: 0,
+                  }}
+                >
+                  <span style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300 }}>
+                    {drug}
+                  </span>
+                  <span style={{ fontFamily: "var(--mono)", fontSize: "12px", color: "var(--accent)", fontWeight: 500 }}>
+                    {price}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <p>
+              Insurance coverage for obesity (as opposed to diabetes) varies widely and is the
+              dominant access barrier in the US. The same structural barriers will apply to
+              retatrutide post-approval.
+            </p>
+
+            <h3>Compounded Versions</h3>
+
+            <p>
+              Compounded semaglutide and tirzepatide flooded the US market during the 2022 to 2024
+              shortages. The FDA designated both as resolved shortages in late 2024 and early 2025,
+              removing the legal basis for routine 503A compounding. Specific patient-need
+              exceptions remain. The compounding pharmacy market has shifted toward research
+              peptides and peptide blends, which sit in a different regulatory category. Quality
+              and purity vary widely; independent third-party testing is the only way to verify
+              what is in any compounded product.
+            </p>
+
+            <h3>Discontinuation and Weight Regain</h3>
+
+            <p>
+              Stopping a GLP-1 agonist results in significant weight regain. The STEP 1 extension
+              trial showed that participants who stopped semaglutide regained roughly two-thirds of
+              their lost weight within one year. This is consistent with framing obesity as a
+              chronic disease requiring ongoing treatment, similar to hypertension or
+              hyperlipidaemia. Maintenance dosing rather than discontinuation is the current
+              clinical norm for patients who tolerate the drug.
+            </p>
+          </section>
+
+          {/* ── SECTION 10: The 2026 Pipeline ── */}
+          <section id="pipeline" style={{ marginBottom: "80px" }}>
+            <h2>The 2026 Pipeline</h2>
+
+            <p>
+              The next generation of incretin therapies is in late-stage trials. Multiple readouts
+              will arrive through 2026 and 2027, and the efficacy ceiling continues to climb.
+            </p>
+
+            {pipelineItems.map((item, i) => (
+              <div
+                key={item.date + i}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "auto 1fr",
+                  borderBottom: i < pipelineItems.length - 1 ? "1px solid var(--rule)" : "none",
+                }}
+              >
+                <div
+                  style={{
+                    padding: "13px 24px 13px 0",
+                    fontFamily: "var(--mono)",
+                    fontSize: "10px",
+                    color: item.highlight ? "var(--accent)" : "var(--ink3)",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    whiteSpace: "nowrap",
+                    fontWeight: item.highlight ? 600 : 400,
+                  }}
+                >
+                  {item.date}
+                </div>
+                <div
+                  style={{
+                    padding: "13px 0 13px 20px",
+                    borderLeft: "2px solid var(--rule)",
+                    fontSize: "1.0625rem",
+                    color: "var(--ink2)",
+                    fontWeight: 300,
+                    lineHeight: 1.75,
+                  }}
+                >
+                  {item.text}
+                </div>
+              </div>
+            ))}
+
+            <p style={{ marginTop: "24px" }}>
+              For the head-to-head on the two leading approved compounds, see{" "}
+              <Link href="/glp-1/semaglutide-vs-tirzepatide">semaglutide vs tirzepatide</Link>. For
+              the deep dive on the leading Phase III candidate, see the{" "}
+              <Link href="/retatrutide">Retatrutide File</Link>.
+            </p>
+          </section>
+
+          {/* ── SECTION 11: Comparison ── */}
+          <section style={{ marginBottom: "80px" }}>
+            <h2>Mono vs Dual vs Triple Agonism</h2>
+
+            <p>
+              The summary view of the class progression. Each receptor target adds clinically
+              meaningful weight loss but introduces additional complexity in the safety profile.
+            </p>
+
+            <div
+              style={{
+                overflowX: "auto",
+                margin: "24px 0",
+                border: "1px solid var(--rule)",
+              }}
+            >
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px" }}>
+                <thead>
+                  <tr style={{ background: "var(--paper2)" }}>
+                    {["", "Mono (semaglutide)", "Dual (tirzepatide)", "Triple (retatrutide)"].map((h, i) => (
+                      <th
+                        key={h + i}
+                        style={{
+                          textAlign: "left",
+                          padding: "12px 16px",
+                          fontFamily: "var(--mono)",
+                          fontSize: "10px",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.05em",
+                          borderBottom: "1px solid var(--rule)",
+                          color: i === 3 ? "var(--accent)" : "var(--ink3)",
+                        }}
+                      >
+                        {h}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonRows.map((row, ri) => (
+                    <tr
+                      key={ri}
+                      style={{
+                        borderBottom: ri < comparisonRows.length - 1 ? "1px solid var(--rule)" : "none",
+                        background: ri % 2 === 0 ? "var(--paper)" : "transparent",
+                      }}
+                    >
+                      {row.map((cell, ci) => (
+                        <td
+                          key={ci}
+                          style={{
+                            padding: "12px 16px",
+                            fontFamily: ci === 0 ? "var(--mono)" : "inherit",
+                            fontSize: ci === 0 ? "10px" : "14px",
+                            textTransform: ci === 0 ? "uppercase" : "none",
+                            letterSpacing: ci === 0 ? "0.08em" : "normal",
+                            color:
+                              ci === 0
+                                ? "var(--ink3)"
+                                : ci === 3 && (ri === 1 || ri === 2)
+                                ? "var(--accent)"
+                                : "var(--ink2)",
+                            fontWeight: ci === 3 && (ri === 1 || ri === 2) ? 500 : 300,
+                            background: ci === 3 ? "rgba(26,107,60,0.025)" : "transparent",
+                          }}
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* ── SECTION 12: Unknowns ── */}
+          <section id="unknowns" style={{ marginBottom: "80px" }}>
+            <h2>What We Don&apos;t Yet Know</h2>
+
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              {[
+                {
+                  title: "Whether GIPR agonism or antagonism is the better approach",
+                  body: "Tirzepatide (GIPR agonist) and MariTide (GIPR antagonist) both work. The biology is unsettled. MariTide Phase III readouts in 2027 should help.",
+                },
+                {
+                  title: "Long-term safety at high doses",
+                  body: "Most safety data is at lower doses or shorter durations. Decades-long maintenance dosing on retatrutide-class drugs is uncharted.",
+                },
+                {
+                  title: "Cardiovascular outcomes for tirzepatide and retatrutide",
+                  body: "SURMOUNT-MMO (tirzepatide) and TRIUMPH-3 (retatrutide) are ongoing. Whether the class CV benefit extends to dual and triple agonists is not yet confirmed in pivotal trials.",
+                },
+                {
+                  title: "Whether the efficacy ceiling continues to climb",
+                  body: "Quad agonists (GLP-1 + GIP + glucagon + amylin or PYY) are in preclinical work. Whether adding a fourth target adds weight loss or hits diminishing returns is open.",
+                },
+                {
+                  title: "Bone density and fracture risk in older patients",
+                  body: "Trial populations skew younger than the typical osteoporosis-risk demographic. Long-term effects of substantial lean mass loss in older adults remain under-characterised.",
+                },
+                {
+                  title: "Effects in adolescents and pregnancy",
+                  body: "Adolescent indications are emerging (semaglutide approved for ≥12y in some markets). Pregnancy data is limited and the class is generally avoided.",
+                },
+                {
+                  title: "Optimal maintenance dose strategy",
+                  body: "Whether patients can step down from peak dose to a maintenance dose without losing efficacy. Trial protocols use peak dose throughout; real-world dose-reduction data is limited.",
+                },
+                {
+                  title: "Effects on neurodegenerative and addiction outcomes",
+                  body: "GLP-1 agonism is being trialled in Alzheimer's disease (evoke trial), alcohol use disorder, and other addiction phenotypes. Early signals are positive but preliminary.",
+                },
+              ].map((item) => (
+                <li
+                  key={item.title}
+                  style={{ padding: "16px 0", borderBottom: "1px solid var(--rule)", marginBottom: 0 }}
+                >
+                  <p style={{ fontFamily: "var(--serif)", fontSize: "17px", color: "var(--ink)", fontWeight: 400, marginBottom: "6px" }}>
+                    {item.title}
+                  </p>
+                  <p style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75, margin: 0 }}>
+                    {item.body}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* ── SECTION 13: FAQ ── */}
+          <section id="faq" style={{ marginBottom: "80px" }}>
+            <h2>Frequently Asked Questions</h2>
+
+            <div style={{ margin: "16px 0" }}>
+              {faqs.map((item, i) => (
+                <details
+                  key={i}
+                  style={{ borderBottom: "1px solid var(--rule)", padding: "16px 0" }}
+                >
+                  <summary
+                    style={{
+                      cursor: "pointer",
+                      fontFamily: "var(--serif)",
+                      fontSize: "20px",
+                      lineHeight: 1.3,
+                      listStyle: "none",
+                    }}
+                  >
+                    {item.q}
+                  </summary>
+                  <p style={{ marginTop: "12px", marginBottom: 0 }}>{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          {/* MEDICAL DISCLAIMER */}
+          <div
+            style={{
+              padding: "24px 28px",
+              background: "var(--paper2)",
+              border: "1px solid var(--rule)",
+              borderLeft: "3px solid var(--accent)",
+            }}
+          >
+            <div className="mono-label" style={{ marginBottom: "8px", color: "var(--accent)" }}>
+              Medical Disclaimer
+            </div>
+            <p style={{ margin: 0, fontSize: "14px", lineHeight: 1.6 }}>
+              The content on this page is for informational and educational purposes only. It does
+              not constitute medical advice, diagnosis, or treatment. GLP-1 receptor agonists are
+              prescription medications with significant side effects and contraindications.
+              Retatrutide is investigational and not approved by the FDA or any other regulatory
+              body. Compounded versions of GLP-1 agonists carry quality and purity risks that vary
+              by source. Always consult a qualified healthcare provider before making any decisions
+              about medications, weight management, or health conditions. Peptide File does not
+              sell, distribute, or endorse the purchase of any investigational compounds.
+            </p>
+            <p style={{ fontSize: "11px", color: "var(--ink3)", fontWeight: 300, fontStyle: "italic", margin: "10px 0 0 0" }}>
+              Last updated: April 2026. This file will be updated as new Phase III readouts publish.
+            </p>
+          </div>
+
+        </article>
+
+        {/* STICKY SIDEBAR */}
+        <aside
+          style={{
+            position: "sticky",
+            top: "96px",
+            alignSelf: "start",
+            fontSize: "13px",
+          }}
+        >
+          <div style={{ marginBottom: "40px" }}>
+            <div className="mono-label" style={{ marginBottom: "12px", fontSize: "10px" }}>
+              On this page
+            </div>
+            <nav style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              {tocSections.map((s) => (
+                <a
+                  key={s.id}
+                  href={`#${s.id}`}
+                  style={{
+                    color: "var(--ink2)",
+                    textDecoration: "none",
+                    borderLeft: "1px solid var(--rule)",
+                    paddingLeft: "12px",
+                    fontSize: "13px",
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {s.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          <div>
+            <div className="mono-label" style={{ marginBottom: "12px", fontSize: "10px" }}>
+              Related files
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              {clusterLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  style={{
+                    color: "var(--ink)",
+                    textDecoration: "none",
+                    fontFamily: "var(--serif)",
+                    fontSize: "15px",
+                    lineHeight: 1.3,
+                    borderBottom: "1px solid var(--rule)",
+                    paddingBottom: "8px",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </aside>
       </div>
+
+      {/* NEWSLETTER SECTION */}
+      <section
+        style={{
+          borderTop: "1px solid var(--rule)",
+          background: "var(--paper2)",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "64px 32px",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "48px",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontSize: "40px",
+                lineHeight: 1.1,
+                margin: 0,
+                border: "none",
+              }}
+            >
+              The weekly peptide brief.
+            </h2>
+            <p style={{ marginTop: "16px", fontSize: "15px", color: "var(--ink2)" }}>
+              New trial readouts, mechanism breakdowns, and FDA updates. One email per week. No
+              filler.
+            </p>
+          </div>
+          <form
+            style={{
+              display: "flex",
+              gap: "8px",
+              border: "1px solid var(--rule)",
+              background: "var(--paper)",
+              padding: "6px",
+            }}
+          >
+            <input
+              type="email"
+              placeholder="your@email.com"
+              style={{
+                flex: 1,
+                border: "none",
+                background: "transparent",
+                padding: "12px 14px",
+                fontFamily: "var(--sans)",
+                fontSize: "14px",
+                outline: "none",
+              }}
+            />
+            <button
+              type="submit"
+              style={{
+                background: "var(--accent)",
+                color: "var(--paper)",
+                border: "none",
+                padding: "12px 20px",
+                fontFamily: "var(--mono)",
+                fontSize: "11px",
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+                cursor: "pointer",
+              }}
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
     </>
   );
 }
