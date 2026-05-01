@@ -206,9 +206,9 @@ export default function GLP1Page() {
             flexWrap: "wrap",
           }}
         >
-          <span>Incretin Class — GLP-1 Receptor Agonists</span>
+          <span>Incretin Hormones</span>
           <span style={{ opacity: 0.4 }}>/</span>
-          <span>Pillar File</span>
+          <span>GLP-1 Receptor Agonists</span>
           <span style={{ opacity: 0.4 }}>/</span>
           <span
             style={{
