@@ -226,12 +226,7 @@ export default function GLP1Page() {
         <h1 className="article-title">The GLP-1 File</h1>
 
         <p className="page-intro">
-          GLP-1 receptor agonists changed obesity medicine. The class moved from a niche type 2
-          diabetes treatment to the most-prescribed weight loss therapy in history, with a clinical
-          efficacy ceiling that keeps climbing — liraglutide produced 8% weight loss, semaglutide
-          doubled that to 14.9%, tirzepatide hit 22.5%, and retatrutide has now reported 28.7%. This
-          file covers the mechanism, the full agonist class, weight loss outcomes, the safety
-          picture, and the 2026 pipeline.
+          GLP-1 receptor agonists changed obesity medicine. The class moved from a niche type 2 diabetes treatment to the most-prescribed weight loss therapy in history, and the efficacy ceiling keeps climbing. Liraglutide produced 8% weight loss. Semaglutide doubled that to 14.9%. Tirzepatide hit 22.5%. Retatrutide has now reported 28.7%. This file covers the mechanism, the full agonist class, weight loss outcomes, the safety picture, and the 2026 pipeline.
         </p>
 
         <div
