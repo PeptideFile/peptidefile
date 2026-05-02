@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: "Why does the body break down natural GLP-1 so quickly?",
-    a: "The enzyme DPP-4 (dipeptidyl peptidase-4) cleaves the second amino acid off GLP-1, deactivating it within about two minutes of release. This is a feature of normal physiology — the body needs the GLP-1 signal to switch off quickly after a meal so that insulin release does not become excessive. GLP-1 agonist drugs are engineered with substitutions at this cleavage site to resist DPP-4, which is the structural change that gives them their multi-day half-lives.",
+    a: "The enzyme DPP-4 (dipeptidyl peptidase-4) cleaves the second amino acid off GLP-1, deactivating it within about two minutes of release. This is a feature of normal physiology. The body needs the GLP-1 signal to switch off quickly after a meal so that insulin release does not become excessive. GLP-1 agonist drugs are engineered with substitutions at this cleavage site to resist DPP-4, which is the structural change that gives them their multi-day half-lives.",
   },
   {
     q: "Why do GLP-1 agonists cause nausea?",
@@ -46,15 +46,48 @@ const faqs = [
   },
   {
     q: "Do GLP-1 agonists work for people without diabetes?",
-    a: "Yes. The original approvals were for type 2 diabetes, but the same compounds at higher doses produce substantial weight loss in people without diabetes. Wegovy (semaglutide 2.4mg) and Zepbound (tirzepatide 5–15mg) are FDA-approved specifically for weight management in people with obesity or overweight with at least one weight-related comorbidity. The mechanism is the same; the difference is dose and labelled indication.",
+    a: "Yes. The original approvals were for type 2 diabetes, but the same compounds at higher doses produce substantial weight loss in people without diabetes. Wegovy (semaglutide 2.4mg) and Zepbound (tirzepatide 5 to 15mg) are FDA-approved specifically for weight management in people with obesity or overweight with at least one weight-related comorbidity. The mechanism is the same. The difference is dose and labelled indication.",
   },
   {
     q: "How long does it take for GLP-1 agonists to start working?",
-    a: "Appetite suppression typically appears within days of the first dose. Measurable weight loss usually shows up within two to four weeks, with maximum effect reached after roughly six to twelve months on the full dose. Trial endpoints are commonly measured at 56 to 72 weeks. Clinical guidelines suggest evaluating response after three to six months — if weight loss is below approximately 5%, switching compounds or adding adjunctive therapy is reasonable.",
+    a: "Appetite suppression typically appears within days of the first dose. Measurable weight loss usually shows up within two to four weeks, with maximum effect reached after roughly six to twelve months on the full dose. Trial endpoints are commonly measured at 56 to 72 weeks. Clinical guidelines suggest evaluating response after three to six months. If weight loss is below approximately 5%, switching compounds or adding adjunctive therapy is reasonable.",
   },
   {
     q: "What happens when someone stops a GLP-1 agonist?",
-    a: "Most of the weight tends to come back. The STEP-4 trial showed that participants who stopped semaglutide regained roughly two-thirds of lost weight within a year. The mechanism is reversible: once the drug clears, appetite returns to baseline and gastric emptying normalises. This is why current clinical thinking treats obesity pharmacotherapy as long-term maintenance rather than a finite course, similar to how blood pressure medication is used.",
+    a: "Most of the weight tends to come back. The STEP-4 trial (Rubino et al., JAMA, 2021, PMID: 33755728) showed that participants who stopped semaglutide regained roughly two-thirds of lost weight within a year. The mechanism is reversible. Once the drug clears, appetite returns to baseline and gastric emptying normalises. This is why current clinical thinking treats obesity pharmacotherapy as long-term maintenance rather than a finite course, similar to how blood pressure medication is used.",
+  },
+];
+
+const timeline = [
+  {
+    date: "April 2005",
+    name: "Exenatide (Byetta)",
+    detail:
+      "First GLP-1 agonist approved by the FDA. Synthetic exendin-4 from Gila monster saliva. Twice-daily injection, 2.4-hour half-life. Approved for type 2 diabetes only.",
+  },
+  {
+    date: "January 2010",
+    name: "Liraglutide (Victoza)",
+    detail:
+      "First acylated GLP-1 agonist. C16 fatty acid chain binds serum albumin, extending half-life to ~13 hours. Daily dosing. Saxenda (3.0mg) approved for weight loss in 2014.",
+  },
+  {
+    date: "December 2017",
+    name: "Semaglutide (Ozempic)",
+    detail:
+      "Once-weekly dosing achieved. C18 fatty acid chain extends half-life to ~7 days. Wegovy (2.4mg) approved for weight loss in June 2021. STEP 1 reported 14.9% weight loss.",
+  },
+  {
+    date: "May 2022",
+    name: "Tirzepatide (Mounjaro)",
+    detail:
+      "First dual GLP-1 + GIP agonist. C20 diacid, ~5-day half-life. Zepbound (weight-loss indication) approved November 2023. SURMOUNT-1 reported 22.5% weight loss.",
+  },
+  {
+    date: "Expected 2027",
+    name: "Retatrutide (LY3437943)",
+    detail:
+      "First triple GLP-1 + GIP + glucagon agonist. Phase III TRIUMPH program. TRIUMPH-4 reported 28.7% weight loss at 12mg/68 weeks. NDA submission expected late 2026.",
   },
 ];
 
@@ -132,10 +165,10 @@ export default function HowGLP1AgonistsWorkPage() {
         </h1>
 
         <p className="page-intro">
-          GLP-1 agonists are drugs that activate the GLP-1 receptor — the same
-          receptor used by the body's natural GLP-1 hormone, released from the
-          gut after meals. Activating this receptor lowers blood glucose,
-          slows gastric emptying, and reduces appetite. The drug versions are
+          GLP-1 agonists are drugs that activate the GLP-1 receptor. This is
+          the same receptor used by the body's natural GLP-1 hormone, released
+          from the gut after meals. Activating it lowers blood glucose, slows
+          gastric emptying, and reduces appetite. The drug versions are
           engineered to resist enzymatic breakdown, extending the natural
           two-minute half-life out to days or weeks.
         </p>
@@ -163,7 +196,7 @@ export default function HowGLP1AgonistsWorkPage() {
             </Link>
           </span>
           <span>Last updated: May 2026</span>
-          <span>~2,400 words</span>
+          <span>~2,500 words</span>
         </div>
       </header>
 
@@ -241,33 +274,38 @@ export default function HowGLP1AgonistsWorkPage() {
           {/* INTRO */}
           <section style={{ marginBottom: 80 }}>
             <p>
-              GLP-1 agonists are the most successful class of weight-loss drugs
-              ever developed. Semaglutide produces 14.9% weight loss in Phase
-              III trials. Tirzepatide reaches 22.5%. Retatrutide, the newest
-              triple agonist, has reported 28.7%. None of these numbers were
-              achievable with any prior pharmacotherapy, and the curve keeps
-              climbing as newer compounds add receptor mechanisms.
+              GLP-1 agonists are the most successful class of weight-loss
+              drugs ever developed. Semaglutide produces 14.9% weight loss in
+              Phase III trials. Tirzepatide reaches 22.5%. Retatrutide, the
+              newest triple agonist, has reported 28.7%. None of these
+              numbers were achievable with any prior pharmacotherapy. The
+              curve keeps climbing as newer compounds add receptor mechanisms.
             </p>
             <p>
               The shared starting point for the entire class is the GLP-1
-              receptor. Every drug in this category — from liraglutide
-              (approved 2010) to retatrutide (Phase III, expected approval
-              2027) — activates this single receptor as its primary mechanism.
-              What differs between compounds is whether they activate
-              additional receptors, how long they stay active in the body, and
-              whether they are taken daily, weekly, or by mouth versus
-              injection.
+              receptor. Every drug in this category activates this single
+              receptor as its primary mechanism. That includes liraglutide
+              (approved 2010), semaglutide (Wegovy approved 2021),
+              tirzepatide (Zepbound approved 2023), and retatrutide (Phase
+              III, expected approval 2027). What differs between compounds is
+              whether they activate additional receptors, how long they stay
+              active in the body, and whether they are taken daily, weekly,
+              or by mouth versus injection.
             </p>
             <p>
-              This article covers the mechanism in detail: what the GLP-1
-              receptor is, where it lives in the body, what happens when it is
-              activated, why the natural hormone lasts only minutes while the
-              drug versions last days, and how the mechanism translates into
-              the appetite suppression and weight loss that drives the
-              category. For head-to-head comparisons of specific compounds
-              see{" "}
+              This article covers the mechanism in detail. It explains what
+              the GLP-1 receptor is, where it lives in the body, what happens
+              when it is activated, why the natural hormone lasts only
+              minutes while the drug versions last days, and how the
+              mechanism translates into the appetite suppression and weight
+              loss that drives the category. For head-to-head comparisons of
+              specific compounds see{" "}
               <Link href="/glp-1/semaglutide-vs-tirzepatide">
                 Semaglutide vs Tirzepatide
+              </Link>
+              . For the full class comparison see the{" "}
+              <Link href="/glp-1/comparison-chart-2026">
+                GLP-1 Comparison Chart 2026
               </Link>
               .
             </p>
@@ -282,20 +320,20 @@ export default function HowGLP1AgonistsWorkPage() {
               colon) in response to food intake. Within minutes of eating,
               GLP-1 levels in the bloodstream rise sharply, peak, and then
               fall back to baseline. The half-life of native GLP-1 is roughly
-              two minutes — a deliberately short window calibrated to the
-              duration of a meal.
+              two minutes. This is a deliberately short window calibrated to
+              the duration of a meal.
             </p>
             <p>
               The GLP-1 receptor (GLP1R) is a class B G-protein-coupled
-              receptor expressed in several tissues. Each location contributes
-              a different physiological effect when activated:
+              receptor expressed in several tissues. Each location
+              contributes a different physiological effect when activated:
             </p>
 
             <ul style={{ listStyle: "none", padding: 0, margin: "32px 0" }}>
               {[
                 {
                   label: "Pancreatic beta cells",
-                  text: "Insulin release in response to elevated blood glucose. This is the original mechanism that made GLP-1 attractive as a diabetes target. Importantly, the effect is glucose-dependent — insulin is released only when blood sugar is high, which is why GLP-1 agonists carry low hypoglycaemia risk compared with insulin or sulfonylureas.",
+                  text: "Insulin release in response to elevated blood glucose. This is the original mechanism that made GLP-1 attractive as a diabetes target. Importantly, the effect is glucose-dependent. Insulin is released only when blood sugar is high, which is why GLP-1 agonists carry low hypoglycaemia risk compared with insulin or sulfonylureas.",
                 },
                 {
                   label: "Pancreatic alpha cells",
@@ -311,7 +349,7 @@ export default function HowGLP1AgonistsWorkPage() {
                 },
                 {
                   label: "Cardiovascular tissue",
-                  text: "Reduced inflammation, modest blood pressure reduction, and cardioprotective effects independent of weight loss. The SELECT trial showed a 20% reduction in major adverse cardiovascular events with semaglutide in patients with established cardiovascular disease, in 17,604 participants over a median of 39.8 months.",
+                  text: "Reduced inflammation, modest blood pressure reduction, and cardioprotective effects independent of weight loss. The SELECT trial (Lincoff et al., NEJM, 2023, PMID: 37952131, NCT03574597) showed a 20% reduction in major adverse cardiovascular events with semaglutide in patients with established cardiovascular disease, in 17,604 participants over a median of 39.8 months.",
                 },
               ].map((item) => (
                 <li
@@ -350,15 +388,15 @@ export default function HowGLP1AgonistsWorkPage() {
 
             <p>
               The receptor distribution explains why GLP-1 agonists produce
-              such a wide constellation of effects. They are not single-target
-              drugs in the conventional sense. A single molecule binding a
-              single receptor type produces effects in five organ systems,
-              because that receptor is expressed in five organ systems. This
-              is the strength and the weakness of the class — the breadth of
-              effects produces remarkable efficacy, but it also produces a
-              spectrum of side effects (gastrointestinal, central nervous
-              system, biliary) that is broader than what most drug classes
-              show.
+              such a wide constellation of effects. They are not
+              single-target drugs in the conventional sense. A single
+              molecule binding a single receptor type produces effects in
+              five organ systems, because that receptor is expressed in five
+              organ systems. This is the strength and the weakness of the
+              class. The breadth of effects produces remarkable efficacy. It
+              also produces a spectrum of side effects (gastrointestinal,
+              central nervous system, biliary) that is broader than what most
+              drug classes show.
             </p>
           </section>
 
@@ -370,28 +408,28 @@ export default function HowGLP1AgonistsWorkPage() {
               half-life. Native GLP-1 is broken down by the enzyme
               dipeptidyl peptidase-4 (DPP-4) in roughly two minutes. DPP-4
               cleaves the second amino acid (alanine at position 2) off the
-              N-terminus, producing an inactive metabolite. Any GLP-1 receptor
-              agonist intended for therapeutic use must resist this cleavage
-              or it will not last long enough to be useful.
+              N-terminus, producing an inactive metabolite. Any GLP-1
+              receptor agonist intended for therapeutic use must resist this
+              cleavage or it will not last long enough to be useful.
             </p>
             <p>
               The first GLP-1 agonist to reach the market, exenatide (Byetta),
               took a different route. Exenatide is a synthetic version of
               exendin-4, a peptide isolated from the saliva of the Gila
               monster lizard. Exendin-4 happens to share enough structural
-              similarity with human GLP-1 to bind the GLP-1 receptor, but its
-              sequence at position 2 (glycine instead of alanine) makes it
-              resistant to DPP-4 cleavage. Exenatide was approved by the FDA
-              in April 2005 for type 2 diabetes, with a half-life of roughly
-              2.4 hours requiring twice-daily injection.
+              similarity with human GLP-1 to bind the GLP-1 receptor, but
+              its sequence at position 2 (glycine instead of alanine) makes
+              it resistant to DPP-4 cleavage. Exenatide was approved by the
+              FDA in April 2005 for type 2 diabetes, with a half-life of
+              roughly 2.4 hours requiring twice-daily injection.
             </p>
             <p>
               The next generation engineered DPP-4 resistance directly into
               the GLP-1 backbone. Liraglutide (Victoza, approved 2010)
               substitutes alanine at position 2 with α-aminoisobutyric acid
               and adds a C16 fatty acid chain that binds serum albumin. The
-              fatty acid extension (called acylation) is a key innovation:
-              once the molecule is bound to albumin, it is too large to be
+              fatty acid extension (called acylation) is a key innovation.
+              Once the molecule is bound to albumin, it is too large to be
               filtered by the kidneys, which extends the half-life to about
               13 hours. Daily dosing becomes feasible.
             </p>
@@ -405,20 +443,78 @@ export default function HowGLP1AgonistsWorkPage() {
               acylation pattern is now the established design template for
               long-acting peptide drugs across the class.
             </p>
+
+            <h3 style={{ marginTop: 48, marginBottom: 24 }}>
+              Drug development timeline
+            </h3>
+
+            <div style={{ margin: "32px 0" }}>
+              {timeline.map((item, i) => (
+                <div
+                  key={item.name}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "auto 1fr",
+                    gap: 32,
+                    paddingTop: i === 0 ? 0 : 24,
+                    paddingBottom: 24,
+                    borderBottom:
+                      i === timeline.length - 1
+                        ? "none"
+                        : "1px solid var(--rule)",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: "var(--mono)",
+                      fontSize: 12,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.08em",
+                      color: "var(--ink3)",
+                      minWidth: 140,
+                      paddingTop: 4,
+                    }}
+                  >
+                    {item.date}
+                  </div>
+                  <div>
+                    <div
+                      style={{
+                        fontFamily: "var(--serif)",
+                        fontSize: 20,
+                        color: "var(--ink)",
+                        marginBottom: 8,
+                      }}
+                    >
+                      {item.name}
+                    </div>
+                    <div
+                      style={{
+                        fontFamily: "var(--serif)",
+                        fontSize: 16,
+                        lineHeight: 1.6,
+                        color: "var(--ink2)",
+                      }}
+                    >
+                      {item.detail}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
             <p>
               The clinical trials that established the class are familiar
-              names. Liraglutide's SCALE trial (2015) reported 8.0% weight
-              loss at 3.0mg over 56 weeks. Semaglutide's STEP 1 trial (2021)
-              reported 14.9% at 2.4mg over 68 weeks — almost double the
-              liraglutide figure at the same receptor. Tirzepatide's
-              SURMOUNT-1 (2022) reported 22.5% at 15mg, adding the GIP
-              receptor mechanism. Each step in the sequence reflected a
-              meaningful improvement in either dose, duration, or receptor
-              coverage. For the full comparison data see the{" "}
-              <Link href="/glp-1/comparison-chart-2026">
-                GLP-1 Comparison Chart 2026
-              </Link>
-              .
+              names. Liraglutide's SCALE trial (Pi-Sunyer et al., NEJM, 2015,
+              PMID: 26132939, NCT01272219) reported 8.0% weight loss at 3.0mg
+              over 56 weeks. Semaglutide's STEP 1 trial (Wilding et al.,
+              NEJM, 2021, PMID: 33567185, NCT03548935) reported 14.9% at
+              2.4mg over 68 weeks. That was almost double the liraglutide
+              figure at the same receptor. Tirzepatide's SURMOUNT-1
+              (Jastreboff et al., NEJM, 2022, PMID: 35658024, NCT04184622)
+              reported 22.5% at 15mg over 72 weeks, adding the GIP receptor
+              mechanism. Each step in the sequence reflected a meaningful
+              improvement in either dose, duration, or receptor coverage.
             </p>
 
             <div
@@ -449,11 +545,12 @@ export default function HowGLP1AgonistsWorkPage() {
                   color: "var(--ink2)",
                 }}
               >
-                Real-world weight loss runs roughly 60–75% of trial figures
-                across the GLP-1 class. Trial participants receive structured
-                lifestyle support, monthly check-ins, and free medication.
-                Real-world patients deal with insurance gaps, missed doses,
-                and inconsistent titration. Set expectations accordingly.
+                Real-world weight loss runs roughly 60 to 75% of trial
+                figures across the GLP-1 class. Trial participants receive
+                structured lifestyle support, monthly check-ins, and free
+                medication. Real-world patients deal with insurance gaps,
+                missed doses, and inconsistent titration. Set expectations
+                accordingly.
               </div>
             </div>
           </section>
@@ -466,15 +563,15 @@ export default function HowGLP1AgonistsWorkPage() {
               the binding kinetics are straightforward. The drug binds the
               GLP-1 receptor with high affinity, the receptor activates its
               downstream G-protein cascade, and the physiological effects
-              cascade outward over hours and days. Some effects appear within
-              an hour of the first dose. Others build over weeks.
+              cascade outward over hours and days. Some effects appear
+              within an hour of the first dose. Others build over weeks.
             </p>
 
             <h3>Day-one effects</h3>
             <p>
-              Insulin secretion in response to a meal is detectable within an
-              hour of the first dose. Most people notice reduced appetite at
-              the next meal — food tastes less appealing, portions feel
+              Insulin secretion in response to a meal is detectable within
+              an hour of the first dose. Most people notice reduced appetite
+              at the next meal. Food tastes less appealing, portions feel
               larger, and the urge to snack between meals fades. Gastric
               emptying slows immediately, which is why nausea is most common
               with the first dose and the first day or two after each dose
@@ -485,33 +582,36 @@ export default function HowGLP1AgonistsWorkPage() {
             <h3>Week-one effects</h3>
             <p>
               By the end of the first week, the appetite suppression is
-              steady. Most people report eating roughly 20–30% less by
+              steady. Most people report eating roughly 20 to 30% less by
               volume, with smaller portions feeling satisfying. Cravings for
-              high-reward foods (sweet, fatty, salty) typically fade. This is
-              also when nausea peaks for most people, particularly if the
+              high-reward foods (sweet, fatty, salty) typically fade. This
+              is also when nausea peaks for most people, particularly if the
               starting dose was on the higher end. Slow titration protocols
               exist specifically to soften this peak.
             </p>
 
             <h3>Month-one effects</h3>
             <p>
-              Measurable weight loss appears, typically 2–4% of body weight.
-              The pace is faster in the first month than in subsequent months
-              because the initial drop includes water weight from reduced
-              caloric intake and glycogen depletion. By the end of month one,
-              most people have completed at least one dose escalation step
-              and are tolerating the drug well.
+              Measurable weight loss appears, typically 2 to 4% of body
+              weight. The pace is faster in the first month than in
+              subsequent months because the initial drop includes water
+              weight from reduced caloric intake and glycogen depletion. By
+              the end of month one, most people have completed at least one
+              dose escalation step and are tolerating the drug well.
             </p>
 
             <h3>Six to twelve months</h3>
             <p>
               Maximum effect is reached. For semaglutide and tirzepatide,
-              this means roughly 80–90% of total trial weight loss is
+              this means roughly 80 to 90% of total trial weight loss is
               achieved by month nine, with smaller gains continuing through
               month 18. After this point, weight stabilises at the new lower
               level so long as the drug continues. Discontinuation reverses
-              the effect: STEP-4 showed approximately two-thirds of lost
-              weight returning within a year of stopping semaglutide.
+              the effect. STEP-4 (Rubino et al., JAMA, 2021, PMID: 33755728,
+              NCT03548987) showed approximately two-thirds of lost weight
+              returning within a year of stopping semaglutide. For
+              practitioner-grade discussion of long-term safety see{" "}
+              <Link href="/glp-1/safety-profile">GLP-1 Safety Profile</Link>.
             </p>
           </section>
 
@@ -519,10 +619,10 @@ export default function HowGLP1AgonistsWorkPage() {
           <section id="comparison" style={{ marginBottom: 80 }}>
             <h2>Why each compound differs at the receptor level</h2>
             <p>
-              All approved GLP-1 agonists bind the same GLP-1 receptor. Their
-              clinical differences come from three variables: how strongly
-              they bind, what other receptors they touch, and how long they
-              stay in circulation. The table below summarises the
+              All approved GLP-1 agonists bind the same GLP-1 receptor.
+              Their clinical differences come from three variables: how
+              strongly they bind, what other receptors they touch, and how
+              long they stay in circulation. The table below summarises the
               receptor-level differences across the class.
             </p>
 
@@ -607,26 +707,37 @@ export default function HowGLP1AgonistsWorkPage() {
             </div>
 
             <p>
-              The pattern is consistent across the class. Each receptor added
-              to the molecule adds roughly 5–7 percentage points of
+              The pattern is consistent across the class. Each receptor
+              added to the molecule adds roughly 5 to 7 percentage points of
               additional weight loss, suggesting that the mechanisms combine
-              additively rather than compete. This is the basis for the
-              continued development of multi-receptor compounds. Whether
-              quadruple agonism (GLP-1 + GIP + glucagon + amylin) or
-              alternative receptor combinations continue the trend is an
-              active research question, with several candidates in early
-              clinical testing.
+              additively rather than compete. The retatrutide Phase II data
+              (Jastreboff et al., NEJM, 2023, PMID: 37366315, NCT04881760)
+              was the first human demonstration that triple agonism produced
+              weight loss beyond what dual agonism could. TRIUMPH-4
+              (NCT05882045) confirmed this in Phase III at larger scale.
+              This is the basis for the continued development of
+              multi-receptor compounds. Whether quadruple agonism (GLP-1 +
+              GIP + glucagon + amylin) or alternative receptor combinations
+              continue the trend is an active research question, with
+              several candidates in early clinical testing. For a deeper
+              look at the mechanism question see{" "}
+              <Link href="/glp-1/triple-vs-dual-agonism">
+                Triple vs Dual Agonism
+              </Link>
+              .
             </p>
             <p>
               Receptor selectivity also shapes the side-effect profile.
               GLP-1-only compounds (liraglutide, semaglutide) have a
-              characteristic gastrointestinal profile dominated by nausea and
-              delayed gastric emptying. Adding GIP appears to slightly improve
-              GI tolerability. Adding glucagon introduces a new signal — the
-              dysesthesia (abnormal skin sensation) reported in retatrutide's
-              TRIUMPH-4 — that is not seen in the GLP-1-only or GLP-1+GIP
-              compounds. For the full safety picture see{" "}
-              <Link href="/glp-1/safety-profile">GLP-1 Safety Profile</Link>.
+              characteristic gastrointestinal profile dominated by nausea
+              and delayed gastric emptying. Adding GIP appears to slightly
+              improve GI tolerability. Adding glucagon introduces a new
+              signal: dysesthesia (abnormal skin sensation) reported in
+              retatrutide's TRIUMPH-4 at 20.9% in 12mg participants versus
+              0.7% on placebo. This signal is not seen in the GLP-1-only or
+              GLP-1+GIP compounds. For mechanism-level discussion of why
+              GIP and glucagon contribute differently see{" "}
+              <Link href="/glp-1/vs-gip">GLP-1 vs GIP</Link>.
             </p>
           </section>
 
