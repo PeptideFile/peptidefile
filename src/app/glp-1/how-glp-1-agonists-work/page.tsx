@@ -140,24 +140,30 @@ export default function HowGLP1AgonistsWorkPage() {
         }}
       >
         <div
+          className="mono-label"
           style={{
             display: "flex",
-            gap: 16,
+            gap: "16px",
             alignItems: "center",
-            fontFamily: "var(--mono)",
-            fontSize: 12,
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            color: "var(--ink3)",
-            marginBottom: 24,
+            marginBottom: "24px",
             flexWrap: "wrap",
           }}
         >
           <span>GLP-1 File</span>
-          <span>·</span>
+          <span style={{ opacity: 0.4 }}>/</span>
           <span>Mechanism</span>
-          <span>·</span>
-          <span style={{ color: "var(--accent)" }}>Evidence: Strong</span>
+          <span style={{ opacity: 0.4 }}>/</span>
+          <span
+            style={{
+              background: "var(--accent)",
+              color: "var(--paper)",
+              padding: "3px 8px",
+              borderRadius: "2px",
+              fontSize: "10px",
+            }}
+          >
+            Evidence: Strong
+          </span>
         </div>
 
         <h1 className="article-title">
@@ -201,9 +207,9 @@ export default function HowGLP1AgonistsWorkPage() {
       </header>
 
       {/* KEY DATA GRID */}
-      <section
+      <div
         style={{
-          maxWidth: 1200,
+          maxWidth: "1200px",
           margin: "0 auto",
           padding: "32px",
         }}
@@ -212,52 +218,43 @@ export default function HowGLP1AgonistsWorkPage() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: 1,
-            backgroundColor: "var(--rule)",
+            gap: "1px",
+            background: "var(--rule)",
             border: "1px solid var(--rule)",
           }}
         >
           {[
-            { label: "Native GLP-1 half-life", value: "~2 min" },
-            { label: "Semaglutide half-life", value: "~7 days" },
-            { label: "STEP 1 weight loss", value: "14.9%" },
-            { label: "SURMOUNT-1 weight loss", value: "22.5%" },
-            { label: "TRIUMPH-4 weight loss", value: "28.7%" },
-            { label: "First class approval", value: "2005 (exenatide)" },
-          ].map((cell) => (
+            { stat: "~2 min", label: "Native GLP-1 half-life" },
+            { stat: "~7 days", label: "Semaglutide half-life" },
+            { stat: "14.9%", label: "STEP 1 weight loss (68 wk)" },
+            { stat: "22.5%", label: "SURMOUNT-1 weight loss (72 wk)" },
+            { stat: "28.7%", label: "TRIUMPH-4 weight loss (68 wk)" },
+          ].map((item) => (
             <div
-              key={cell.label}
+              key={item.stat}
               style={{
-                backgroundColor: "var(--paper)",
-                padding: "24px",
+                background: "var(--paper)",
+                padding: "20px 24px",
               }}
             >
               <div
                 style={{
-                  fontFamily: "var(--mono)",
-                  fontSize: 11,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.08em",
-                  color: "var(--ink3)",
-                  marginBottom: 8,
-                }}
-              >
-                {cell.label}
-              </div>
-              <div
-                style={{
                   fontFamily: "var(--serif)",
-                  fontSize: 28,
-                  color: "var(--ink)",
-                  lineHeight: 1.1,
+                  fontSize: "32px",
+                  color: "var(--accent)",
+                  lineHeight: 1,
+                  marginBottom: "6px",
                 }}
               >
-                {cell.value}
+                {item.stat}
+              </div>
+              <div className="mono-label" style={{ fontSize: "10px", lineHeight: 1.4 }}>
+                {item.label}
               </div>
             </div>
           ))}
         </div>
-      </section>
+      </div>
 
       {/* MAIN CONTENT LAYOUT */}
       <div
