@@ -140,7 +140,7 @@ const faqs = [
   },
   {
     q: "Why is retatrutide considered the next step beyond tirzepatide?",
-    a: "Retatrutide adds glucagon receptor agonism to the GLP-1 plus GIP combination already used by tirzepatide. The glucagon component drives energy expenditure through hepatic and brown adipose tissue activity. TRIUMPH-4 reported 28.7% weight loss at 12mg over 68 weeks — the strongest figure ever recorded for an obesity drug.",
+    a: "Retatrutide adds glucagon receptor agonism to the GLP-1 plus GIP combination already used by tirzepatide. The glucagon component drives energy expenditure through hepatic and brown adipose tissue activity. TRIUMPH-4 reported 28.7% weight loss at 12mg over 68 weeks. That is the strongest figure ever recorded for an obesity drug.",
   },
   {
     q: "Will compounded semaglutide remain available?",
@@ -316,7 +316,7 @@ export default function GLP1Page() {
             <p>
               Glucagon-like peptide-1 (GLP-1) is a 30-amino-acid incretin hormone released by
               intestinal L-cells in response to nutrient intake. It is cleaved from the proglucagon
-              gene product — the same precursor that produces glucagon and GLP-2. Postprandial
+              gene product, the same precursor that produces glucagon and GLP-2. Postprandial
               GLP-1 secretion peaks within 15 to 30 minutes of eating and falls back to baseline
               within an hour.
             </p>
@@ -386,7 +386,7 @@ export default function GLP1Page() {
                 },
                 {
                   label: "Brain (hypothalamic appetite suppression)",
-                  text: "The hypothalamic arcuate nucleus and area postrema express GLP-1 receptors. Agonism activates POMC neurons (anorexigenic) and inhibits NPY/AgRP neurons (orexigenic), producing sustained reductions in appetite and food preference. fMRI studies show reduced reward-system activation in response to high-calorie food cues — the neural substrate of the 'food noise' reduction patients describe.",
+                  text: "The hypothalamic arcuate nucleus and area postrema express GLP-1 receptors. Agonism activates POMC neurons (anorexigenic) and inhibits NPY/AgRP neurons (orexigenic), producing sustained reductions in appetite and food preference. fMRI studies show reduced reward-system activation in response to high-calorie food cues. This is the neural substrate of the 'food noise' reduction patients describe.",
                 },
                 {
                   label: "Cardiovascular (direct vascular effects)",
@@ -568,8 +568,7 @@ export default function GLP1Page() {
               Trial populations were typically high-BMI (mean BMI 35 to 40) and excluded patients
               with significant comorbidities or polypharmacy. Real-world populations include more
               variability in baseline BMI, more diabetes, more medication interactions, and more
-              variable adherence. The 60 to 75% real-world adherence rule — that real-world weight
-              loss runs 60 to 75% of trial figures — is a useful heuristic across the class.
+              variable adherence. The 60 to 75% real-world adherence rule is a useful heuristic across the class. Real-world weight loss runs 60 to 75% of trial figures.
             </p>
 
             <h3>Cardiovascular Benefit, Beyond Weight</h3>
@@ -656,8 +655,7 @@ export default function GLP1Page() {
             </p>
 
             <p>
-              The risk with glucagon agonism is hyperglycaemia — glucagon raises blood glucose by
-              definition. Retatrutide solves this by combining glucagon agonism with strong GLP-1
+              The risk with glucagon agonism is hyperglycaemia. Glucagon raises blood glucose by definition. Retatrutide solves this by combining glucagon agonism with strong GLP-1
               plus GIP agonism, so the insulinotropic effect of the incretin component dominates.
               TRIUMPH-2 data in type 2 diabetes confirmed glycaemic improvement despite the
               glucagon component, with HbA1c reductions of around 2.0 percentage points.
