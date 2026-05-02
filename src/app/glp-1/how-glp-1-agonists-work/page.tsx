@@ -131,9 +131,9 @@ export default function HowGLP1AgonistsWorkPage() {
       />
 
       {/* PAGE HEADER */}
-      <header
+      <div
         style={{
-          maxWidth: 1200,
+          maxWidth: "1200px",
           margin: "0 auto",
           padding: "64px 32px 40px",
           borderBottom: "1px solid var(--rule)",
@@ -180,31 +180,26 @@ export default function HowGLP1AgonistsWorkPage() {
         </p>
 
         <div
+          className="mono-label"
           style={{
             display: "flex",
-            gap: 24,
-            marginTop: 32,
-            fontFamily: "var(--mono)",
-            fontSize: 12,
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            color: "var(--ink3)",
+            gap: "24px",
+            marginTop: "32px",
             flexWrap: "wrap",
+            fontSize: "11px",
+            opacity: 0.7,
           }}
         >
           <span>
             By{" "}
-            <Link
-              href="/author"
-              style={{ color: "var(--ink)", textDecoration: "underline" }}
-            >
+            <Link href="/author" style={{ color: "inherit", textDecoration: "underline" }}>
               Mark Boreland
             </Link>
           </span>
           <span>Last updated: May 2026</span>
           <span>~2,500 words</span>
         </div>
-      </header>
+      </div>
 
       {/* KEY DATA GRID */}
       <div
@@ -259,12 +254,12 @@ export default function HowGLP1AgonistsWorkPage() {
       {/* MAIN CONTENT LAYOUT */}
       <div
         style={{
-          maxWidth: 1200,
+          maxWidth: "1200px",
           margin: "0 auto",
           padding: "40px 32px 80px",
           display: "grid",
           gridTemplateColumns: "minmax(0, 1fr) 280px",
-          gap: 64,
+          gap: "64px",
         }}
       >
         <article className="prose">
@@ -632,8 +627,8 @@ export default function HowGLP1AgonistsWorkPage() {
                   fontSize: 15,
                 }}
               >
-                <thead style={{ backgroundColor: "var(--paper2)" }}>
-                  <tr>
+                <thead>
+                  <tr style={{ background: "var(--paper2)" }}>
                     {[
                       "Compound",
                       "Receptors",
@@ -647,11 +642,11 @@ export default function HowGLP1AgonistsWorkPage() {
                           textAlign: "left",
                           padding: "12px 16px",
                           fontFamily: "var(--mono)",
-                          fontSize: 11,
+                          fontSize: "10px",
                           textTransform: "uppercase",
-                          letterSpacing: "0.08em",
-                          color: "var(--ink3)",
+                          letterSpacing: "0.05em",
                           borderBottom: "1px solid var(--rule)",
+                          color: "var(--ink3)",
                         }}
                       >
                         {h}
@@ -663,40 +658,39 @@ export default function HowGLP1AgonistsWorkPage() {
                   {[
                     ["Liraglutide", "GLP-1", "~13 hr", "8.0%", "Daily SC"],
                     ["Semaglutide", "GLP-1", "~7 days", "14.9%", "Weekly SC"],
-                    [
-                      "Tirzepatide",
-                      "GLP-1 + GIP",
-                      "~5 days",
-                      "22.5%",
-                      "Weekly SC",
-                    ],
-                    [
-                      "Retatrutide",
-                      "GLP-1 + GIP + Glucagon",
-                      "~6 days",
-                      "28.7%",
-                      "Weekly SC",
-                    ],
-                  ].map((row, i) => (
+                    ["Tirzepatide", "GLP-1 + GIP", "~5 days", "22.5%", "Weekly SC"],
+                    ["Retatrutide", "GLP-1 + GIP + Glucagon", "~6 days", "28.7%", "Weekly SC"],
+                  ].map((row, ri) => (
                     <tr
-                      key={row[0]}
+                      key={ri}
                       style={{
-                        backgroundColor:
-                          i % 2 === 0 ? "var(--paper)" : "var(--paper2)",
+                        borderBottom: ri < 3 ? "1px solid var(--rule)" : "none",
+                        background: ri % 2 === 0 ? "var(--paper)" : "transparent",
                       }}
                     >
-                      {row.map((cell, j) => (
-                        <td
-                          key={j}
-                          style={{
-                            padding: "14px 16px",
-                            borderBottom: "1px solid var(--rule)",
-                            color: "var(--ink2)",
-                          }}
-                        >
-                          {cell}
-                        </td>
-                      ))}
+                      <td style={{ padding: "12px 16px", fontFamily: "var(--mono)", fontSize: "13px", color: "var(--ink)" }}>
+                        {row[0]}
+                      </td>
+                      <td style={{ padding: "12px 16px", color: "var(--ink2)", fontWeight: 300, fontSize: "13px" }}>
+                        {row[1]}
+                      </td>
+                      <td style={{ padding: "12px 16px", color: "var(--ink2)", fontWeight: 300, fontSize: "13px" }}>
+                        {row[2]}
+                      </td>
+                      <td
+                        style={{
+                          padding: "12px 16px",
+                          fontFamily: "var(--serif)",
+                          fontSize: "16px",
+                          color: row[0] === "Retatrutide" ? "var(--accent)" : "var(--ink)",
+                          fontWeight: row[0] === "Retatrutide" ? 500 : 400,
+                        }}
+                      >
+                        {row[3]}
+                      </td>
+                      <td style={{ padding: "12px 16px", color: "var(--ink3)", fontWeight: 300, fontSize: "13px" }}>
+                        {row[4]}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -823,8 +817,9 @@ export default function HowGLP1AgonistsWorkPage() {
         <aside
           style={{
             position: "sticky",
-            top: 96,
+            top: "96px",
             alignSelf: "start",
+            fontSize: "13px",
           }}
         >
           <div style={{ marginBottom: 48 }}>
@@ -940,73 +935,70 @@ export default function HowGLP1AgonistsWorkPage() {
       {/* NEWSLETTER SECTION */}
       <section
         style={{
-          backgroundColor: "var(--paper2)",
           borderTop: "1px solid var(--rule)",
-          borderBottom: "1px solid var(--rule)",
-          padding: "64px 32px",
+          background: "var(--paper2)",
         }}
       >
         <div
           style={{
-            maxWidth: 720,
+            maxWidth: "1200px",
             margin: "0 auto",
-            textAlign: "center",
+            padding: "64px 32px",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "48px",
+            alignItems: "center",
           }}
         >
-          <h2
-            style={{
-              fontFamily: "var(--serif)",
-              fontSize: 32,
-              color: "var(--ink)",
-              marginBottom: 16,
-            }}
-          >
-            The weekly peptide brief.
-          </h2>
-          <p
-            style={{
-              fontFamily: "var(--serif)",
-              fontSize: 18,
-              color: "var(--ink2)",
-              marginBottom: 32,
-            }}
-          >
-            New trial readouts, mechanism breakdowns, and FDA updates. One
-            email per week. No filler.
-          </p>
+          <div>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontSize: "40px",
+                lineHeight: 1.1,
+                margin: 0,
+                border: "none",
+              }}
+            >
+              The weekly peptide brief.
+            </h2>
+            <p style={{ marginTop: "16px", fontSize: "15px", color: "var(--ink2)" }}>
+              New trial readouts, mechanism breakdowns, and FDA updates. One email per week. No filler.
+            </p>
+          </div>
           <form
             style={{
               display: "flex",
-              gap: 12,
-              maxWidth: 480,
-              margin: "0 auto",
+              gap: "8px",
+              border: "1px solid var(--rule)",
+              background: "var(--paper)",
+              padding: "6px",
             }}
           >
             <input
               type="email"
-              placeholder="Email address"
-              required
+              placeholder="your@email.com"
               style={{
                 flex: 1,
-                padding: "12px 16px",
-                fontFamily: "var(--serif)",
-                fontSize: 16,
-                border: "1px solid var(--rule)",
-                backgroundColor: "var(--paper)",
-                color: "var(--ink)",
+                border: "none",
+                background: "transparent",
+                padding: "12px 14px",
+                fontFamily: "var(--sans)",
+                fontSize: "14px",
+                outline: "none",
               }}
             />
             <button
               type="submit"
               style={{
-                padding: "12px 24px",
-                fontFamily: "var(--mono)",
-                fontSize: 12,
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-                backgroundColor: "var(--ink)",
+                background: "var(--accent)",
                 color: "var(--paper)",
                 border: "none",
+                padding: "12px 20px",
+                fontFamily: "var(--mono)",
+                fontSize: "11px",
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
                 cursor: "pointer",
               }}
             >
