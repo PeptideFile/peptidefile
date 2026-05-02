@@ -346,34 +346,24 @@ export default function HowGLP1AgonistsWorkPage() {
               ].map((item) => (
                 <li
                   key={item.label}
-                  style={{
-                    marginBottom: 24,
-                    paddingBottom: 24,
-                    borderBottom: "1px solid var(--rule)",
-                  }}
+                  style={{ padding: "14px 0", borderBottom: "1px solid var(--rule)", marginBottom: 0 }}
                 >
-                  <div
+                  <span
                     style={{
                       fontFamily: "var(--mono)",
-                      fontSize: 11,
+                      fontSize: "10px",
                       textTransform: "uppercase",
                       letterSpacing: "0.08em",
                       color: "var(--ink3)",
-                      marginBottom: 8,
+                      display: "block",
+                      marginBottom: "6px",
                     }}
                   >
                     {item.label}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 17,
-                      lineHeight: 1.6,
-                      color: "var(--ink2)",
-                    }}
-                  >
+                  </span>
+                  <span style={{ fontSize: "1.0625rem", color: "var(--ink2)", fontWeight: 300, lineHeight: 1.75 }}>
                     {item.text}
-                  </div>
+                  </span>
                 </li>
               ))}
             </ul>
@@ -618,7 +608,7 @@ export default function HowGLP1AgonistsWorkPage() {
               receptor-level differences across the class.
             </p>
 
-            <div style={{ overflowX: "auto", margin: "32px 0" }}>
+            <div style={{ overflowX: "auto", margin: "24px 0", border: "1px solid var(--rule)" }}>
               <table
                 style={{
                   width: "100%",
@@ -733,84 +723,50 @@ export default function HowGLP1AgonistsWorkPage() {
           </section>
 
           {/* FAQ */}
-          <section id="faq" style={{ marginBottom: 80 }}>
-            <h2>Frequently asked questions</h2>
-            <div style={{ marginTop: 24 }}>
-              {faqs.map((item) => (
+          <section id="faq" style={{ marginBottom: "80px" }}>
+            <h2>Frequently Asked Questions</h2>
+            <div style={{ margin: "16px 0" }}>
+              {faqs.map((item, i) => (
                 <details
-                  key={item.q}
-                  style={{
-                    borderBottom: "1px solid var(--rule)",
-                    padding: "20px 0",
-                  }}
+                  key={i}
+                  style={{ borderBottom: "1px solid var(--rule)", padding: "16px 0" }}
                 >
                   <summary
                     style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 18,
-                      color: "var(--ink)",
                       cursor: "pointer",
+                      fontFamily: "var(--serif)",
+                      fontSize: "20px",
+                      lineHeight: 1.3,
                       listStyle: "none",
                     }}
                   >
                     {item.q}
                   </summary>
-                  <div
-                    style={{
-                      marginTop: 12,
-                      fontFamily: "var(--serif)",
-                      fontSize: 17,
-                      lineHeight: 1.7,
-                      color: "var(--ink2)",
-                    }}
-                  >
-                    {item.a}
-                  </div>
+                  <p style={{ marginTop: "12px", marginBottom: 0 }}>{item.a}</p>
                 </details>
               ))}
             </div>
           </section>
 
           {/* MEDICAL DISCLAIMER */}
-          <section style={{ marginBottom: 80 }}>
-            <div
-              style={{
-                padding: "20px 24px",
-                backgroundColor: "var(--paper2)",
-                borderLeft: "3px solid var(--accent)",
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: "var(--mono)",
-                  fontSize: 11,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.08em",
-                  color: "var(--ink3)",
-                  marginBottom: 8,
-                }}
-              >
-                Medical disclaimer
-              </div>
-              <div
-                style={{
-                  fontFamily: "var(--serif)",
-                  fontSize: 16,
-                  lineHeight: 1.6,
-                  color: "var(--ink2)",
-                }}
-              >
-                This article is for informational and educational purposes
-                only and does not constitute medical advice. GLP-1 agonists
-                are prescription medications with a range of indications,
-                contraindications, and side effects. Retatrutide is
-                investigational and has not been approved by the FDA, EMA,
-                MHRA, or any other regulatory agency as of May 2026. Consult
-                a licensed healthcare provider before starting, stopping, or
-                changing any medication.
-              </div>
+          <div
+            style={{
+              padding: "24px 28px",
+              background: "var(--paper2)",
+              border: "1px solid var(--rule)",
+              borderLeft: "3px solid var(--accent)",
+            }}
+          >
+            <div className="mono-label" style={{ marginBottom: "8px", color: "var(--accent)" }}>
+              Medical Disclaimer
             </div>
-          </section>
+            <p style={{ margin: 0, fontSize: "14px", lineHeight: 1.6 }}>
+              This article is for informational and educational purposes only and does not constitute medical advice. GLP-1 agonists are prescription medications with a range of indications, contraindications, and side effects. Retatrutide is investigational and has not been approved by the FDA, EMA, MHRA, or any other regulatory agency as of May 2026. Consult a licensed healthcare provider before starting, stopping, or changing any medication.
+            </p>
+            <p style={{ fontSize: "11px", color: "var(--ink3)", fontWeight: 300, fontStyle: "italic", margin: "10px 0 0 0" }}>
+              Last updated: May 2026.
+            </p>
+          </div>
         </article>
 
         {/* STICKY SIDEBAR */}
@@ -822,112 +778,183 @@ export default function HowGLP1AgonistsWorkPage() {
             fontSize: "13px",
           }}
         >
-          <div style={{ marginBottom: 48 }}>
-            <div
-              style={{
-                fontFamily: "var(--mono)",
-                fontSize: 11,
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-                color: "var(--ink3)",
-                marginBottom: 16,
-                paddingBottom: 12,
-                borderBottom: "1px solid var(--rule)",
-              }}
-            >
+          <div style={{ marginBottom: "40px" }}>
+            <div className="mono-label" style={{ marginBottom: "12px", fontSize: "10px" }}>
               On this page
             </div>
-            <nav
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 12,
-                fontFamily: "var(--serif)",
-                fontSize: 15,
-              }}
-            >
-              <a href="#what-it-is" style={{ color: "var(--ink2)" }}>
+            <nav style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <a
+                href="#what-it-is"
+                style={{
+                  color: "var(--ink2)",
+                  textDecoration: "none",
+                  borderLeft: "1px solid var(--rule)",
+                  paddingLeft: "12px",
+                  fontSize: "13px",
+                  lineHeight: 1.4,
+                }}
+              >
                 What GLP-1 is
               </a>
               <a
                 href="#what-the-research-says"
-                style={{ color: "var(--ink2)" }}
+                style={{
+                  color: "var(--ink2)",
+                  textDecoration: "none",
+                  borderLeft: "1px solid var(--rule)",
+                  paddingLeft: "12px",
+                  fontSize: "13px",
+                  lineHeight: 1.4,
+                }}
               >
                 Two minutes to once-weekly
               </a>
-              <a href="#practical-breakdown" style={{ color: "var(--ink2)" }}>
+              <a
+                href="#practical-breakdown"
+                style={{
+                  color: "var(--ink2)",
+                  textDecoration: "none",
+                  borderLeft: "1px solid var(--rule)",
+                  paddingLeft: "12px",
+                  fontSize: "13px",
+                  lineHeight: 1.4,
+                }}
+              >
                 What activation looks like
               </a>
-              <a href="#comparison" style={{ color: "var(--ink2)" }}>
+              <a
+                href="#comparison"
+                style={{
+                  color: "var(--ink2)",
+                  textDecoration: "none",
+                  borderLeft: "1px solid var(--rule)",
+                  paddingLeft: "12px",
+                  fontSize: "13px",
+                  lineHeight: 1.4,
+                }}
+              >
                 Compound differences
               </a>
-              <a href="#faq" style={{ color: "var(--ink2)" }}>
+              <a
+                href="#faq"
+                style={{
+                  color: "var(--ink2)",
+                  textDecoration: "none",
+                  borderLeft: "1px solid var(--rule)",
+                  paddingLeft: "12px",
+                  fontSize: "13px",
+                  lineHeight: 1.4,
+                }}
+              >
                 Frequently asked questions
               </a>
             </nav>
           </div>
 
           <div>
-            <div
-              style={{
-                fontFamily: "var(--mono)",
-                fontSize: 11,
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-                color: "var(--ink3)",
-                marginBottom: 16,
-                paddingBottom: 12,
-                borderBottom: "1px solid var(--rule)",
-              }}
-            >
+            <div className="mono-label" style={{ marginBottom: "12px", fontSize: "10px" }}>
               Related files
             </div>
-            <nav
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 12,
-                fontFamily: "var(--serif)",
-                fontSize: 15,
-              }}
-            >
-              <Link href="/glp-1" style={{ color: "var(--ink2)" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <Link
+                href="/glp-1"
+                style={{
+                  color: "var(--ink)",
+                  textDecoration: "none",
+                  fontFamily: "var(--serif)",
+                  fontSize: "15px",
+                  lineHeight: 1.3,
+                  borderBottom: "1px solid var(--rule)",
+                  paddingBottom: "8px",
+                }}
+              >
                 The GLP-1 File
               </Link>
               <Link
                 href="/glp-1/comparison-chart-2026"
-                style={{ color: "var(--ink2)" }}
+                style={{
+                  color: "var(--ink)",
+                  textDecoration: "none",
+                  fontFamily: "var(--serif)",
+                  fontSize: "15px",
+                  lineHeight: 1.3,
+                  borderBottom: "1px solid var(--rule)",
+                  paddingBottom: "8px",
+                }}
               >
                 Comparison Chart 2026
               </Link>
               <Link
                 href="/glp-1/natural-boosters"
-                style={{ color: "var(--ink2)" }}
+                style={{
+                  color: "var(--ink)",
+                  textDecoration: "none",
+                  fontFamily: "var(--serif)",
+                  fontSize: "15px",
+                  lineHeight: 1.3,
+                  borderBottom: "1px solid var(--rule)",
+                  paddingBottom: "8px",
+                }}
               >
                 Natural GLP-1 Boosters
               </Link>
-              <Link href="/glp-1/vs-gip" style={{ color: "var(--ink2)" }}>
+              <Link
+                href="/glp-1/vs-gip"
+                style={{
+                  color: "var(--ink)",
+                  textDecoration: "none",
+                  fontFamily: "var(--serif)",
+                  fontSize: "15px",
+                  lineHeight: 1.3,
+                  borderBottom: "1px solid var(--rule)",
+                  paddingBottom: "8px",
+                }}
+              >
                 GLP-1 vs GIP
               </Link>
               <Link
                 href="/glp-1/triple-vs-dual-agonism"
-                style={{ color: "var(--ink2)" }}
+                style={{
+                  color: "var(--ink)",
+                  textDecoration: "none",
+                  fontFamily: "var(--serif)",
+                  fontSize: "15px",
+                  lineHeight: 1.3,
+                  borderBottom: "1px solid var(--rule)",
+                  paddingBottom: "8px",
+                }}
               >
                 Triple vs Dual Agonism
               </Link>
               <Link
                 href="/glp-1/semaglutide-vs-tirzepatide"
-                style={{ color: "var(--ink2)" }}
+                style={{
+                  color: "var(--ink)",
+                  textDecoration: "none",
+                  fontFamily: "var(--serif)",
+                  fontSize: "15px",
+                  lineHeight: 1.3,
+                  borderBottom: "1px solid var(--rule)",
+                  paddingBottom: "8px",
+                }}
               >
                 Semaglutide vs Tirzepatide
               </Link>
               <Link
                 href="/glp-1/safety-profile"
-                style={{ color: "var(--ink2)" }}
+                style={{
+                  color: "var(--ink)",
+                  textDecoration: "none",
+                  fontFamily: "var(--serif)",
+                  fontSize: "15px",
+                  lineHeight: 1.3,
+                  borderBottom: "1px solid var(--rule)",
+                  paddingBottom: "8px",
+                }}
               >
                 GLP-1 Safety Profile
               </Link>
-            </nav>
+            </div>
           </div>
         </aside>
       </div>
