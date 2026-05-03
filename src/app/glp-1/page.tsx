@@ -128,7 +128,7 @@ const faqs = [
   },
   {
     q: "Are natural ways to boost GLP-1 effective?",
-    a: "Endogenous GLP-1 release rises modestly with protein-rich meals, soluble fibre, fermented foods, and short-chain fatty acids from gut microbiota. The effect size is real but small relative to pharmacological agonism. Diet alone cannot reproduce the 14 to 28% weight loss seen in trials. See the natural boosters cluster article for the actual evidence.",
+    a: "Endogenous GLP-1 release rises modestly with protein-rich meals, soluble fibre, fermented foods, and short-chain fatty acids from gut microbiota. The effect size is real but small relative to pharmacological agonism. Diet alone cannot reproduce the 14 to 28% weight loss seen in trials. See the natural boosters guide for the actual evidence.",
   },
   {
     q: "Are GLP-1 agonists safe long term?",
@@ -638,7 +638,7 @@ export default function GLP1Page() {
             <p>
               The deep dive on receptor biology, GIP knockout mouse data, and the unresolved
               question of agonism versus antagonism is in the{" "}
-              <Link href="/glp-1/vs-gip">GLP-1 vs GIP cluster article</Link>.
+              <Link href="/glp-1/vs-gip">GLP-1 vs GIP comparison</Link>.
             </p>
           </section>
 
@@ -673,7 +673,7 @@ export default function GLP1Page() {
             <p>
               Full analysis, the trial data on glucagon mono-agonism, and the question of whether
               a quad agonist makes biological sense are covered in the{" "}
-              <Link href="/glp-1/triple-vs-dual-agonism">triple vs dual agonism cluster</Link>.
+              <Link href="/glp-1/triple-vs-dual-agonism">triple vs dual agonism explainer</Link>.
               For the head-to-head specifically on retatrutide vs the dual agonist class, see{" "}
               <Link href="/retatrutide/vs-tirzepatide">retatrutide vs tirzepatide</Link>.
             </p>
@@ -749,7 +749,7 @@ export default function GLP1Page() {
             <p>
               The full safety synthesis, including comparisons of dose-titration tolerability across
               compounds, is in the{" "}
-              <Link href="/glp-1/safety-profile">GLP-1 safety profile cluster article</Link>.
+              <Link href="/glp-1/safety-profile">GLP-1 safety profile explainer</Link>.
             </p>
           </section>
 
@@ -782,7 +782,7 @@ export default function GLP1Page() {
               is genuinely beneficial and worth doing, but it does not substitute for the
               pharmacological intervention when the latter is indicated. The full evidence rundown
               is in the{" "}
-              <Link href="/glp-1/natural-boosters">natural GLP-1 boosters cluster</Link>.
+              <Link href="/glp-1/natural-boosters">natural GLP-1 boosters guide</Link>.
             </p>
           </section>
 

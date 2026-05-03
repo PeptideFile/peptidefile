@@ -373,7 +373,7 @@ export default function GLP1SafetyProfilePage() {
               <Link href="/glp-1/triple-vs-dual-agonism">
                 Triple vs Dual Agonism
               </Link>{" "}
-              cluster.
+              explainer.
             </p>
           </section>
 

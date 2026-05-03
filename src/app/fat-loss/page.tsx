@@ -139,7 +139,7 @@ const faqs = [
   },
   {
     q: "Why are GLP-1 agonists in this file if they aren't fat loss peptides?",
-    a: "Because they reset the efficacy benchmark for the entire fat loss category. Any fat loss peptide marketed to a patient with obesity is being compared, implicitly or explicitly, to what semaglutide and tirzepatide can produce. Older GH-axis peptides aimed at 5 to 10% body fat reductions in athletic populations. The GLP-1 class produces 15 to 28% total weight loss across general obesity populations. The comparison is unavoidable. See the dedicated peptides versus Ozempic cluster article for the side-by-side.",
+    a: "Because they reset the efficacy benchmark for the entire fat loss category. Any fat loss peptide marketed to a patient with obesity is being compared, implicitly or explicitly, to what semaglutide and tirzepatide can produce. Older GH-axis peptides aimed at 5 to 10% body fat reductions in athletic populations. The GLP-1 class produces 15 to 28% total weight loss across general obesity populations. The comparison is unavoidable. See the dedicated peptides versus Ozempic comparison for the side-by-side.",
   },
   {
     q: "Where do peptide therapy clinics fit in?",
@@ -564,7 +564,7 @@ export default function FatLossPage() {
               in a person without a specific underlying condition. The full side-by-side is in the
               dedicated{" "}
               <Link href="/fat-loss/peptides-vs-ozempic">peptides versus Ozempic</Link>{" "}
-              cluster article.
+              comparison.
             </p>
           </section>
 
@@ -624,7 +624,7 @@ export default function FatLossPage() {
             <p>
               The full mechanism, trial history, and current research peptide market position is
               covered in the{" "}
-              <Link href="/fat-loss/aod-9604">AOD-9604 cluster article</Link>.
+              <Link href="/fat-loss/aod-9604">AOD-9604 explainer</Link>.
             </p>
           </section>
 
@@ -663,7 +663,7 @@ export default function FatLossPage() {
               The cost is significant. List prices in the US run into the thousands of dollars per
               month, and reimbursement is generally limited to the approved indication. The full
               mechanism, lipodystrophy data, off-label considerations, and cost picture are in the{" "}
-              <Link href="/fat-loss/tesamorelin-deep-dive">tesamorelin deep dive cluster</Link>.
+              <Link href="/fat-loss/tesamorelin-deep-dive">tesamorelin deep dive</Link>.
             </p>
           </section>
 
@@ -696,7 +696,7 @@ export default function FatLossPage() {
               the regulatory status sometimes ambiguous. Quality and purity vary by source. The
               full review of stacking protocols, dosing patterns used in clinic practice, and the
               evidence gap is in the{" "}
-              <Link href="/fat-loss/cjc-1295-fat-loss">CJC-1295 cluster article</Link>.
+              <Link href="/fat-loss/cjc-1295-fat-loss">CJC-1295 explainer</Link>.
             </p>
           </section>
 
@@ -725,7 +725,7 @@ export default function FatLossPage() {
             <p>
               The full review of the mitochondrial peptide class, the published human data, and the
               gap between the preclinical promise and clinical reality is in the{" "}
-              <Link href="/fat-loss/mots-c-metabolism">MOTS-c cluster article</Link>.
+              <Link href="/fat-loss/mots-c-metabolism">MOTS-c explainer</Link>.
             </p>
           </section>
 
@@ -758,7 +758,7 @@ export default function FatLossPage() {
               have not been systematically characterised, and the additive efficacy is presumed
               rather than measured. The full review of common stacks, published mechanism data, and
               the regulatory grey zone is in the{" "}
-              <Link href="/fat-loss/peptide-stacking-guide">peptide stacking guide cluster</Link>.
+              <Link href="/fat-loss/peptide-stacking-guide">peptide stacking guide</Link>.
             </p>
           </section>
 
@@ -823,7 +823,7 @@ export default function FatLossPage() {
             <p>
               The full clinic landscape, the 503A regulatory situation as of mid-2026, and the
               questions a patient should ask before signing up are in the{" "}
-              <Link href="/fat-loss/peptide-therapy-clinics">peptide therapy clinics cluster</Link>.
+              <Link href="/fat-loss/peptide-therapy-clinics">peptide therapy clinics guide</Link>.
             </p>
           </section>
 
